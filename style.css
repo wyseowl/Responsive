@@ -1,0 +1,336 @@
+/************************************************ NAVBAR *************************************/
+
+.navbar{
+    background-color:rgba(243, 247, 250,1);
+    box-shadow: 4px 4px 2px grey;
+}
+
+.navbar-brand{
+  padding:0;
+  margin:0;
+  padding-left:10px;
+  align:top;
+}
+
+.navbar li:hover{
+  background-color:rgba(107, 164, 243,0.3);
+}
+
+h1 {
+  color:black;
+  font-size:110%;
+  align:top;
+}
+
+h1:hover{
+  color:grey;
+}
+
+/************************************************ ABOUT CALCULATOR *************************************/
+
+.tooltip-inner{
+  width:120px;
+}
+
+/************************************************ ABOUT CALCULATOR *************************************/
+
+.panel{
+    background-color:white;
+      box-shadow: 4px 4px 2px grey;
+}
+
+.panel .panel-heading{
+    background-color:rgba(243, 247, 250,1);
+}
+
+
+.panel-heading .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: black;         /* adjust as needed */
+}
+.panel-heading .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
+
+h4 {
+  font-color:black;
+}
+
+h4:hover{
+  color:grey;
+}
+
+/************************************************ FONTS *************************************/
+
+
+green {color: rgba(12, 207, 73,1);}
+red {color: rgba(218, 71, 71, 1);}
+blue {color: rgba(85, 117, 220,1);}
+
+
+h2 {color: #002E5D;
+  font-family: verdana;
+  font-size: 140%;
+}
+
+h3 {
+  font-size: 160%;
+}
+
+/************************************************ STUDENT LOANS LINK *************************************/
+
+#StudentLoansLink{
+      font-size: 110%;
+      padding: 10px 10px;
+      margin-bottom:10px;
+      border-radius: 8px;
+      background-color:rgba(243, 247, 250,1);
+      margin:12px;
+      box-shadow: 4px 4px 2px grey;
+}
+
+#slcp{
+  width:80px;
+  box-shadow: 3px 3px 1px grey;
+}
+
+#slcp:hover{
+  box-shadow: 0px 0px 0px grey;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/************************************************ INPUT FORM *************************************/
+
+.label-container{
+  padding-top:10px;
+}
+
+.row{
+  margin-bottom:5px;
+}
+
+#inputform{
+  border-radius: 40px;
+  box-shadow: 4px 4px 2px grey;
+  padding: 20px;
+  background-color:rgba(243, 247, 250,1);
+}
+
+input[type=number], select {
+  padding: 12px 20px;
+  border-radius: 4px;
+}
+
+input[type=button] {
+  width: 20%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: 5px;
+  border-radius: 8px;
+  box-shadow: 3px 3px 1px grey;
+  background: #A0A09F; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#A0A09F, #002E5D); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#A0A09F, #002E5D); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#A0A09F, #002E5D); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#A0A09F, #002E5D); /* Standard syntax (must be last) */
+}
+
+input[type=button]:hover {
+  background: #CCCCCC;
+  box-shadow: 0px 0px 0px grey;
+}
+
+input[type=submit] {
+  width: 20%;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 90%;
+  box-shadow: 3px 3px 1px grey;
+  background: #A0A09F; /* For browsers that do not support gradients */
+  background: -webkit-linear-gradient(#A0A09F, #CCCCCC); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(#A0A09F, #CCCCCC); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(#A0A09F, #CCCCCC); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(#A0A09F, #CCCCCC); /* Standard syntax (must be last) */
+}
+
+#Overseas{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  padding: 20px;
+  margin:12px;
+  background-color:rgba(243, 247, 250,1);
+}
+
+/************************************************ OUTPUT FORM *************************************/
+
+#outform{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  font-size: 100%;
+  padding: 20px;
+  margin:12px;
+  background-color:rgba(243, 247, 250,1);
+}
+
+/************************************************ VOL. REPAY *************************************/
+
+#OneTimeRepay{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  font-size: 100%;
+  padding: 20px;
+  margin:10px;
+  background-color:rgba(243, 247, 250,1);
+}
+
+/************************************************ PLOTS *************************************/
+
+#plots1{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  font-size: 100%;
+  padding: 20px;
+  background-color:rgba(243, 247, 250,1);
+  margin:10px;
+}
+
+#plots2{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  font-size: 100%;
+  padding: 20px;
+  background-color:rgba(243, 247, 250,1);
+  margin:10px;
+}
+
+#plots3{
+  border-radius: 30px;
+  box-shadow: 4px 4px 2px grey;
+  color: black;
+  font-size: 100%;
+  padding: 20px;
+  background-color:rgba(243, 247, 250,1);
+  margin:10px;
+}
+
+/************************************************ LOGO FOOTER *************************************/
+
+#compdet{
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px grey;
+  color: black;
+  background-color:rgba(243, 247, 250,1);
+  width:105px;
+}
+
+/************************************************ ADVICE *************************************/
+
+#advicediv{
+  font-size: 100%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 1px grey;
+  padding: 10px 10px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  background-color:rgba(243, 247, 250,1);
+}
+
+
+/************************************************ ASSUMPTIONS *************************************/
+
+#assump{
+  border-radius: 8px;
+  box-shadow: 3px 3px 1px grey;
+  padding: 10px 10px;
+  margin: 8px 0;
+  background-color:rgba(243, 247, 250,1);
+}
+
+/************************************************ LINKS *************************************/
+
+#links{
+  font-size: 90%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 1px grey;
+  padding: 10px 10px;
+  margin: 8px 0;
+  background-color:rgba(243, 247, 250,1);
+  text-align:left;
+}
+
+
+/* link */
+a:link {
+    text-decoration: none;
+    font-color:#002E5D;
+}
+
+/* mouse over link */
+a:hover {
+    font-color: rgb(141, 196, 250);
+}
+
+/************************************************ DISCLAIMER *************************************/
+
+#disclaim{
+  font-size: 70%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 1px grey;
+  padding: 10px 10px;
+  margin: 8px 0;
+  background-color:rgba(243, 247, 250,1);
+  text-align:left;
+}
+
+/************************************************ HIDDEN FIELDS *************************************/
+
+.hidden1{
+  display:none;
+}
+
+.hidden2{
+  display:none;
+}
+
+.hidden3{
+  display:none;
+}
+
+/********** BULK OF ITEMS ************/
+
+.hidden4{
+  display:none;
+}
+
+.hidden5{
+  display:none;
+}
+
+/********** PG LOAN ************/
+
+.hidden6{
+  display:none;
+}
+
+/************************************************ HORIZONTAL STYLES *************************************/
+
+
+hr.style1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}

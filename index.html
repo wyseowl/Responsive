@@ -1,0 +1,1559 @@
+﻿<!DOCTYPE html>
+<html>
+
+<!---------------------------------------------------------- HEAD --------------------------------------------------------------->
+
+<head>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content="Want to know how to best manage your UK student loan? Use our calculator to find the best repayment options for you.">
+  <meta name="keywords" content="student" "loans" "free" "multiple" "loans" "loan" "calculator" "england" "save" "savings" "scotland" "northern ireland" "other country" "country" "wales" "cancelled" "paid off" "amount" "UK" "Studentloans.gov" "Repayment" "Calculator" "overseas" "government">
+  <meta name="author" content="Tomas Rouse">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <link rel="icon" href="slc_icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+
+  <title>UK Student Loans Repayment Calculator</title>
+
+
+
+<img src="pic2.jpeg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
+
+</head>
+
+<!---------------------------------------------------------- BODY --------------------------------------------------------------->
+
+<body>
+
+<!---------------------------------------------------------- NAVBAR --------------------------------------------------------------->
+
+<nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html"><h1 id="header"><strong>Student Loan Repayment Calculator (UK)</strong></h1></a>
+            </div>
+
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="savings.html">Savings options</a></li>
+                    <li><a href="contact.html">Contact us</a></li>
+                    <li><a href="help.html">Help</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+<br>
+<br>
+<!---------------------------------------------------------- ABOUT CALCULATOR --------------------------------------------------------------->
+<div class = "container"  style="width:100%;">
+  <div class="row">
+    <!---------------------------------------------------------- QUESTIONS --------------------------------------------------------------->
+
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px">
+          <div class="row text-center" id="inputform" style="margin-left:10px;margin-right:10px">
+            <form name="form">
+            <h3><strong>Enter your details</strong></h3>
+            <div class="form-inline">
+              <div class="form-group" style="width:100%">
+                <div class="input-group" style="margin-top: 20px;">
+                  <!---------------------------- QUESTION 1 ------------------------>
+                  <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-6 label-container" align="left">
+                      <label for="loan"> Student loan balance:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6" align="right">
+                      <div class="input-group">
+                        <span class="input-group-addon">£</span>
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="dl" id="loan"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="This is the balance displayed in your account on the Student Loans Company website">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 2 ------------------------>
+                  <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-6 label-container" align="left">
+                      <label for="location">Location of home address used to apply for your student loan:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="l" id="location" onchange="mloanalert();">
+                          <option value="Select">Select</option>
+                          <option value="England">England</option>
+                          <option value="Northern Ireland">Northern Ireland</option>
+                          <option value="Scotland">Scotland</option>
+                          <option value="Wales">Wales</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="If you applied from outside the UK, choose the location of the University you went to">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 3 ------------------------>
+                  <div class="row">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="yearstart">Year loan was first taken:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="ys" id="yearstart" onchange="mloanalert();">
+                          <option value="Select">Select</option>
+                          <option value=2017>2017</option>
+                          <option value=2016>2016</option>
+                          <option value=2015>2015</option>
+                          <option value=2014>2014</option>
+                          <option value=2013>2013</option>
+                          <option value=2012>2012</option>
+                          <option value=2011>2011</option>
+                          <option value=2010>2010</option>
+                          <option value=2009>2009</option>
+                          <option value=2008>2008</option>
+                          <option value=2007>2007</option>
+                          <option value=2006>2006</option>
+                          <option value=2005>2005</option>
+                          <option value=2004>2004</option>
+                          <option value=2003>2003</option>
+                          <option value=2002>2002</option>
+                          <option value=2001>2001</option>
+                          <option value=2000>2000</option>
+                          <option value=1999>1999</option>
+                          <option value="Before 1999">Before 1999</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="The beginning of the academic year when you first got your student loan">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 4 ------------------------>
+                  <div class="row" style="width:100%;">
+                    <div class="hidden3" style="width:100%;">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="yearelig">Year repayment started:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="ye" id="yearelig" onchange="mloanalert();">
+                          <option value="Select">Select</option>
+                          <option value=2017>2017</option>
+                          <option value=2016>2016</option>
+                          <option value=2015>2015</option>
+                          <option value=2014>2014</option>
+                          <option value=2013>2013</option>
+                          <option value=2012>2012</option>
+                          <option value=2011>2011</option>
+                          <option value=2010>2010</option>
+                          <option value=2009>2009</option>
+                          <option value=2008>2008</option>
+                          <option value=2007>2007</option>
+                          <option value=2006>2006</option>
+                          <option value=2005>2005</option>
+                          <option value=2004>2004</option>
+                          <option value=2003>2003</option>
+                          <option value=2002>2002</option>
+                          <option value=2001>2001</option>
+                          <option value=2000>2000</option>
+                          <option value=1999>1999</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="This is the year corresponding to the April after you finished your course. Example: If your course finished in summer 2009, you will choose 2010">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                    </div>
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 5 ------------------------>
+                  <div class="row">
+                    <div class="hidden6">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="postgrad">Postgraduate loan:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="pg" id="postgrad">
+                          <option value="No">No</option>
+                          <option value="Yes">Yes</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="Answer No if loan was taken out for an undergraduate course">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div>
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 6 ------------------------>
+                  <div class="row">
+                    <div class="hidden1">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="age">Month and year of birth:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-3" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="age_m" id="age">
+                          <option value="01">Jan</option>
+                          <option value="02">Feb</option>
+                          <option value="03">Mar</option>
+                          <option value="04">Apr</option>
+                          <option value="05">May</option>
+                          <option value="06">Jun</option>
+                          <option value="07">Jul</option>
+                          <option value="08">Aug</option>
+                          <option value="09">Sep</option>
+                          <option value="10">Oct</option>
+                          <option value="11">Nov</option>
+                          <option value="12">Dec</option>
+                        </select>
+                      </div>
+                    </div> <!-- end column -->
+                    <div class="col-xs-3" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="age_y" id="age">
+                          <option value=1991>1991</option>
+                          <option value=1990>1990</option>
+                          <option value=1989>1989</option>
+                          <option value=1988>1988</option>
+                          <option value=1987>1987</option>
+                          <option value=1986>1986</option>
+                          <option value=1985>1985</option>
+                          <option value=1984>1984</option>
+                          <option value=1983>1983</option>
+                          <option value=1982>1982</option>
+                          <option value=1981>1981</option>
+                          <option value=1980>1980</option>
+                          <option value=1979>1979</option>
+                          <option value=1978>1978</option>
+                          <option value=1977>1977</option>
+                          <option value=1976>1976</option>
+                          <option value=1975>1975</option>
+                          <option value=1974>1974</option>
+                          <option value=1973>1973</option>
+                        </select>
+                      </div>
+                    </div> <!-- end column -->
+                    </div>
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 7 ------------------------>
+                  <div class="row">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="paye">Repayments made using PAYE:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="paye" id="paye" onchange="mloanalert();">
+                          <option value="No">No</option>
+                          <option value="Yes">Yes</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="Pay As You Earn (PAYE) is when your student loan is automatically taken out of your paycheck">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 8 ------------------------>
+                  <div class="row">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 label-container" align="left">
+                      <label for="earnings">Gross earnings:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" align="right">
+                      <div class="input-group" style="margin:5px">
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="ge" id="earnings"/>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 label-container">
+                      <span id=curr>British Pounds</span>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="td" id="earnings">
+                          <option value="per year">per year</option>
+                          <option value="per month">per month</option>
+                          <option value="per week">per week</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="This is your pre-tax earnings">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 9 ------------------------>
+                  <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5 label-container" align="left">
+                      <label for="addrepay">Monthly additional recurrent repayments:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 label-container" align="right">
+                      <div class="input-group" style="margin:5px">
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="ar" id="addrepay"/>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 label-container" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="curr_ar" id="earnings">
+                          <option value="British Pound">British Pounds</option>
+                          <option value="Afghanis">Afghanis</option>
+                          <option value="Algerian Dinar">Algerian Dinar</option>
+                          <option value="Antillean Guilder">Antillean Guilder</option>
+                          <option value="Antilles Guilder">Antilles Guilder</option>
+                          <option value="Argentine Peso">Argentine Peso</option>
+                          <option value="Aruban Guilder">Aruban Guilder</option>
+                          <option value="Australian Dollar">Australian Dollar</option>
+                          <option value="Azerbaijanian Manat">Azerbaijanian Manat</option>
+                          <option value="Bahamian Dollar">Bahamian Dollar</option>
+                          <option value="Bahrain Dinar">Bahrain Dinar</option>
+                          <option value="Balboas">Balboas</option>
+                          <option value="Barbados Dollar">Barbados Dollar</option>
+                          <option value="Belarusian Ruble">Belarusian Ruble</option>
+                          <option value="Belizean Dollar">Belizean Dollar</option>
+                          <option value="Bermudian Dollar">Bermudian Dollar</option>
+                          <option value="Bhutanese Ngultrum">Bhutanese Ngultrum</option>
+                          <option value="Bolivar Fuerte">Bolivar Fuerte</option>
+                          <option value="Boliviano">Boliviano</option>
+                          <option value="Brazilian Real">Brazilian Real</option>
+                          <option value="Brunei Dollar">Brunei Dollar</option>
+                          <option value="Bulgarian Lev">Bulgarian Lev</option>
+                          <option value="Burundi Franc">Burundi Franc</option>
+                          <option value="Canadian Dollar">Canadian Dollar</option>
+                          <option value="Cape Verde Escudo">Cape Verde Escudo</option>
+                          <option value="Cayman Islands Dollar">Cayman Islands Dollar</option>
+                          <option value="CFA Franc (BCEAO)">CFA Franc (BCEAO)</option>
+                          <option value="CFA Franc (BEAC)">CFA Franc (BEAC)</option>
+                          <option value="CFP Franc">CFP Franc</option>
+                          <option value="Chilean Peso">Chilean Peso</option>
+                          <option value="Colombian Peso">Colombian Peso</option>
+                          <option value="Comorian Franc">Comorian Franc</option>
+                          <option value="Congolese Franc">Congolese Franc</option>
+                          <option value="Convertible Marka">Convertible Marka</option>
+                          <option value="Costa Rican Colon">Costa Rican Colon</option>
+                          <option value="Cuban Peso">Cuban Peso</option>
+                          <option value="Czech Koruna">Czech Koruna</option>
+                          <option value="Dalasi">Dalasi</option>
+                          <option value="Danish Krone">Danish Krone</option>
+                          <option value="Djiboutian Franc">Djiboutian Franc</option>
+                          <option value="Dobras">Dobras</option>
+                          <option value="Dominican Peso">Dominican Peso</option>
+                          <option value="Dong">Dong</option>
+                          <option value="Dram">Dram</option>
+                          <option value="East Caribbean Dollar">East Caribbean Dollar</option>
+                          <option value="Egyptian Pound">Egyptian Pound</option>
+                          <option value="Ethiopian Birr">Ethiopian Birr</option>
+                          <option value="Euro">Euro</option>
+                          <option value="Falkland Pound">Falkland Pound</option>
+                          <option value="Fiji Dollar">Fiji Dollar</option>
+                          <option value="Forint">Forint</option>
+                          <option value="Ghanaian Cedi">Ghanaian Cedi</option>
+                          <option value="Gold Cordoba">Gold Cordoba</option>
+                          <option value="Gourde">Gourde</option>
+                          <option value="Guarani">Guarani</option>
+                          <option value="Guinean Franc">Guinean Franc</option>
+                          <option value="Guyanese Dollar">Guyanese Dollar</option>
+                          <option value="Hong Kong Dollar">Hong Kong Dollar</option>
+                          <option value="Hryvnia">Hryvnia</option>
+                          <option value="Icelandic Krona">Icelandic Krona</option>
+                          <option value="Indian Rupee">Indian Rupee</option>
+                          <option value="Indonesian Rupiah">Indonesian Rupiah</option>
+                          <option value="Iranian Rial">Iranian Rial</option>
+                          <option value="Iraqi Dinar">Iraqi Dinar</option>
+                          <option value="Jamaican Dollar">Jamaican Dollar</option>
+                          <option value="Jordanian Dinar">Jordanian Dinar</option>
+                          <option value="Kenya Schilling">Kenya Schilling</option>
+                          <option value="Kina">Kina</option>
+                          <option value="Kip">Kip</option>
+                          <option value="Kuna">Kuna</option>
+                          <option value="Kuwaiti Dinar">Kuwaiti Dinar</option>
+                          <option value="Kwanza">Kwanza</option>
+                          <option value="Kyat">Kyat</option>
+                          <option value="Kyrgyzstan Som">Kyrgyzstan Som</option>
+                          <option value="Lari">Lari</option>
+                          <option value="Lebanese Pound">Lebanese Pound</option>
+                          <option value="Leke">Leke</option>
+                          <option value="Lempira">Lempira</option>
+                          <option value="Leone">Leone</option>
+                          <option value="Liberian Dollar (US Dollar in use)">Liberian Dollar (US Dollar in use)</option>
+                          <option value="Libyan Dinar">Libyan Dinar</option>
+                          <option value="Lilangeni">Lilangeni</option>
+                          <option value="Loti">Loti</option>
+                          <option value="Macedonian Denar">Macedonian Denar</option>
+                          <option value="Malagasy Ariary">Malagasy Ariary</option>
+                          <option value="Malawi Kwacha">Malawi Kwacha</option>
+                          <option value="Mauritius Rupee">Mauritius Rupee</option>
+                          <option value="Metical">Metical</option>
+                          <option value="Mexican Peso">Mexican Peso</option>
+                          <option value="Moldovan Leu">Moldovan Leu</option>
+                          <option value="Moroccan Dirham">Moroccan Dirham</option>
+                          <option value="Nafka">Nafka</option>
+                          <option value="Namibian Dollar">Namibian Dollar</option>
+                          <option value="Nepalese Rupee">Nepalese Rupee</option>
+                          <option value="New Israeli Shekel">New Israeli Shekel</option>
+                          <option value="New Sol">New Sol</option>
+                          <option value="New Zealand Dollar">New Zealand Dollar</option>
+                          <option value="Nigerian Naira">Nigerian Naira</option>
+                          <option value="Norwegian Krone">Norwegian Krone</option>
+                          <option value="Ouguiyas">Ouguiyas</option>
+                          <option value="Pa anga">Pa'anga</option>
+                          <option value="Pakistan Rupee">Pakistan Rupee</option>
+                          <option value="Patacas">Patacas</option>
+                          <option value="Philippine Peso">Philippine Peso</option>
+                          <option value="Pula">Pula</option>
+                          <option value="Qatar Riyal">Qatar Riyal</option>
+                          <option value="Quetzal">Quetzal</option>
+                          <option value="Rand">Rand</option>
+                          <option value="Rial Omani">Rial Omani</option>
+                          <option value="Riel">Riel</option>
+                          <option value="Ringgit">Ringgit</option>
+                          <option value="Romanian Leu">Romanian Leu</option>
+                          <option value="Rufiyaa">Rufiyaa</option>
+                          <option value="Russian Ruble">Russian Ruble</option>
+                          <option value="Rwanda Franc">Rwanda Franc</option>
+                          <option value="Saint Helena Pound">Saint Helena Pound</option>
+                          <option value="Saudi Riyal">Saudi Riyal</option>
+                          <option value="Serbian Dinar">Serbian Dinar</option>
+                          <option value="Seychelles Rupee">Seychelles Rupee</option>
+                          <option value="Singapore Dollar">Singapore Dollar</option>
+                          <option value="Solomon Islands Dollar">Solomon Islands Dollar</option>
+                          <option value="Somali Shilling">Somali Shilling</option>
+                          <option value="Somoni">Somoni</option>
+                          <option value="Sri Lankan Rupee">Sri Lankan Rupee</option>
+                          <option value="Sudanese Pound">Sudanese Pound</option>
+                          <option value="Surinam Dollar">Surinam Dollar</option>
+                          <option value="Swedish Krona">Swedish Krona</option>
+                          <option value="Swiss Franc">Swiss Franc</option>
+                          <option value="Syrian Pound">Syrian Pound</option>
+                          <option value="Taiwan Dollar">Taiwan Dollar</option>
+                          <option value="Taka">Taka</option>
+                          <option value="Tala">Tala</option>
+                          <option value="Tanzanian Shilling">Tanzanian Shilling</option>
+                          <option value="Tenge">Tenge</option>
+                          <option value="Thai Baht">Thai Baht</option>
+                          <option value="Trinidad and Tobago Dollar">Trinidad and Tobago Dollar</option>
+                          <option value="Tugrik">Tugrik</option>
+                          <option value="Tunisian Dinar">Tunisian Dinar</option>
+                          <option value="Turkish New Lira">Turkish New Lira</option>
+                          <option value="Turkmenistan New Manat">Turkmenistan New Manat</option>
+                          <option value="U.A.E. Dirham">U.A.E. Dirham</option>
+                          <option value="U.S. Dollar">U.S. Dollar</option>
+                          <option value="Ugandan New Shilling">Ugandan New Shilling</option>
+                          <option value="Uruguayan Peso">Uruguayan Peso</option>
+                          <option value="Uzbekistan Sum">Uzbekistan Sum</option>
+                          <option value="Vatu">Vatu</option>
+                          <option value="Won Korea Dem. Rep">Won Korea Dem. Rep</option>
+                          <option value="Yuan Renminbi">Yuan Renminbi</option>
+                          <option value="Won Korea Rep">Won Korea Rep</option>
+                          <option value="Yemeni Rial">Yemeni Rial</option>
+                          <option value="Yen">Yen</option>
+                          <option value="Zambian Kwacha">Zambian Kwacha</option>
+                          <option value="Zimbabwean Dollar">Zimbabwean Dollar</option>
+                          <option value="Zloty">Zloty</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="These are monthly additional recurring repayments you make in addition to your mandatory repayments">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <!---------------------------- QUESTION 10 ------------------------>
+                  <div class="row">
+                    <div class="hidden2">
+                    <div class="col-xs-6 label-container" align="left">
+                      <label for="bulkrepay">One time repayments between last April and today:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group" style="margin:5px">
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="bulk" id="bulkrepay"/>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                    <div class="col-xs-6" align="right">
+                      <div class="input-group">
+                        <select class="form-control dropdown" name="curr_bulk" id="bulkrepay">
+                          <option value="British Pound">British Pounds</option>
+                          <option value="Afghanis">Afghanis</option>
+                          <option value="Algerian Dinar">Algerian Dinar</option>
+                          <option value="Antillean Guilder">Antillean Guilder</option>
+                          <option value="Antilles Guilder">Antilles Guilder</option>
+                          <option value="Argentine Peso">Argentine Peso</option>
+                          <option value="Aruban Guilder">Aruban Guilder</option>
+                          <option value="Australian Dollar">Australian Dollar</option>
+                          <option value="Azerbaijanian Manat">Azerbaijanian Manat</option>
+                          <option value="Bahamian Dollar">Bahamian Dollar</option>
+                          <option value="Bahrain Dinar">Bahrain Dinar</option>
+                          <option value="Balboas">Balboas</option>
+                          <option value="Barbados Dollar">Barbados Dollar</option>
+                          <option value="Belarusian Ruble">Belarusian Ruble</option>
+                          <option value="Belizean Dollar">Belizean Dollar</option>
+                          <option value="Bermudian Dollar">Bermudian Dollar</option>
+                          <option value="Bhutanese Ngultrum">Bhutanese Ngultrum</option>
+                          <option value="Bolivar Fuerte">Bolivar Fuerte</option>
+                          <option value="Boliviano">Boliviano</option>
+                          <option value="Brazilian Real">Brazilian Real</option>
+                          <option value="Brunei Dollar">Brunei Dollar</option>
+                          <option value="Bulgarian Lev">Bulgarian Lev</option>
+                          <option value="Burundi Franc">Burundi Franc</option>
+                          <option value="Canadian Dollar">Canadian Dollar</option>
+                          <option value="Cape Verde Escudo">Cape Verde Escudo</option>
+                          <option value="Cayman Islands Dollar">Cayman Islands Dollar</option>
+                          <option value="CFA Franc (BCEAO)">CFA Franc (BCEAO)</option>
+                          <option value="CFA Franc (BEAC)">CFA Franc (BEAC)</option>
+                          <option value="CFP Franc">CFP Franc</option>
+                          <option value="Chilean Peso">Chilean Peso</option>
+                          <option value="Colombian Peso">Colombian Peso</option>
+                          <option value="Comorian Franc">Comorian Franc</option>
+                          <option value="Congolese Franc">Congolese Franc</option>
+                          <option value="Convertible Marka">Convertible Marka</option>
+                          <option value="Costa Rican Colon">Costa Rican Colon</option>
+                          <option value="Cuban Peso">Cuban Peso</option>
+                          <option value="Czech Koruna">Czech Koruna</option>
+                          <option value="Dalasi">Dalasi</option>
+                          <option value="Danish Krone">Danish Krone</option>
+                          <option value="Djiboutian Franc">Djiboutian Franc</option>
+                          <option value="Dobras">Dobras</option>
+                          <option value="Dominican Peso">Dominican Peso</option>
+                          <option value="Dong">Dong</option>
+                          <option value="Dram">Dram</option>
+                          <option value="East Caribbean Dollar">East Caribbean Dollar</option>
+                          <option value="Egyptian Pound">Egyptian Pound</option>
+                          <option value="Ethiopian Birr">Ethiopian Birr</option>
+                          <option value="Euro">Euro</option>
+                          <option value="Falkland Pound">Falkland Pound</option>
+                          <option value="Fiji Dollar">Fiji Dollar</option>
+                          <option value="Forint">Forint</option>
+                          <option value="Ghanaian Cedi">Ghanaian Cedi</option>
+                          <option value="Gold Cordoba">Gold Cordoba</option>
+                          <option value="Gourde">Gourde</option>
+                          <option value="Guarani">Guarani</option>
+                          <option value="Guinean Franc">Guinean Franc</option>
+                          <option value="Guyanese Dollar">Guyanese Dollar</option>
+                          <option value="Hong Kong Dollar">Hong Kong Dollar</option>
+                          <option value="Hryvnia">Hryvnia</option>
+                          <option value="Icelandic Krona">Icelandic Krona</option>
+                          <option value="Indian Rupee">Indian Rupee</option>
+                          <option value="Indonesian Rupiah">Indonesian Rupiah</option>
+                          <option value="Iranian Rial">Iranian Rial</option>
+                          <option value="Iraqi Dinar">Iraqi Dinar</option>
+                          <option value="Jamaican Dollar">Jamaican Dollar</option>
+                          <option value="Jordanian Dinar">Jordanian Dinar</option>
+                          <option value="Kenya Schilling">Kenya Schilling</option>
+                          <option value="Kina">Kina</option>
+                          <option value="Kip">Kip</option>
+                          <option value="Kuna">Kuna</option>
+                          <option value="Kuwaiti Dinar">Kuwaiti Dinar</option>
+                          <option value="Kwanza">Kwanza</option>
+                          <option value="Kyat">Kyat</option>
+                          <option value="Kyrgyzstan Som">Kyrgyzstan Som</option>
+                          <option value="Lari">Lari</option>
+                          <option value="Lebanese Pound">Lebanese Pound</option>
+                          <option value="Leke">Leke</option>
+                          <option value="Lempira">Lempira</option>
+                          <option value="Leone">Leone</option>
+                          <option value="Liberian Dollar (US Dollar in use)">Liberian Dollar (US Dollar in use)</option>
+                          <option value="Libyan Dinar">Libyan Dinar</option>
+                          <option value="Lilangeni">Lilangeni</option>
+                          <option value="Loti">Loti</option>
+                          <option value="Macedonian Denar">Macedonian Denar</option>
+                          <option value="Malagasy Ariary">Malagasy Ariary</option>
+                          <option value="Malawi Kwacha">Malawi Kwacha</option>
+                          <option value="Mauritius Rupee">Mauritius Rupee</option>
+                          <option value="Metical">Metical</option>
+                          <option value="Mexican Peso">Mexican Peso</option>
+                          <option value="Moldovan Leu">Moldovan Leu</option>
+                          <option value="Moroccan Dirham">Moroccan Dirham</option>
+                          <option value="Nafka">Nafka</option>
+                          <option value="Namibian Dollar">Namibian Dollar</option>
+                          <option value="Nepalese Rupee">Nepalese Rupee</option>
+                          <option value="New Israeli Shekel">New Israeli Shekel</option>
+                          <option value="New Sol">New Sol</option>
+                          <option value="New Zealand Dollar">New Zealand Dollar</option>
+                          <option value="Nigerian Naira">Nigerian Naira</option>
+                          <option value="Norwegian Krone">Norwegian Krone</option>
+                          <option value="Ouguiyas">Ouguiyas</option>
+                          <option value="Pa anga">Pa'anga</option>
+                          <option value="Pakistan Rupee">Pakistan Rupee</option>
+                          <option value="Patacas">Patacas</option>
+                          <option value="Philippine Peso">Philippine Peso</option>
+                          <option value="Pula">Pula</option>
+                          <option value="Qatar Riyal">Qatar Riyal</option>
+                          <option value="Quetzal">Quetzal</option>
+                          <option value="Rand">Rand</option>
+                          <option value="Rial Omani">Rial Omani</option>
+                          <option value="Riel">Riel</option>
+                          <option value="Ringgit">Ringgit</option>
+                          <option value="Romanian Leu">Romanian Leu</option>
+                          <option value="Rufiyaa">Rufiyaa</option>
+                          <option value="Russian Ruble">Russian Ruble</option>
+                          <option value="Rwanda Franc">Rwanda Franc</option>
+                          <option value="Saint Helena Pound">Saint Helena Pound</option>
+                          <option value="Saudi Riyal">Saudi Riyal</option>
+                          <option value="Serbian Dinar">Serbian Dinar</option>
+                          <option value="Seychelles Rupee">Seychelles Rupee</option>
+                          <option value="Singapore Dollar">Singapore Dollar</option>
+                          <option value="Solomon Islands Dollar">Solomon Islands Dollar</option>
+                          <option value="Somali Shilling">Somali Shilling</option>
+                          <option value="Somoni">Somoni</option>
+                          <option value="Sri Lankan Rupee">Sri Lankan Rupee</option>
+                          <option value="Sudanese Pound">Sudanese Pound</option>
+                          <option value="Surinam Dollar">Surinam Dollar</option>
+                          <option value="Swedish Krona">Swedish Krona</option>
+                          <option value="Swiss Franc">Swiss Franc</option>
+                          <option value="Syrian Pound">Syrian Pound</option>
+                          <option value="Taiwan Dollar">Taiwan Dollar</option>
+                          <option value="Taka">Taka</option>
+                          <option value="Tala">Tala</option>
+                          <option value="Tanzanian Shilling">Tanzanian Shilling</option>
+                          <option value="Tenge">Tenge</option>
+                          <option value="Thai Baht">Thai Baht</option>
+                          <option value="Trinidad and Tobago Dollar">Trinidad and Tobago Dollar</option>
+                          <option value="Tugrik">Tugrik</option>
+                          <option value="Tunisian Dinar">Tunisian Dinar</option>
+                          <option value="Turkish New Lira">Turkish New Lira</option>
+                          <option value="Turkmenistan New Manat">Turkmenistan New Manat</option>
+                          <option value="U.A.E. Dirham">U.A.E. Dirham</option>
+                          <option value="U.S. Dollar">U.S. Dollar</option>
+                          <option value="Ugandan New Shilling">Ugandan New Shilling</option>
+                          <option value="Uruguayan Peso">Uruguayan Peso</option>
+                          <option value="Uzbekistan Sum">Uzbekistan Sum</option>
+                          <option value="Vatu">Vatu</option>
+                          <option value="Won Korea Dem. Rep">Won Korea Dem. Rep</option>
+                          <option value="Yuan Renminbi">Yuan Renminbi</option>
+                          <option value="Won Korea Rep">Won Korea Rep</option>
+                          <option value="Yemeni Rial">Yemeni Rial</option>
+                          <option value="Yen">Yen</option>
+                          <option value="Zambian Kwacha">Zambian Kwacha</option>
+                          <option value="Zimbabwean Dollar">Zimbabwean Dollar</option>
+                          <option value="Zloty">Zloty</option>
+                        </select>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="If you have made multiple one time repayments, please input the total amount">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                      </div>
+                    </div> <!-- end column -->
+                    </div>
+                  </div> <!-- end row -->
+                </div> <!-- end input-group -->
+              </div> <!-- end form-group -->
+            </div> <!-- end form-inline -->
+            <br>
+            <button type="button" class="btn btn-primary" onclick="calculate();calculate2();show1();">Calculate</button>
+          </form>
+        </div> <!-- end row text-center -->
+      </div>
+
+    <div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+            <strong>About the calculator</strong>
+            </a>
+            </h4>
+          </div>
+          <div id="collapseOne" class="panel-collapse collapse">
+            <div class="panel-body">
+              UK student loans are complicated. That's why we've put together a calculator that will help you decide how best to manage your loan.
+              <br>
+              <br>
+              This calculator will answer questions like:
+              <br>
+              <br>
+              <ul>
+              <li>When will my loan be cancelled?</li>
+              <br>
+              <li>How long is it until I pay my loan off?</li>
+              <br>
+              <li>How much do I have to pay a month?</li>
+              <br>
+              <li>Does paying off my student loan early <strong>save me money</strong>?</li>
+              </ul>
+              <br>
+              We would like to help you save money wherever possible. For this reason, we offer a <a href="savings.html">selection of different ways</a> to increase savings instead of paying your loan off early.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group" id="accordion2">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+            <strong>Still at university or thinking of going?</strong>
+            </a>
+            </h4>
+          </div>
+          <div id="collapseTwo" class="panel-collapse collapse">
+            <div class="panel-body">
+              You can still use this calculator to see how to manage your loan. Enter what your loan is expected to be and how much you expect to earn.
+              <br>
+              <br>
+              <strong>Warning!</strong> keep the following items constant:
+              <br>
+              <br>
+              <ul>
+              <li>Year loan was first taken: 2017</li>
+              <br>
+              <li>Year repayment started: 2017</li>
+              <br>
+              <li>Repayments made using PAYE: No</li>
+              </ul>
+              Moneysavingexpert have a calculator which will estimate your loan size, follow <a href="http://www.moneysavingexpert.com/students/student-finance-calculator" target="_blank">this link</a>.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group" id="accordion3">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+            <strong>Your student loan balance</strong>
+            </a>
+            </h4>
+          </div>
+          <div id="collapseThree" class="panel-collapse collapse">
+            <div class="panel-body">
+              Log in to your account on the Student Loans Company website to find out your<a href="http://www.studentloanrepayment.co.uk/" target="_blank">loan balance</a>
+              <center><a href="http://www.studentloanrepayment.co.uk/" target="_blank"><img src="slc.jpg" alt="slc" id="slcp"></a></center>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel-group" id="accordion4">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion4" href="#collapseFour">
+            <strong>Do you work outside the UK?</strong>
+            </a>
+            </h4>
+          </div>
+          <div id="collapseFour" class="panel-collapse collapse">
+            <div class="panel-body">
+              Select the country you live and work in:
+                <form name="form_over">
+                  <div class="form-inline">
+                    <div class="form-group" style="width:100%">
+                      <div class="row">
+                        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                          <div class="input-group" style="margin:5px" >
+                      <select class="form-control dropdown" id="overseas" name="c" style="width:100%;margin-left:5px;" onchange="curren();">
+          	            <option value="United Kingdom">United Kingdom</option>
+                        <option value="Afghanistan">Afganistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="American Samoa">American Samoa</option>
+                        <option value="Andorra">Andorra</option>
+                        <option value="Angola">Angola</option>
+                        <option value="Anguilla">Anguilla</option>
+                        <option value="Antarctica">Antarctica</option>
+                        <option value="Antigua and Barbuda">Antigua and Barbuda</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Armenia">Armenia</option>
+                        <option value="Aruba">Aruba</option>
+                        <option value="Australia">Australia</option>
+                        <option value= "Austria">Austria</option>
+                        <option value="Azerbaijan">Azerbaijan</option>
+                        <option value="Bahamas">Bahamas</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Barbados">Barbados</option>
+                        <option value="Belarus">Belarus</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Belize">Belize</option>
+                        <option value="Benin">Benin</option>
+                        <option value="Bermuda">Bermuda</option>
+                        <option value="Bhutan">Bhutan</option>
+                        <option value="Bolivia">Bolivia</option>
+                        <option value="Bonaire, Saint Eustatius and Saba">Bonaire, Saint Eustatius and Saba</option>
+                        <option value="Bosnia and Herzegovina">Bosnia and Herzegovina</option>
+                        <option value="Botswana">Botswana</option>
+                        <option value="Bouvet Island">Bouvet Island</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="British Indian Ocean Territory">British Indian Ocean Territory</option>
+                        <option value="Brunei">Brunei</option>
+                        <option value="Bulgaria">Bulgaria</option>
+                        <option value="Burkina Faso">Burkina Faso</option>
+                        <option value="Burundi">Burundi</option>
+                        <option value="Cambodia">Cambodia</option>
+                        <option value="Cameroon">Cameroon</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Cape Verde">Cape Verde</option>
+                        <option value="Cayman Islands">Cayman Islands</option>
+                        <option value="Central African Republic">Central African Republic</option>
+                        <option value="Chad">Chad</option>
+                        <option value="Channel Islands">Channel Islands</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Christmas Island">Christmas Island</option>
+                        <option value="Cocos (Keeling) Islands">Cocos (Keeling) Islands</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Comoros">Comoros</option>
+                        <option value="Congo">Congo</option>
+                        <option value="Congo, Democratic Republic of">Congo, Democratic Republic of</option>
+                        <option value="Cook Islands">Cook Islands</option>
+                        <option value="Costa Rica">Costa Rica</option>
+                        <option value="Cote dIvoire">Cote d'Ivoire</option>
+                        <option value="Croatia">Croatia</option>
+                        <option value="Cuba">Cuba</option>
+                        <option value="Curacao">Curacao</option>
+                        <option value="Cyprus">Cyprus</option>
+                        <option value="Czech Republic">Czech Republic</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Djibouti">Djibouti</option>
+                        <option value="Dominica">Dominica</option>
+                        <option value="Dominican Republic">Dominican Republic</option>
+                        <option value="Ecuador">Ecuador</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="El Salvador">El Salvador</option>
+                        <option value="Equatorial Guinea">Equatorial Guinea</option>
+                        <option value="Eritrea">Eritrea</option>
+                        <option value="Estonia">Estonia</option>
+                        <option value="Ethiopia">Ethiopia</option>
+                        <option value="Faeroe Islands">Faeroe Islands</option>
+                        <option value="Falkland Islands">Falkland Islands</option>
+                        <option value="Federated States of Micronesia">Federated States of Micronesia</option>
+                        <option value="Fiji">Fiji</option>
+                        <option value="Finland">Finland</option>
+                        <option value="France">France</option>
+                        <option value="French Guiana">French Guiana</option>
+                        <option value="French Polynesia">French Polynesia</option>
+                        <option value="French Southern Territories">French Southern Territories</option>
+                        <option value="Gabon">Gabon</option>
+                        <option value="Gambia">Gambia</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Ghana">Ghana</option>
+                        <option value="Gibraltar">Gibraltar</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Greenland">Greenland</option>
+                        <option value="Grenada">Grenada</option>
+                        <option value="Guadeloupe">Guadeloupe</option>
+                        <option value="Guam">Guam</option>
+                        <option value="Guatemala">Guatemala</option>
+                        <option value="Guinea">Guinea</option>
+                        <option value="Guinea-Bissau">Guinea-Bissau</option>
+                        <option value="Guyana">Guyana</option>
+                        <option value="Haiti">Haiti</option>
+                        <option value="Heard and McDonald Islands">Heard and McDonald Islands</option>
+                        <option value="Holy See (Vatican City State)">Holy See (Vatican City State)</option>
+                        <option value="Honduras">Honduras</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Hungary">Hungary</option>
+                        <option value="Iceland">Iceland</option>
+                        <option value="India">India</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Isle of Man">Isle of Man</option>
+                        <option value="Israel">Israel</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jamaica">Jamaica</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kazakhstan">Kazakhstan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kiribati">Kiribati</option>
+                        <option value="Korea, Democratic Peoples Republic of">Korea, Democratic People's Republic of</option>
+                        <option value="Korea, Republic of">Korea, Republic of</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Kyrgyztan Republic">Kyrgyztan Republic</option>
+                        <option value="Lao PDR">Lao PDR</option>
+                        <option value="Latvia">Latvia</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Lesotho">Lesotho</option>
+                        <option value="Liberia">Liberia</option>
+                        <option value="Libya">Libya</option>
+                        <option value="Liechtenstein">Liechtenstein</option>
+                        <option value="Lithuania">Lithuania</option>
+                        <option value="Luxembourg">Luxembourg</option>
+                        <option value="Macau">Macau</option>
+                        <option value="Macedonia">Macedonia</option>
+                        <option value="Madagascar">Madagascar</option>
+                        <option value="Malawi">Malawi</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Maldives">Maldives</option>
+                        <option value="Mali">Mali</option>
+                        <option value="Malta">Malta</option>
+                        <option value="Marshall Islands">Marshall Islands</option>
+                        <option value="Martinique">Martinique</option>
+                        <option value="Mauritania">Mauritania</option>
+                        <option value="Mauritius">Mauritius</option>
+                        <option value="Mayotte">Mayotte</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Moldova">Moldova</option>
+                        <option value="Monaco">Monaco</option>
+                        <option value="Mongolia">Mongolia</option>
+                        <option value="Montenegro">Montenegro</option>
+                        <option value="Montserrat">Montserrat</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="Mozambique">Mozambique</option>
+                        <option value="Myanmar">Myanmar</option>
+                        <option value="Namibia">Namibia</option>
+                        <option value="Nauru">Nauru</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="New Caledonia">New Caledonia</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nicaragua">Nicaragua</option>
+                        <option value="Niger">Niger</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Niue">Niue</option>
+                        <option value="Norfolk Island">Norfolk Island</option>
+                        <option value="Northern Mariana Islands">Northern Mariana Islands</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Palau">Palau</option>
+                        <option value="Palestine">Palestine</option>
+                        <option value="Panama">Panama</option>
+                        <option value="Papua New Guinea">Papua New Guinea</option>
+                        <option value="Paraguay">Paraguay</option>
+                        <option value="Peru">Peru</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Pitcairn">Pitcairn</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Puerto Rico">Puerto Rico</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Reunion">Reunion</option>
+                        <option value="Romania">Romania</option>
+                        <option value="Russian Federation">Russian Federation</option>
+                        <option value="Rwanda">Rwanda</option>
+                        <option value="Saint Helena">Saint Helena</option>
+                        <option value="Saint Kitts and Nevis">Saint Kitts and Nevis</option>
+                        <option value="Saint Lucia">Saint Lucia</option>
+                        <option value="Saint Martin (French part)">Saint Martin (French part)</option>
+                        <option value="Saint Pierre and Miquelon">Saint Pierre and Miquelon</option>
+                        <option value="Saint Vincent and Grenadines">Saint Vincent and Grenadines</option>
+                        <option value="Saint-Barthelemy">Saint-Barthelemy</option>
+                        <option value="Samoa">Samoa</option>
+                        <option value="San Marino">San Marino</option>
+                        <option value="Sao Tome and Principe">Sao Tome and Principe</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="Senegal">Senegal</option>
+                        <option value="Serbia">Serbia</option>
+                        <option value="Seychelles">Seychelles</option>
+                        <option value="Sierra Leone">Sierra Leone</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Sint Maarten (Dutch part)">Sint Maarten (Dutch part)</option>
+                        <option value="Slovakia">Slovakia</option>
+                        <option value="Slovenia">Slovenia</option>
+                        <option value="Solomon Islands">Solomon Islands</option>
+                        <option value="Somalia">Somalia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Georgia and the South Sandwich Islands">South Georgia and the South Sandwich Islands</option>
+                        <option value="South Sudan">South Sudan</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sudan">Sudan</option>
+                        <option value="Suriname">Suriname</option>
+                        <option value="Svalbard and Jan Mayen Islands">Svalbard and Jan Mayen Islands</option>
+                        <option value="Swaziland">Swaziland</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Syria">Syria</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Tajikistan">Tajikistan</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Timor-Leste">Timor-Leste</option>
+                        <option value="Togo">Togo</option>
+                        <option value="Tokelau">Tokelau</option>
+                        <option value="Tonga">Tonga</option>
+                        <option value="Trinidad and Tobago">Trinidad and Tobago</option>
+                        <option value="Tunisia">Tunisia</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Turkmenistan">Turkmenistan</option>
+                        <option value="Turks and Caicos Islands">Turks and Caicos Islands</option>
+                        <option value="Tuvalu">Tuvalu</option>
+                        <option value="Uganda">Uganda</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="United Arab Emirates">United Arab Emirates</option>
+                        <option value="United Republic of Tanzania">United Republic of Tanzania</option>
+                        <option value="United States of America">United States of America</option>
+                        <option value="Uruguay">Uruguay</option>
+                        <option value="Uzbekistan">Uzbekistan</option>
+                        <option value="Vanuatu">Vanuatu</option>
+                        <option value="Venezuela">Venezuela</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Virgin Islands (British)">Virgin Islands (British)</option>
+                        <option value="Virgin Islands (US)">Virgin Islands (US)</option>
+                        <option value="Wallis and Futuna Islands">Wallis and Futuna Islands</option>
+                        <option value="Western Sahara">Western Sahara</option>
+                        <option value="Yemen">Yemen</option>
+                        <option value="Zambia">Zambia</option>
+                        <option value="Zimbabwe">Zimbabwe</option>
+                      </select>
+                      <span class="input-group-addon">
+                        <a class='my-tool-tip' data-toggle="tooltip" data-placement="right" title="This is the country in which you are registered with the Student Loans Company">
+                          <i class='glyphicon glyphicon-info-sign'></i>
+                        </a>
+                      </span>
+                    </div>
+                  </div>
+                    </div>
+                    </div>
+                  </div>
+                </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end column -->
+  </div> <!-- end row -->
+</div> <!-- end container -->
+
+<br>
+
+<div class="container" style="width:100%;">
+  <div class="row hidden4">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" align=right>
+<!------------------------------------------------------------------- KEY LOAN INFO -------------------------------------------------------------------->
+      <div id="outform" style="width:100%;">
+        <form name="outf">
+          <table width=100%>
+            <tr>
+              <td align="left" width=100%>
+                <strong><font size=4.3%>Key information about your loan</font></strong>
+              </td>
+            </tr>
+          </table>
+            <br>
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  <font size=1%><a href="#" data-toggle="tooltip" data-placement="bottom" title="If you repay via PAYE, the balance displayed on your student loans account is the balance as of the previous April. This is an estimation of your student loan as of this month.">Help</a></font>
+                  Loan as of this month
+                </td>
+                <td id="rl" align="left" width=40%>
+                  ...
+                </td>
+              </tr>
+            </table>
+            <hr class="style1">
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  <font size=1%><a href="#" data-toggle="tooltip" data-placement="bottom" title="This is the monthly amount you must repay.">Help</a></font>
+                  Monthly mandatory repayments
+                </td>
+                <td id="mmr" align="left" width=40%>
+                ...
+                </td>
+              </tr>
+            </table>
+            <hr class="style1">
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  Time until loan is payed off
+                </td>
+                <td id="tcanc" align="left" width=40%>
+                  ...
+                </td>
+              </tr>
+            </table>
+            <hr class="style1">
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  <font size=1%><a href="#" data-toggle="tooltip" data-placement="bottom" title="If you continued making additional repayments of this amount, this is how much you will save by paying off early. Note: Negative means you're losing money.">Help</a></font>
+                  Amount saved by making additional repayments
+                </td>
+                <td id="es" align="left" width=40%>
+                  ...
+                </td>
+              </tr>
+            </table>
+            <hr class="style1">
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  <font size=1%><a href="#" data-toggle="tooltip" data-placement="bottom" title="If you don't make any repayments at all, your loan will be cancelled after this amount of time.">Help</a></font>
+                  Time until loan cancelled without payments
+                </td>
+                <td id="cancelled" align="left" width=40%>
+                  ...
+                </td>
+              </tr>
+            </table>
+            <hr class="style1">
+            <table width=100%>
+              <tr>
+                <td align="left" width=70%>
+                  <font size=1%><a href="#" data-toggle="tooltip" data-placement="bottom" title="This is the loan type you are classified as having, based on when you went to university and where you applied from.">Help</a></font>
+                  Your loan type
+                </td>
+                <td id="loantype" align="left" width=40%>
+                  ...
+                </td>
+              </tr>
+            </table>
+          </form>
+        </div>
+      </div>
+
+  <!------------------------------------------------------------------- ADVICE -------------------------------------------------------------------->
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+          <center>
+            <div align="left" id="advicediv">
+              <strong><font size=4.3%>General Advice</font></strong>
+              <br>
+              <br>
+              The only part of the student loan you have control over are the <strong>additional repayments</strong>. Additional repayments are voluntary repayments you make on top of your mandatory repayments.
+              <br>
+              <br>
+	      Making additional repayments is how you can save money by paying off your loans quicker.
+              <br>
+              <br>
+              If the amount you save by making additional repayments is <strong>positive</strong> then you will <strong>save money</strong>.
+              If it is <strong>negative</strong>, then you are <strong>losing money</strong> by making additional repayments.
+              <br>
+              <br>
+              You should use the <a href="savings.html">APR</a> to assess how much you are saving as a proportion of what you have spent. You can also compare the APR to current bank rates, the higher the better.
+              <br>
+              <br>
+              Keep in mind that the total amount you spend on additional repayments can be put in a savings account or in other investments which <strong>may</strong> give a better return. See <a href="savings.html">here</a> for other options.
+            </div>
+          </center>
+          </div>
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+      <div class="panel-group" id="accordion5">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+            <strong>Additional repayment guidance</strong>
+            </a>
+            </h4>
+          </div>
+          <div id="collapseFive" class="panel-collapse collapse">
+            <div class="panel-body">
+              Below are three charts that will help you decide how much you should repay additionally.
+              <br>
+              <br>
+              Additional repayments are repayments you make on top of what you <strong>must</strong> repay each month. Visit the Student Loans Company website to see how to make <a href="http://www.studentloanrepayment.co.uk/portal/page?_pageid=93,6678558&_dad=portal&_schema=PORTAL" target="_blank">additional repayments</a>.
+              <br>
+              <br>
+              Making additional repayments can <strong>save you money</strong>. However, it is possible to <strong>lose money</strong> by making these repayments. We highly recommend you look at these charts before you make additional repayments!
+              <br>
+              <br>
+              You may be in a position where you save only a small amount compared to how much you put in. Therefore, if you have a low APR, we recommend you take a look at our <a href="savings.html">other suggested methods</a> of saving/investing.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!------------------------------------------------------------------- ADDITIONAL REPAYMENT GUIDANCE -------------------------------------------------------------------->
+
+<div class = "container hidden5" style="width:100%;">
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="plots1">
+        <strong>Chart One</strong>
+        <br>
+        <br>
+        <canvas id="lineChart3";></canvas>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="OneTimeRepay">
+        <form name="volunt">
+          <table>
+            <tr>
+              <strong> Chart One - Description </strong>
+            </tr>
+            <br>
+            <br>
+            <tr>
+              This chart shows what making additional repayments does to:
+              <br>
+              <br>
+              <ul>
+                <li>
+                  How much you can save - <strong><green>green line</green></strong>
+		            </li>
+		            <li>
+		                How much you have spent on the loan in total - <strong><red>red line</red></strong>
+		            </li>
+		            <li>
+		                How much you have spent on additional repayments in total - <strong><blue>blue line</blue></strong>.
+		            </li>
+              </ul>
+              <br>
+              Note that For small loans and/or large repayments, all three charts start to look strange as the estimations are more uncertain. APR will become unusable and care should be taken when interpreting.
+              <br>
+              <hr class="style1"></hr>
+              <br>
+              Want to make a large on off repayment? See how that has an effect on your savings:
+            </tr>
+            <tr>
+              <td width="50%">
+                <a href="#" data-toggle="tooltip" data-placement="left" title="Making a one time repayment will rarely increase the APR, unless it brings you close to the end of your loan.">Help</a>
+                Make one time repayment:
+              </td>
+              <td width="22%" align="right">
+                <input type="number" id="input" name="bulk_ar" min="0" max="1000000000" value="0" style="width: 100%;" onchange="calculate2();">
+              </td>
+              <td width="28%" align="left">
+                <select id="input" name="curr_bulk_ar" style="width:100%;" onchange="calculate2();">
+                <option value="British Pound">British Pounds</option>
+                <option value="Afghanis">Afghanis</option>
+                <option value="Algerian Dinar">Algerian Dinar</option>
+                <option value="Antillean Guilder">Antillean Guilder</option>
+                <option value="Antilles Guilder">Antilles Guilder</option>
+                <option value="Argentine Peso">Argentine Peso</option>
+                <option value="Aruban Guilder">Aruban Guilder</option>
+                <option value="Australian Dollar">Australian Dollar</option>
+                <option value="Azerbaijanian Manat">Azerbaijanian Manat</option>
+                <option value="Bahamian Dollar">Bahamian Dollar</option>
+                <option value="Bahrain Dinar">Bahrain Dinar</option>
+                <option value="Balboas">Balboas</option>
+                <option value="Barbados Dollar">Barbados Dollar</option>
+                <option value="Belarusian Ruble">Belarusian Ruble</option>
+                <option value="Belizean Dollar">Belizean Dollar</option>
+                <option value="Bermudian Dollar">Bermudian Dollar</option>
+                <option value="Bhutanese Ngultrum">Bhutanese Ngultrum</option>
+                <option value="Bolivar Fuerte">Bolivar Fuerte</option>
+                <option value="Boliviano">Boliviano</option>
+                <option value="Brazilian Real">Brazilian Real</option>
+                <option value="Brunei Dollar">Brunei Dollar</option>
+                <option value="Bulgarian Lev">Bulgarian Lev</option>
+                <option value="Burundi Franc">Burundi Franc</option>
+                <option value="Canadian Dollar">Canadian Dollar</option>
+                <option value="Cape Verde Escudo">Cape Verde Escudo</option>
+                <option value="Cayman Islands Dollar">Cayman Islands Dollar</option>
+                <option value="CFA Franc (BCEAO)">CFA Franc (BCEAO)</option>
+                <option value="CFA Franc (BEAC)">CFA Franc (BEAC)</option>
+                <option value="CFP Franc">CFP Franc</option>
+                <option value="Chilean Peso">Chilean Peso</option>
+                <option value="Colombian Peso">Colombian Peso</option>
+                <option value="Comorian Franc">Comorian Franc</option>
+                <option value="Congolese Franc">Congolese Franc</option>
+                <option value="Convertible Marka">Convertible Marka</option>
+                <option value="Costa Rican Colon">Costa Rican Colon</option>
+                <option value="Cuban Peso">Cuban Peso</option>
+                <option value="Czech Koruna">Czech Koruna</option>
+                <option value="Dalasi">Dalasi</option>
+                <option value="Danish Krone">Danish Krone</option>
+                <option value="Djiboutian Franc">Djiboutian Franc</option>
+                <option value="Dobras">Dobras</option>
+                <option value="Dominican Peso">Dominican Peso</option>
+                <option value="Dong">Dong</option>
+                <option value="Dram">Dram</option>
+                <option value="East Caribbean Dollar">East Caribbean Dollar</option>
+                <option value="Egyptian Pound">Egyptian Pound</option>
+                <option value="Ethiopian Birr">Ethiopian Birr</option>
+                <option value="Euro">Euro</option>
+                <option value="Falkland Pound">Falkland Pound</option>
+                <option value="Fiji Dollar">Fiji Dollar</option>
+                <option value="Forint">Forint</option>
+                <option value="Ghanaian Cedi">Ghanaian Cedi</option>
+                <option value="Gold Cordoba">Gold Cordoba</option>
+                <option value="Gourde">Gourde</option>
+                <option value="Guarani">Guarani</option>
+                <option value="Guinean Franc">Guinean Franc</option>
+                <option value="Guyanese Dollar">Guyanese Dollar</option>
+                <option value="Hong Kong Dollar">Hong Kong Dollar</option>
+                <option value="Hryvnia">Hryvnia</option>
+                <option value="Icelandic Krona">Icelandic Krona</option>
+                <option value="Indian Rupee">Indian Rupee</option>
+                <option value="Indonesian Rupiah">Indonesian Rupiah</option>
+                <option value="Iranian Rial">Iranian Rial</option>
+                <option value="Iraqi Dinar">Iraqi Dinar</option>
+                <option value="Jamaican Dollar">Jamaican Dollar</option>
+                <option value="Jordanian Dinar">Jordanian Dinar</option>
+                <option value="Kenya Schilling">Kenya Schilling</option>
+                <option value="Kina">Kina</option>
+                <option value="Kip">Kip</option>
+                <option value="Kuna">Kuna</option>
+                <option value="Kuwaiti Dinar">Kuwaiti Dinar</option>
+                <option value="Kwanza">Kwanza</option>
+                <option value="Kyat">Kyat</option>
+                <option value="Kyrgyzstan Som">Kyrgyzstan Som</option>
+                <option value="Lari">Lari</option>
+                <option value="Lebanese Pound">Lebanese Pound</option>
+                <option value="Leke">Leke</option>
+                <option value="Lempira">Lempira</option>
+                <option value="Leone">Leone</option>
+                <option value="Liberian Dollar (US Dollar in use)">Liberian Dollar (US Dollar in use)</option>
+                <option value="Libyan Dinar">Libyan Dinar</option>
+                <option value="Lilangeni">Lilangeni</option>
+                <option value="Loti">Loti</option>
+                <option value="Macedonian Denar">Macedonian Denar</option>
+                <option value="Malagasy Ariary">Malagasy Ariary</option>
+                <option value="Malawi Kwacha">Malawi Kwacha</option>
+                <option value="Mauritius Rupee">Mauritius Rupee</option>
+                <option value="Metical">Metical</option>
+                <option value="Mexican Peso">Mexican Peso</option>
+                <option value="Moldovan Leu">Moldovan Leu</option>
+                <option value="Moroccan Dirham">Moroccan Dirham</option>
+                <option value="Nafka">Nafka</option>
+                <option value="Namibian Dollar">Namibian Dollar</option>
+                <option value="Nepalese Rupee">Nepalese Rupee</option>
+                <option value="New Israeli Shekel">New Israeli Shekel</option>
+                <option value="New Sol">New Sol</option>
+                <option value="New Zealand Dollar">New Zealand Dollar</option>
+                <option value="Nigerian Naira">Nigerian Naira</option>
+                <option value="Norwegian Krone">Norwegian Krone</option>
+                <option value="Ouguiyas">Ouguiyas</option>
+                <option value="Pa anga">Pa anga</option>
+                <option value="Pakistan Rupee">Pakistan Rupee</option>
+                <option value="Patacas">Patacas</option>
+                <option value="Philippine Peso">Philippine Peso</option>
+                <option value="Pula">Pula</option>
+                <option value="Qatar Riyal">Qatar Riyal</option>
+                <option value="Quetzal">Quetzal</option>
+                <option value="Rand">Rand</option>
+                <option value="Rial Omani">Rial Omani</option>
+                <option value="Riel">Riel</option>
+                <option value="Ringgit">Ringgit</option>
+                <option value="Romanian Leu">Romanian Leu</option>
+                <option value="Rufiyaa">Rufiyaa</option>
+                <option value="Russian Ruble">Russian Ruble</option>
+                <option value="Rwanda Franc">Rwanda Franc</option>
+                <option value="Saint Helena Pound">Saint Helena Pound</option>
+                <option value="Saudi Riyal">Saudi Riyal</option>
+                <option value="Serbian Dinar">Serbian Dinar</option>
+                <option value="Seychelles Rupee">Seychelles Rupee</option>
+                <option value="Singapore Dollar">Singapore Dollar</option>
+                <option value="Solomon Islands Dollar">Solomon Islands Dollar</option>
+                <option value="Somali Shilling">Somali Shilling</option>
+                <option value="Somoni">Somoni</option>
+                <option value="Sri Lankan Rupee">Sri Lankan Rupee</option>
+                <option value="Sudanese Pound">Sudanese Pound</option>
+                <option value="Surinam Dollar">Surinam Dollar</option>
+                <option value="Swedish Krona">Swedish Krona</option>
+                <option value="Swiss Franc">Swiss Franc</option>
+                <option value="Syrian Pound">Syrian Pound</option>
+                <option value="Taiwan Dollar">Taiwan Dollar</option>
+                <option value="Taka">Taka</option>
+                <option value="Tala">Tala</option>
+                <option value="Tanzanian Shilling">Tanzanian Shilling</option>
+                <option value="Tenge">Tenge</option>
+                <option value="Thai Baht">Thai Baht</option>
+                <option value="Trinidad and Tobago Dollar">Trinidad and Tobago Dollar</option>
+                <option value="Tugrik">Tugrik</option>
+                <option value="Tunisian Dinar">Tunisian Dinar</option>
+                <option value="Turkish New Lira">Turkish New Lira</option>
+                <option value="Turkmenistan New Manat">Turkmenistan New Manat</option>
+                <option value="U.A.E. Dirham">U.A.E. Dirham</option>
+                <option value="U.S. Dollar">U.S. Dollar</option>
+                <option value="Ugandan New Shilling">Ugandan New Shilling</option>
+                <option value="Uruguayan Peso">Uruguayan Peso</option>
+                <option value="Uzbekistan Sum">Uzbekistan Sum</option>
+                <option value="Vatu">Vatu</option>
+                <option value="Won Korea Dem. Rep">Won Korea Dem. Rep</option>
+                <option value="Yuan Renminbi">Yuan Renminbi</option>
+                <option value="Won Korea Rep">Won Korea Rep</option>
+                <option value="Yemeni Rial">Yemeni Rial</option>
+                <option value="Yen">Yen</option>
+                <option value="Zambian Kwacha">Zambian Kwacha</option>
+                <option value="Zimbabwean Dollar">Zimbabwean Dollar</option>
+                <option value="Zloty">Zloty</option>
+                </select>
+              </td>
+            </tr>
+          </table>
+          Warning for when making large one time contributions! To get the same results as displayed in the charts, you would need to immediately put that much into your chosen investment scheme.
+        </form>
+      </div>
+    </div>
+  </div>
+
+<!------------------------------------------------------------------- PLOTS -------------------------------------------------------------------->
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="plots2">
+        <strong>Chart Two</strong>
+        <br>
+        <br>
+        <canvas id="lineChart2";></canvas>
+      </div>
+    </div>
+
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="OneTimeRepay">
+        <strong> Chart Two - Description </strong>
+        <br>
+        <br>
+        This is <strong>the most important chart</strong>! It gives you an estimated <a href="help.html">APR</a> for your additional repayments.
+        <br>
+        <br>
+        Here's why it's important; although you might save some money by making additional repayments, you might have spent a lot in the process.
+        <br>
+        <br>
+        Think of it this way, <strong>the higher the APR, the more worth it is to make additional repayments</strong>.
+        <br>
+        <br>
+        Before you make additional repayments, you should compare the APR to savings account interest rates. It may be worth putting your money into <a href="savings.html">other savings schemes</a>.
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="plots3">
+        <strong>Chart Three</strong>
+        <br>
+        <br>
+        <canvas id="lineChart4";></canvas>
+      </div>
+    </div>
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12">
+      <div id="OneTimeRepay">
+        <strong> Chart Three - Description </strong>
+        <br>
+        <br>
+        This chart shows how long it will be until you pay off your student loans.
+        <br>
+        <br>
+        The quicker you pay off your student loan, the quicker you will begin to feel the effects of the savings!
+      </div>
+    </div>
+  </div>
+
+<!------------------------------------------------------------- PAGE LINKS ----------------------------------------------------------------->
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-10 col-xs-12" style="margin-left:10px">
+      <center>
+      <div id="links">
+        Would you like to see alternative savings options than paying off your student loan? <a href="contact.html">Click here</a>
+        <br>
+        <br>
+        Having any issues or would like to get in touch with us? <a href="contact.html">Contact us</a>.
+        <br>
+        <br>
+        Visit our <a href="help.html">help</a> page for more detailed explanations of questions and terms used.
+      </div>
+      </center>
+    </div>
+
+<!------------------------------------------------------------- ASSUMPTIONS ----------------------------------------------------------------->
+    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12" style="margin-left:10px">
+    <center>
+      <div id="assump" align="left">
+        <strong><font size=4.3%>Assumptions you should be aware of:</font></strong>
+        <br>
+        <ul>
+          <li>We assumed a fixed income, inflation and repayment thresholds until your loan is cancelled or you pay it off. In reality, these will increase or decrease through the duration of your loan.</li>
+          <br>
+          <li>We assumed fixed interest rates until your loan is cancelled or you pay it off.</li>
+          <br>
+          <li>We assume you stay in the same country.</li>
+          <br>
+          <li>We assume a fixed currency exchange rate as specified by the Student Loans Company.</li>
+          <br>
+          <li>We assume any one time repayments are made immediately.</li>
+          <br>
+          <li>We assume benefits from making additional repayments are felt immediately after paying the loan off. In reality you will feel the benefits both before <strong>and</strong> after the loan is paid off.</li>
+        </ul>
+        <center>
+        <br>
+        <button onclick="topFunction()" class="btn btn-primary" id="myBtn" title="Go to top">Back to top</button>
+        </center>
+      </div>
+      </center>
+    </div>
+
+<!------------------------------------------------------------- DISCLAIMER ----------------------------------------------------------------->
+
+    <div class="col-lg-3 col-md-1">
+    </div>
+    <div class="col-lg-6 col-md-10 col-sm-12 col-xs-12" style="margin-left:10px">
+    <center>
+      <div id="disclaim" align="left">
+        Disclaimer: These results have some estimation error. Take care when making decisions based on these results.
+        Wyse Owl Partners are not a financial advisory service and do not explicity recommend any actions regarding the management of your student loan.
+      </div>
+    </center>
+    </div>
+  </div>
+</div>
+
+<br>
+<br>
+
+<!------------------------------------------------------------- FOOTER ----------------------------------------------------------------->
+  <div class="container" style="width:100%;">
+  <center>
+    <div align="center" id="compdet">
+      <strong><font size=0.5%>Wyse Owl Partners</font></strong>
+    </div>
+  </center>
+  </div>
+
+</body>
+
+<!------------------------------------------------------------- SCRIPTS ----------------------------------------------------------------->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"> </script>
+  <script type="text/javascript" src="script_mod2.js"></script>
+  <script type="text/javascript" src="plots1.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script>
+  $(document).ready(function(){
+      $('[data-toggle="tooltip"]').tooltip({animation: true, delay:{show:300, hide:500}});
+  });
+  </script>
+  <script>
+  $("a.my-tool-tip").tooltip({animation: true, delay:{show:300, hide:500}});
+  </script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-92987754-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+  <script>
+    function topFunction() {
+    document.body.scrollTop = 0; // For Chrome, Safari and Opera
+    document.documentElement.scrollTop = 0; // For IE and Firefox
+  }
+  </script>
+  <script>
+  $(document).ready(function(){
+      $("#hide").click(function(){
+          $("p").hide();
+      });
+      $("#show").click(function(){
+          $("p").show();
+      });
+  });
+  </script>
+
+</html>
