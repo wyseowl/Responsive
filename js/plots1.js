@@ -246,7 +246,7 @@ findrc1();
 
       j3ypo[i]=parseFloat(Math.round(j3yp[i]*100)/100).toFixed(1);
     }
- 
+
   var mvrepayp=[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
   for (var i=0; i < mvrepay.length; i++){
     mvrepayp[i]="\xA3"+mvrepay[i];
@@ -289,7 +289,7 @@ let lineChart2=new Chart(CHART2, {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Monthly Voluntary Repayments (\xA3)'
+              labelString: 'Monthly Additional Repayments (\xA3)'
             }
           }]
         }
@@ -336,7 +336,7 @@ let lineChart3=new Chart(CHART3, {
       data: toto
     },
     {
-      label: 'Total Spent on Voluntary Repayments',
+      label: 'Total Spent on Additional Repayments',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(85, 117, 220,0.4)',
@@ -363,7 +363,7 @@ let lineChart3=new Chart(CHART3, {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: 'Monthly Voluntary Repayments (\xA3)'
+              labelString: 'Monthly Additional Repayments (\xA3)'
             }
           }]
       }
@@ -405,7 +405,7 @@ let lineChart4=new Chart(CHART4, {
           xAxes: [{
             scaleLabel: {
               display: true,
-              labelString: "Monthly Voluntary Repayments (\xA3)"
+              labelString: "Monthly Additional Repayments (\xA3)"
             }
           }]
       }

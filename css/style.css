@@ -72,7 +72,7 @@ red {color: rgba(218, 71, 71, 1);}
 blue {color: rgba(85, 117, 220,1);}
 
 
-h2 {color: #002E5D;
+h2 {color: #4198f4;
   font-family: verdana;
   font-size: 140%;
 }
@@ -121,25 +121,8 @@ h3 {
   background-color:rgba(243, 247, 250,1);
 }
 
-input[type=number], select {
-  padding: 12px 20px;
-  border-radius: 4px;
-}
 
-input[type=button] {
-  width: 20%;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: 5px;
-  border-radius: 8px;
-  box-shadow: 3px 3px 1px grey;
-  background: #A0A09F; /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(#A0A09F, #002E5D); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(#A0A09F, #002E5D); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(#A0A09F, #002E5D); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(#A0A09F, #002E5D); /* Standard syntax (must be last) */
-}
+
 
 input[type=button]:hover {
   background: #CCCCCC;
@@ -179,7 +162,9 @@ input[type=submit] {
   color: black;
   font-size: 100%;
   padding: 20px;
-  margin:12px;
+  margin-right:12px;
+  margin-top:12px;
+  margin-bottom:12px;
   background-color:rgba(243, 247, 250,1);
 }
 
@@ -246,17 +231,6 @@ input[type=submit] {
   padding: 10px 10px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color:rgba(243, 247, 250,1);
-}
-
-
-/************************************************ ASSUMPTIONS *************************************/
-
-#assump{
-  border-radius: 8px;
-  box-shadow: 3px 3px 1px grey;
-  padding: 10px 10px;
-  margin: 8px 0;
   background-color:rgba(243, 247, 250,1);
 }
 
