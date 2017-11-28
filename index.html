@@ -29,15 +29,18 @@
 <nav class="navbar navbar-default">
         <div class="container-fluid">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+              <div class="col-lg-12 col-md-12 col-sm-12 col-xs-9">
                 <a class="navbar-brand" href="index.html"><h1 id="header"><strong>Student Loan Repayment Calculator (UK)</strong></h1></a>
+              </div>
+              <div class="col-xs-3">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                </button>
+              </div>
             </div>
-
             <div class="collapse navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="pages/savings.html">Savings options</a></li>
@@ -55,12 +58,11 @@
     <!---------------------------------------------------------- QUESTIONS --------------------------------------------------------------->
 
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px">
-          <div class="row text-center" id="inputform" style="margin-left:10px;margin-right:10px">
+          <div class="row text-center" id="inputform">
             <form name="form">
-            <h3><strong>Enter your details</strong></h3>
             <div class="form-inline">
               <div class="form-group" style="width:100%">
-                <div class="input-group" style="margin-top: 20px;">
+                <div class="input-group">
                   <!---------------------------- QUESTION 1 ------------------------>
                   <div class="row">
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 label-container" align="left">
@@ -132,7 +134,7 @@
                           <option value="Before 1999">Before 1999</option>
                         </select>
                         <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="The beginning of the academic year when you first got your student loan">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the year when you first got your student loan">
                             <i class='glyphicon glyphicon-info-sign'></i>
                           </a>
                         </span>
@@ -271,7 +273,7 @@
                   </div> <!-- end row -->
                   <!---------------------------- QUESTION 8 ------------------------>
                   <div class="row">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-6 label-container" align="left">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 label-container" align="left">
                       <label for="earnings">Gross earnings:</label>
                     </div> <!-- end label-container -->
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" align="right">
@@ -283,7 +285,7 @@
                     <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6 label-container">
                       <span id=curr>British Pounds</span>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" align="right">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" align="right">
                       <div class="input-group">
                         <select class="form-control dropdown" name="td" id="earnings">
                           <option value="per year">per year</option>
@@ -303,13 +305,13 @@
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 label-container" align="left">
                       <label for="addrepay">Monthly additional recurrent repayments:</label>
                     </div> <!-- end label-container -->
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-4 label-container" align="right">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 label-container" align="right">
                       <div class="input-group" style="margin:5px">
                         <input type="number" min="0" step="100" placeholder="e.g. 50" class="form-control currency" name="ar" id="addrepay"/>
                         </input>
                       </div>
                     </div> <!-- end column -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8 label-container" align="right">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 label-container" align="right">
                       <div class="input-group">
                         <select class="form-control dropdown" name="curr_ar" id="earnings">
                           <option value="British Pound">British Pounds</option>
@@ -481,13 +483,13 @@
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 label-container" align="left">
                       <label for="bulkrepay">One time repayments between last April and today:</label>
                     </div> <!-- end label-container -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" align="right">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
                       <div class="input-group" style="margin:5px">
                         <input type="number" min="0" step="100" placeholder="e.g. 1,000" class="form-control currency" name="bulk" id="bulkrepay"/>
                         </input>
                       </div>
                     </div> <!-- end column -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-8" align="right">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
                       <div class="input-group">
                         <select class="form-control dropdown" name="curr_bulk" id="bulkrepay">
                           <option value="British Pound">British Pounds</option>
@@ -658,7 +660,7 @@
               </div> <!-- end form-group -->
             </div> <!-- end form-inline -->
             <br>
-            <button type="button" class="btn btn-primary" onclick="calculate();calculate2();show1();">Calculate</button>
+            <button type="button" class="btn btn-primary" onclick="calculate();calculate2();show1();document.getElementById('outform').scrollIntoView();">Calculate</button>
           </form>
         </div> <!-- end row text-center -->
       </div>
@@ -1147,7 +1149,13 @@
               The only part of the student loan you have control over are the <strong>additional repayments</strong>. Additional repayments are voluntary repayments you make on top of your mandatory repayments, and this is how you can save money.
               <br>
               <br>
-              Use the charts below to see how much you will save or lose by making additional repayments. You should use the <a href="pages/savings.html">APR</a> to compare how much you are saving with how much you have spent. <strong>The higher the APR the better</strong>.
+              Use the charts below to see how much you will save or lose by making additional repayments.
+              <span>
+                <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="For small loans and/or large repayments, all three charts start to look strange as the estimations are more uncertain. APR will become unusable and care should be taken when interpreting.">
+                  <i class='glyphicon glyphicon-alert'></i>
+                </a>
+              </span>
+              You should use the <a href="pages/savings.html">APR</a> to compare how much you are saving with how much you have spent. <strong>The higher the APR the better</strong>.
               <br>
               <br>
               Keep in mind that what you spend on additional repayments can be put into a savings account or in other investments which may give a better return. See <a href="pages/savings.html">here</a> for other options.
@@ -1378,12 +1386,6 @@
               </div> <!-- end row -->
             </tr>
           </table>
-          Warning for when making large one time contributions! To get the same results as displayed in the charts, you would need to immediately put that much into your chosen investment scheme.
-          <span>
-            <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="For small loans and/or large repayments, all three charts start to look strange as the estimations are more uncertain. APR will become unusable and care should be taken when interpreting.">
-              <i class='glyphicon glyphicon-alert'></i>
-            </a>
-          </span>
         </form>
       </div>
     </div>
@@ -1527,14 +1529,6 @@
       $("#show").click(function(){
           $("p").show();
       });
-  });
-  </script>
-
-  <script>
-  $("button").click(function() {
-      $('html,body').animate({
-          scrollTop: $(".hidden4").offset().top},
-          'slow');
   });
   </script>
 
