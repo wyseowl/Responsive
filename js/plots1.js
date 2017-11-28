@@ -262,7 +262,7 @@ let lineChart2=new Chart(CHART2, {
   data: data={
     labels: mvrepayp,
     datasets: [{
-      label: 'Percentage APR',
+      label: 'APR',
       fill: false,
       lineTension: 0.1,
       backgroundColor: 'rgba(12, 207, 73,0.4)',
