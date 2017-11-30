@@ -263,6 +263,7 @@ mmrf()
 
 function realtimef() {
 
+  ifrac=((gef*tdn)-leth)/(uet-leth);
     if (paye=="No") {
       rl=dl;
     }
@@ -282,7 +283,6 @@ function realtimef() {
             rl=(dl*(1+(tp*rpi[0]))-(arf*tp*12)-bulkf);
           }
           else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
-	    ifrac=((gef*tdn)-leth)/(uet-leth);
             rl=(dl*(1+(tp*((ip2*ifrac)+rpi[0])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
           }
           else if ((gef*tdn)>uet) {
@@ -313,7 +313,6 @@ function realtimef() {
             rl=(dl + (dl*((5/12)*rpi[0]))+(dl*((tp-(5/12))*rpi[1]))-(arf*tp*12)-bulkf);
           }
           else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
-	    ifrac=((gef*tdn)-leth)/(uet-leth);
             rl=(dl + (dl*((5/12)*((ip2*ifrac)+rpi[0])))+(dl*((tp-(5/12))*((ip2*ifrac)+rpi[1])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
           }
           else if ((gef*tdn)>uet) {
@@ -633,7 +632,6 @@ findr()
   document.getElementById('cancelled').innerHTML=cancelledy +" years, "+cancelledm +" month(s)";
   document.getElementById('loantype').innerHTML=loantype;
   document.getElementById('es').innerHTML="£"+eso;
-
 }
       /********************************************** END OF CALCULATE **************************************/
 
