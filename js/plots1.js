@@ -253,7 +253,6 @@ findrc1();
   }
       /********************************************** PLOT **************************************/
 
-
 const CHART2 = document.getElementById("lineChart2");
 console.log(CHART2)
 

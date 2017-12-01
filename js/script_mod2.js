@@ -104,6 +104,7 @@ curr_bulk = document.form.curr_bulk.value;
 
 c = document.form_over.c.value;
 
+
   /************************************************ TIME DETERMINATION *****************************************/
 
 function timef() {
@@ -139,24 +140,6 @@ function loantypef(){
     }
 }
 loantypef()
-
-  /************************************************ TIME DETERMINATION *****************************************/
-
-function alertme() {
-  if (dl==0){
-   alert("Please enter a loan amount greater than zero");
-  }
-  else if (l=="Select"){
-   alert("Please choose the location of your home address");
-  }
-  else if (ys=="Select"){
-   alert("Please choose a year for when you first took out your loan");
-  }
-  else if (ye=="Select" && ((loantype=="Plan 1" && (l=="England" || l=="Northern Ireland" || l=="Wales") && ys>2005) || (loantype=="Plan 1" && l=="Scotland" && ys>2006) || (loantype=="Plan 2" || loantype=="Postgraduate Loan"))){
-   alert("Please choose a year for when you first became eligible to repay");
-  }
-}
-alertme();
 
   /******************************************************** CANCELLATION ***********************************/
 
@@ -710,8 +693,21 @@ function mloanalert(){
   /************************************************************************************/
   /********************************* DISPLAY HIDDEN FIELDS BULK OF ****************************/
   /************************************************************************************/
-
-function show1(){
+  /************************************************ GATEKEEPER *****************************************/
+  function show1(){
+  if (dl==0){
+   alert("Please enter a loan amount greater than zero");
+  }
+  else if (l=="Select"){
+   alert("Please choose the location of your home address");
+  }
+  else if (ys=="Select"){
+   alert("Please choose a year for when you first took out your loan");
+  }
+  else if (ye=="Select" && ((loantype=="Plan 1" && (l=="England" || l=="Northern Ireland" || l=="Wales") && ys>2005) || (loantype=="Plan 1" && l=="Scotland" && ys>2006) || (loantype=="Plan 2" || loantype=="Postgraduate Loan"))){
+   alert("Please choose a year for when you first became eligible to repay");
+  }
+  else{
 
   var elems4 = document.getElementsByClassName("hidden4");
   var elems5 = document.getElementsByClassName("hidden5");
@@ -723,6 +719,7 @@ function show1(){
   for (var i=0;i<elems5.length;i+=1){
       elems5[i].style.display="table-cell";
   }
+}
 }
 
 /************************************************************************************/
