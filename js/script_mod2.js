@@ -554,7 +554,7 @@ totspent()
 function loanfate(){
 
       if (j==cancelledl) {
-        loancomp="Your loan will be cancelled";
+        loancomp="Your loan will be written off - see the row below";
       }
       else if (jy>1 && jm==1){
         loancomp=jy +" years, "+jm +" month";
