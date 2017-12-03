@@ -411,4 +411,37 @@ let lineChart4=new Chart(CHART4, {
   }
 });
 
+google.charts.load('current', {packages: ['corechart', 'line']});
+google.charts.setOnLoadCallback(drawCurveTypes);
+
+function drawCurveTypes() {
+      var data = new google.visualization.DataTable();
+      data.addColumn('string', 'X');
+      data.addColumn('number', 'Total spent on loan');
+      data.addColumn('number', 'Total spent on additional repayments');
+      data.addColumn('number', 'Savings');
+
+      data.addRows([
+        [mvrepayp, toto, art4o, es3o]
+      ]);
+
+      var options = {
+        hAxis: {
+          title: 'Additional Repayments'
+        },
+        vAxis: {
+          title: 'GBP'
+        },
+        series: {
+          1: {curveType: 'function'}
+        },
+        focusTarget: 'category'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+      chart.draw(data, options);
+    }
+
+
+
 }

@@ -21,8 +21,6 @@ var ge; /* Gross Earnings */
 var td; /* Gross earnings time determination */
 var ar; /* Voluntary repayments */
 var curr_ar; /* Voluntary repayment currency */
-var bulk; /* Bulk repayment before today's date */
-var curr_bulk; /* Bulk repayment currency */
 
 var c; /* Country of employment */
 
@@ -30,7 +28,7 @@ var currentTime= new Date();
 var thisyear = (new Date().getFullYear());  /* Current Year*/
 var tp = (Math.ceil(Math.abs(currentTime - (new Date('04/01/'+(thisyear)))) / (1000 * 3600 * 24)))/365.25; /* Proportion of year passed*/
 
-var ip1 = [0.0125, 0.0125];  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
+var ip1 = [0.0125, 0.015];  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
 var ip2 = 0.03; /* Plan 2 Interest Rates*/
 var ipl = 0.03; /* PG Interest Rates*/
 var rpi = [0.016, 0.031] /* Retail Price Index before September and after September (incl.) respectively*/
@@ -49,8 +47,6 @@ var leth; /* Lower earnings threshold*/
 var uet; /* Upper earnings threshold for Plan 2 Loan*/
 var gef; /* Currency adjusted gross earnings*/
 var arf; /* Currency adjusted additional repayments*/
-var bulkf;
-var exch_bulk;
 var rl; /* Realtime Loan - as of today*/
 var tdn; /* Numeric time adjustment for gross earnings*/
 var ifrac;
@@ -99,8 +95,6 @@ ge = Number(document.form.ge.value);
 td = document.form.td.value;
 ar = Number(document.form.ar.value);
 curr_ar = document.form.curr_ar.value;
-bulk = Number(document.form.bulk.value);
-curr_bulk = document.form.curr_bulk.value;
 
 c = document.form_over.c.value;
 
@@ -214,14 +208,10 @@ function overseasf() {
       if (obj.Sheet1[i].Currency == curr_ar){
         exch_ar=obj.Sheet1[i].Exchange_Rate;
       }
-      if (obj.Sheet1[i].Currency == curr_bulk){
-        exch_bulk=obj.Sheet1[i].Exchange_Rate;
-      }
     }
 
     arf = Number(ar*exch_ar);
     gef = Number(ge*exch);
-    bulkf = Number(bulk*exch_bulk);
 
 }
 overseasf()
@@ -252,70 +242,33 @@ function realtimef() {
     }
 
     else if (paye=="Yes") {
-      if (tp<=(5/12)) {
         if (loantype=="Plan 1") {
           if ((gef*tdn)<=leth) {
-            rl=(dl*(1+(tp*ip1[0]))-(arf*tp*12)-bulkf);
+            rl=(dl);
           }
           else if ((gef*tdn)>leth) {
-            rl=(dl*(1+(tp*ip1[0]))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
+            rl=(dl-(mmr_init*12*tp));
           }
         }
         else if (loantype=="Plan 2") {
           if ((gef*tdn)<=leth) {
-            rl=(dl*(1+(tp*rpi[0]))-(arf*tp*12)-bulkf);
+            rl=(dl);
           }
-          else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
-            rl=(dl*(1+(tp*((ip2*ifrac)+rpi[0])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
-          }
-          else if ((gef*tdn)>uet) {
-            rl=(dl*(1+(tp*(ip2+rpi[0])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
+          else if ((gef*tdn)>leth) {
+            rl=(dl-(mmr_init*12*tp));
           }
         }
         else if (loantype=="Postgraduate Loan") {
           if ((gef*tdn)<=leth) {
-            rl=(dl*(1+(tp*rpi[0]))-(arf*tp*12)-bulkf);
+            rl=(dl);
           }
           else if ((gef*tdn)>leth) {
-            rl=(dl*(1+(tp*(ipl+rpi[0])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
+            rl=(dl-(mmr_init*12*tp));
           }
         }
-      }
-
-      else {
-        if (loantype=="Plan 1") {
-          if ((gef*tdn)<=leth) {
-            rl=(dl + (dl*((5/12)*ip1[0]))+(dl*((tp-(5/12))*ip1[1]))-(arf*tp*12)-bulkf);
-          }
-          else if ((gef*tdn)>leth) {
-            rl=(dl + (dl*((5/12)*ip1[0]))+(dl*((tp-(5/12))*ip1[1]))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
-          }
-        }
-        else if (loantype=="Plan 2") {
-          if ((gef*tdn)<=leth) {
-            rl=(dl + (dl*((5/12)*rpi[0]))+(dl*((tp-(5/12))*rpi[1]))-(arf*tp*12)-bulkf);
-          }
-          else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
-            rl=(dl + (dl*((5/12)*((ip2*ifrac)+rpi[0])))+(dl*((tp-(5/12))*((ip2*ifrac)+rpi[1])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
-          }
-          else if ((gef*tdn)>uet) {
-            rl=(dl + (dl*((5/12)*(ip2+rpi[0])))+(dl*((tp-(5/12))*(ip2+rpi[1])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
-          }
-        }
-        else if (loantype=="Postgraduate Loan") {
-          if ((gef*tdn)<=leth) {
-            rl=(dl + (dl*((5/12)*(ipl+rpi[0])))+(dl*((tp-(5/12))*(ipl+rpi[1])))-(arf*tp*12)-bulkf);
-          }
-          else if ((gef*tdn)>leth) {
-            rl=(dl + (dl*((5/12)*(ipl+rpi[0])))+(dl*((tp-(5/12))*(ipl+rpi[1])))-(arf*tp*12)-(mmr_init*12*tp)-bulkf);
-          }
-        }
-      }
     }
-
     if (rl<0){rl=0;}
     else if (rl>=0) {rl=rl;}
-
 }
 realtimef()
 
@@ -645,7 +598,6 @@ function mloanalert(){
 
   var elems = document.getElementsByClassName("hidden6");
   var elems1 = document.getElementsByClassName("hidden1");
-  var elems2 = document.getElementsByClassName("hidden2");
   var elems3 = document.getElementsByClassName("hidden3");
 
 /*********************** AGE ************************/
@@ -659,15 +611,7 @@ function mloanalert(){
       elems3[i].style.display="none";
     }
   }
-/*********************** BULK REPAY ************************/
-  for (var i=0;i<elems2.length;i+=1){
-    if (paye=="Yes") {
-      elems2[i].style.display="table-cell";
-    }
-    else if (paye=="No") {
-      elems2[i].style.display="none";
-    }
-  }
+
 /*********************** YEAR ELIGIBLE ************************/
   for (var i=0;i<elems3.length;i+=1){
     if ((loantype=="Plan 1" || loantype=="Plan 2") && (((l=="England" || l=="Northern Ireland" || l=="Wales") && ys>2005) ||(l=="Scotland" && ys>2006))) {
@@ -691,7 +635,7 @@ function mloanalert(){
 }
 
   /************************************************************************************/
-  /********************************* DISPLAY HIDDEN FIELDS BULK OF ****************************/
+  /********************************* DISPLAY HIDDEN FIELDS ****************************/
   /************************************************************************************/
   /************************************************ GATEKEEPER *****************************************/
   function show1(){

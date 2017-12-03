@@ -18,13 +18,6 @@
   <title>UK Student Loans Repayment Calculator</title>
 <img src="images/pic2.jpg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<script>
-  (adsbygoogle = window.adsbygoogle || []).push({
-    google_ad_client: "ca-pub-3440038570130607",
-    enable_page_level_ads: true
-  });
-</script>
 </head>
 
 <!---------------------------------------------------------- BODY --------------------------------------------------------------->
@@ -59,6 +52,9 @@
     </div>
   </div>
 </div>
+
+<div id="chart_div"></div>
+
 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 container">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
@@ -843,185 +839,6 @@
                       </div>
                     </div> <!-- end column -->
                   </div> <!-- end row -->
-                  <!---------------------------- QUESTION 10 ------------------------>
-                  <div class="row">
-                    <div class="hidden2">
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 label-container" align="left">
-                      <label for="bulkrepay">One time repayments between last April and today:</label>
-                    </div> <!-- end label-container -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                      <div class="input-group" style="margin:5px">
-                        <input type="number" min="0" step="100" placeholder="e.g. 1,000" class="form-control currency" name="bulk" id="bulkrepay"/>
-                        </input>
-                      </div>
-                    </div> <!-- end column -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                      <div class="input-group">
-                        <select class="form-control dropdown" name="curr_bulk" id="bulkrepay">
-                          <option value="British Pound">British Pounds</option>
-                          <option value="Afghanis">Afghanis</option>
-                          <option value="Algerian Dinar">Algerian Dinar</option>
-                          <option value="Antillean Guilder">Antillean Guilder</option>
-                          <option value="Antilles Guilder">Antilles Guilder</option>
-                          <option value="Argentine Peso">Argentine Peso</option>
-                          <option value="Aruban Guilder">Aruban Guilder</option>
-                          <option value="Australian Dollar">Australian Dollar</option>
-                          <option value="Azerbaijanian Manat">Azerbaijanian Manat</option>
-                          <option value="Bahamian Dollar">Bahamian Dollar</option>
-                          <option value="Bahrain Dinar">Bahrain Dinar</option>
-                          <option value="Balboas">Balboas</option>
-                          <option value="Barbados Dollar">Barbados Dollar</option>
-                          <option value="Belarusian Ruble">Belarusian Ruble</option>
-                          <option value="Belizean Dollar">Belizean Dollar</option>
-                          <option value="Bermudian Dollar">Bermudian Dollar</option>
-                          <option value="Bhutanese Ngultrum">Bhutanese Ngultrum</option>
-                          <option value="Bolivar Fuerte">Bolivar Fuerte</option>
-                          <option value="Boliviano">Boliviano</option>
-                          <option value="Brazilian Real">Brazilian Real</option>
-                          <option value="Brunei Dollar">Brunei Dollar</option>
-                          <option value="Bulgarian Lev">Bulgarian Lev</option>
-                          <option value="Burundi Franc">Burundi Franc</option>
-                          <option value="Canadian Dollar">Canadian Dollar</option>
-                          <option value="Cape Verde Escudo">Cape Verde Escudo</option>
-                          <option value="Cayman Islands Dollar">Cayman Islands Dollar</option>
-                          <option value="CFA Franc (BCEAO)">CFA Franc (BCEAO)</option>
-                          <option value="CFA Franc (BEAC)">CFA Franc (BEAC)</option>
-                          <option value="CFP Franc">CFP Franc</option>
-                          <option value="Chilean Peso">Chilean Peso</option>
-                          <option value="Colombian Peso">Colombian Peso</option>
-                          <option value="Comorian Franc">Comorian Franc</option>
-                          <option value="Congolese Franc">Congolese Franc</option>
-                          <option value="Convertible Marka">Convertible Marka</option>
-                          <option value="Costa Rican Colon">Costa Rican Colon</option>
-                          <option value="Cuban Peso">Cuban Peso</option>
-                          <option value="Czech Koruna">Czech Koruna</option>
-                          <option value="Dalasi">Dalasi</option>
-                          <option value="Danish Krone">Danish Krone</option>
-                          <option value="Djiboutian Franc">Djiboutian Franc</option>
-                          <option value="Dobras">Dobras</option>
-                          <option value="Dominican Peso">Dominican Peso</option>
-                          <option value="Dong">Dong</option>
-                          <option value="Dram">Dram</option>
-                          <option value="East Caribbean Dollar">East Caribbean Dollar</option>
-                          <option value="Egyptian Pound">Egyptian Pound</option>
-                          <option value="Ethiopian Birr">Ethiopian Birr</option>
-                          <option value="Euro">Euro</option>
-                          <option value="Falkland Pound">Falkland Pound</option>
-                          <option value="Fiji Dollar">Fiji Dollar</option>
-                          <option value="Forint">Forint</option>
-                          <option value="Ghanaian Cedi">Ghanaian Cedi</option>
-                          <option value="Gold Cordoba">Gold Cordoba</option>
-                          <option value="Gourde">Gourde</option>
-                          <option value="Guarani">Guarani</option>
-                          <option value="Guinean Franc">Guinean Franc</option>
-                          <option value="Guyanese Dollar">Guyanese Dollar</option>
-                          <option value="Hong Kong Dollar">Hong Kong Dollar</option>
-                          <option value="Hryvnia">Hryvnia</option>
-                          <option value="Icelandic Krona">Icelandic Krona</option>
-                          <option value="Indian Rupee">Indian Rupee</option>
-                          <option value="Indonesian Rupiah">Indonesian Rupiah</option>
-                          <option value="Iranian Rial">Iranian Rial</option>
-                          <option value="Iraqi Dinar">Iraqi Dinar</option>
-                          <option value="Jamaican Dollar">Jamaican Dollar</option>
-                          <option value="Jordanian Dinar">Jordanian Dinar</option>
-                          <option value="Kenya Schilling">Kenya Schilling</option>
-                          <option value="Kina">Kina</option>
-                          <option value="Kip">Kip</option>
-                          <option value="Kuna">Kuna</option>
-                          <option value="Kuwaiti Dinar">Kuwaiti Dinar</option>
-                          <option value="Kwanza">Kwanza</option>
-                          <option value="Kyat">Kyat</option>
-                          <option value="Kyrgyzstan Som">Kyrgyzstan Som</option>
-                          <option value="Lari">Lari</option>
-                          <option value="Lebanese Pound">Lebanese Pound</option>
-                          <option value="Leke">Leke</option>
-                          <option value="Lempira">Lempira</option>
-                          <option value="Leone">Leone</option>
-                          <option value="Liberian Dollar (US Dollar in use)">Liberian Dollar (US Dollar in use)</option>
-                          <option value="Libyan Dinar">Libyan Dinar</option>
-                          <option value="Lilangeni">Lilangeni</option>
-                          <option value="Loti">Loti</option>
-                          <option value="Macedonian Denar">Macedonian Denar</option>
-                          <option value="Malagasy Ariary">Malagasy Ariary</option>
-                          <option value="Malawi Kwacha">Malawi Kwacha</option>
-                          <option value="Mauritius Rupee">Mauritius Rupee</option>
-                          <option value="Metical">Metical</option>
-                          <option value="Mexican Peso">Mexican Peso</option>
-                          <option value="Moldovan Leu">Moldovan Leu</option>
-                          <option value="Moroccan Dirham">Moroccan Dirham</option>
-                          <option value="Nafka">Nafka</option>
-                          <option value="Namibian Dollar">Namibian Dollar</option>
-                          <option value="Nepalese Rupee">Nepalese Rupee</option>
-                          <option value="New Israeli Shekel">New Israeli Shekel</option>
-                          <option value="New Sol">New Sol</option>
-                          <option value="New Zealand Dollar">New Zealand Dollar</option>
-                          <option value="Nigerian Naira">Nigerian Naira</option>
-                          <option value="Norwegian Krone">Norwegian Krone</option>
-                          <option value="Ouguiyas">Ouguiyas</option>
-                          <option value="Pa anga">Pa'anga</option>
-                          <option value="Pakistan Rupee">Pakistan Rupee</option>
-                          <option value="Patacas">Patacas</option>
-                          <option value="Philippine Peso">Philippine Peso</option>
-                          <option value="Pula">Pula</option>
-                          <option value="Qatar Riyal">Qatar Riyal</option>
-                          <option value="Quetzal">Quetzal</option>
-                          <option value="Rand">Rand</option>
-                          <option value="Rial Omani">Rial Omani</option>
-                          <option value="Riel">Riel</option>
-                          <option value="Ringgit">Ringgit</option>
-                          <option value="Romanian Leu">Romanian Leu</option>
-                          <option value="Rufiyaa">Rufiyaa</option>
-                          <option value="Russian Ruble">Russian Ruble</option>
-                          <option value="Rwanda Franc">Rwanda Franc</option>
-                          <option value="Saint Helena Pound">Saint Helena Pound</option>
-                          <option value="Saudi Riyal">Saudi Riyal</option>
-                          <option value="Serbian Dinar">Serbian Dinar</option>
-                          <option value="Seychelles Rupee">Seychelles Rupee</option>
-                          <option value="Singapore Dollar">Singapore Dollar</option>
-                          <option value="Solomon Islands Dollar">Solomon Islands Dollar</option>
-                          <option value="Somali Shilling">Somali Shilling</option>
-                          <option value="Somoni">Somoni</option>
-                          <option value="Sri Lankan Rupee">Sri Lankan Rupee</option>
-                          <option value="Sudanese Pound">Sudanese Pound</option>
-                          <option value="Surinam Dollar">Surinam Dollar</option>
-                          <option value="Swedish Krona">Swedish Krona</option>
-                          <option value="Swiss Franc">Swiss Franc</option>
-                          <option value="Syrian Pound">Syrian Pound</option>
-                          <option value="Taiwan Dollar">Taiwan Dollar</option>
-                          <option value="Taka">Taka</option>
-                          <option value="Tala">Tala</option>
-                          <option value="Tanzanian Shilling">Tanzanian Shilling</option>
-                          <option value="Tenge">Tenge</option>
-                          <option value="Thai Baht">Thai Baht</option>
-                          <option value="Trinidad and Tobago Dollar">Trinidad and Tobago Dollar</option>
-                          <option value="Tugrik">Tugrik</option>
-                          <option value="Tunisian Dinar">Tunisian Dinar</option>
-                          <option value="Turkish New Lira">Turkish New Lira</option>
-                          <option value="Turkmenistan New Manat">Turkmenistan New Manat</option>
-                          <option value="U.A.E. Dirham">U.A.E. Dirham</option>
-                          <option value="U.S. Dollar">U.S. Dollar</option>
-                          <option value="Ugandan New Shilling">Ugandan New Shilling</option>
-                          <option value="Uruguayan Peso">Uruguayan Peso</option>
-                          <option value="Uzbekistan Sum">Uzbekistan Sum</option>
-                          <option value="Vatu">Vatu</option>
-                          <option value="Won Korea Dem. Rep">Won Korea Dem. Rep</option>
-                          <option value="Yuan Renminbi">Yuan Renminbi</option>
-                          <option value="Won Korea Rep">Won Korea Rep</option>
-                          <option value="Yemeni Rial">Yemeni Rial</option>
-                          <option value="Yen">Yen</option>
-                          <option value="Zambian Kwacha">Zambian Kwacha</option>
-                          <option value="Zimbabwean Dollar">Zimbabwean Dollar</option>
-                          <option value="Zloty">Zloty</option>
-                        </select>
-                        <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="If you have made multiple one time repayments, please input the total amount">
-                            <i class='glyphicon glyphicon-info-sign'></i>
-                          </a>
-                        </span>
-                      </div>
-                    </div> <!-- end column -->
-                    </div>
-                  </div> <!-- end row -->
                 </div> <!-- end input-group -->
               </div> <!-- end form-group -->
             </div> <!-- end form-inline -->
@@ -1502,6 +1319,7 @@
 <!------------------------------------------------------------- SCRIPTS ----------------------------------------------------------------->
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"> </script>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <script type="text/javascript" src="js/script_mod2.js"></script>
   <script type="text/javascript" src="js/plots1.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
