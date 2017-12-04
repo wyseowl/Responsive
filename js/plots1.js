@@ -411,6 +411,9 @@ let lineChart4=new Chart(CHART4, {
   }
 });
 
+/*toto=Number(toto);
+art4o=Number(art4o);
+es3o=Number(es3o);
 google.charts.load('current', {packages: ['corechart', 'line']});
 google.charts.setOnLoadCallback(drawCurveTypes);
 
@@ -422,7 +425,11 @@ function drawCurveTypes() {
       data.addColumn('number', 'Savings');
 
       data.addRows([
-        [mvrepayp, toto, art4o, es3o]
+        [mvrepayp[0], toto[0], art4o[0], es3o[0]],
+        [mvrepayp[1], toto[1], art4o[1], es3o[1]],
+        [mvrepayp[2], toto[2], art4o[2], es3o[2]],
+        [mvrepayp[3], toto[3], art4o[3], es3o[3]],
+        [mvrepayp[4], toto[4], art4o[4], es3o[4]]
       ]);
 
       var options = {
@@ -433,7 +440,7 @@ function drawCurveTypes() {
           title: 'GBP'
         },
         series: {
-          1: {curveType: 'function'}
+          curveType: 'function'
         },
         focusTarget: 'category'
       };
@@ -441,7 +448,7 @@ function drawCurveTypes() {
       var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
       chart.draw(data, options);
     }
-
+*/
 
 
 }
