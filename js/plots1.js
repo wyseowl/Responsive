@@ -295,7 +295,76 @@ let lineChart2=new Chart(CHART2, {
       }
   });
 
-const CHART3 = document.getElementById("lineChart3");
+  for (var i=0; i < toto.length; i++){
+    toto[i]=Number(toto[i]);
+  }
+
+  for (var i=0; i < es3o.length; i++){
+    es3o[i]=Number(es3o[i]);
+  }
+
+  for (var i=0; i < art4o.length; i++){
+    art4o[i]=Number(art4o[i]);
+  }
+
+
+  google.charts.load('current', {packages: ['corechart', 'line']});
+  google.charts.setOnLoadCallback(drawCurveTypes);
+
+  function drawCurveTypes() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'X');
+        data.addColumn('number', 'Total spent on loan');
+        data.addColumn('number', 'Total spent on additional repayments');
+        data.addColumn('number', 'Savings');
+
+        data.addRows([
+          [mvrepayp[0], toto[0], art4o[0], es3o[0]],
+          [mvrepayp[1], toto[1], art4o[1], es3o[1]],
+          [mvrepayp[2], toto[2], art4o[2], es3o[2]],
+          [mvrepayp[3], toto[3], art4o[3], es3o[3]],
+          [mvrepayp[4], toto[4], art4o[4], es3o[4]],
+          [mvrepayp[5], toto[5], art4o[5], es3o[5]],
+          [mvrepayp[6], toto[6], art4o[6], es3o[6]],
+          [mvrepayp[7], toto[7], art4o[7], es3o[7]],
+          [mvrepayp[8], toto[8], art4o[8], es3o[8]],
+          [mvrepayp[9], toto[9], art4o[9], es3o[9]],
+          [mvrepayp[10], toto[10], art4o[10], es3o[10]],
+          [mvrepayp[11], toto[11], art4o[11], es3o[11]],
+          [mvrepayp[12], toto[12], art4o[12], es3o[12]],
+          [mvrepayp[13], toto[13], art4o[13], es3o[13]],
+          [mvrepayp[14], toto[14], art4o[14], es3o[14]],
+          [mvrepayp[15], toto[15], art4o[15], es3o[15]],
+          [mvrepayp[16], toto[16], art4o[16], es3o[16]],
+          [mvrepayp[17], toto[17], art4o[17], es3o[17]],
+          [mvrepayp[18], toto[18], art4o[18], es3o[18]],
+          [mvrepayp[19], toto[19], art4o[19], es3o[19]],
+          [mvrepayp[20], toto[20], art4o[20], es3o[20]],
+          [mvrepayp[21], toto[21], art4o[21], es3o[21]],
+          [mvrepayp[22], toto[22], art4o[22], es3o[22]],
+          [mvrepayp[23], toto[23], art4o[23], es3o[23]],
+          [mvrepayp[24], toto[24], art4o[24], es3o[24]],
+          [mvrepayp[25], toto[25], art4o[25], es3o[25]],
+          [mvrepayp[26], toto[26], art4o[26], es3o[26]]
+        ]);
+
+        var options = {
+          hAxis: {
+            title: 'Additional Repayments'
+          },
+          vAxis: {
+            title: 'GBP'
+          },
+          series: {
+            curveType: 'function'
+          },
+          focusTarget: 'category'
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+/*const CHART3 = document.getElementById("lineChart3");
 console.log(CHART3)
 
 let lineChart3=new Chart(CHART3, {
@@ -367,7 +436,7 @@ let lineChart3=new Chart(CHART3, {
           }]
       }
   }
-});
+});*/
 
 const CHART4 = document.getElementById("lineChart4");
 console.log(CHART4)
@@ -410,45 +479,5 @@ let lineChart4=new Chart(CHART4, {
       }
   }
 });
-
-/*toto=Number(toto);
-art4o=Number(art4o);
-es3o=Number(es3o);
-google.charts.load('current', {packages: ['corechart', 'line']});
-google.charts.setOnLoadCallback(drawCurveTypes);
-
-function drawCurveTypes() {
-      var data = new google.visualization.DataTable();
-      data.addColumn('string', 'X');
-      data.addColumn('number', 'Total spent on loan');
-      data.addColumn('number', 'Total spent on additional repayments');
-      data.addColumn('number', 'Savings');
-
-      data.addRows([
-        [mvrepayp[0], toto[0], art4o[0], es3o[0]],
-        [mvrepayp[1], toto[1], art4o[1], es3o[1]],
-        [mvrepayp[2], toto[2], art4o[2], es3o[2]],
-        [mvrepayp[3], toto[3], art4o[3], es3o[3]],
-        [mvrepayp[4], toto[4], art4o[4], es3o[4]]
-      ]);
-
-      var options = {
-        hAxis: {
-          title: 'Additional Repayments'
-        },
-        vAxis: {
-          title: 'GBP'
-        },
-        series: {
-          curveType: 'function'
-        },
-        focusTarget: 'category'
-      };
-
-      var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-      chart.draw(data, options);
-    }
-*/
-
 
 }
