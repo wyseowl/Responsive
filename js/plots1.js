@@ -358,7 +358,9 @@ let lineChart2=new Chart(CHART2, {
           series: {
             curveType: 'function'
           },
-          focusTarget: 'category'
+          focusTarget: 'category',
+          backgroundColor: '#F3F7FA',
+          height:400
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
