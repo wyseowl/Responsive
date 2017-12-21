@@ -252,7 +252,218 @@ findrc1();
     mvrepayp[i]="\xA3"+mvrepay[i];
   }
       /********************************************** PLOT **************************************/
+      for (var i=0; i < shif31o.length; i++){
+        shif31o[i]=Number(shif31o[i]);
+      }
 
+      google.charts.load('current', {packages: ['corechart', 'line']});
+      google.charts.setOnLoadCallback(drawCurveTypes2);
+
+      function drawCurveTypes2() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'X');
+            data.addColumn('number', 'APR');
+
+            data.addRows([
+              [mvrepayp[0], shif31o[0]],
+              [mvrepayp[1], shif31o[1]],
+              [mvrepayp[2], shif31o[2]],
+              [mvrepayp[3], shif31o[3]],
+              [mvrepayp[4], shif31o[4]],
+              [mvrepayp[5], shif31o[5]],
+              [mvrepayp[6], shif31o[6]],
+              [mvrepayp[7], shif31o[7]],
+              [mvrepayp[8], shif31o[8]],
+              [mvrepayp[9], shif31o[9]],
+              [mvrepayp[10], shif31o[10]],
+              [mvrepayp[11], shif31o[11]],
+              [mvrepayp[12], shif31o[12]],
+              [mvrepayp[13], shif31o[13]],
+              [mvrepayp[14], shif31o[14]],
+              [mvrepayp[15], shif31o[15]],
+              [mvrepayp[16], shif31o[16]],
+              [mvrepayp[17], shif31o[17]],
+              [mvrepayp[18], shif31o[18]],
+              [mvrepayp[19], shif31o[19]],
+              [mvrepayp[20], shif31o[20]],
+              [mvrepayp[21], shif31o[21]],
+              [mvrepayp[22], shif31o[22]],
+              [mvrepayp[23], shif31o[23]],
+              [mvrepayp[24], shif31o[24]],
+              [mvrepayp[25], shif31o[25]],
+              [mvrepayp[26], shif31o[26]]
+            ]);
+
+            var options = {
+              hAxis: {
+                title: 'Additional Repayments',
+                textStyle : {fontSize:12}
+              },
+              vAxis: {
+                title: 'APR'
+              },
+              series: {
+                curveType: 'function'
+              },
+              focusTarget: 'category',
+              backgroundColor: '#F3F7FA',
+              height:350,
+              legend: { position: 'top', alignment: 'center' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
+            chart.draw(data, options);
+          }
+          $(window).resize(function(){
+                  drawCurveTypes2();
+                  });
+
+  for (var i=0; i < toto.length; i++){
+    toto[i]=Number(toto[i]);
+  }
+
+  for (var i=0; i < es3o.length; i++){
+    es3o[i]=Number(es3o[i]);
+  }
+
+  for (var i=0; i < art4o.length; i++){
+    art4o[i]=Number(art4o[i]);
+  }
+
+
+  google.charts.load('current', {packages: ['corechart', 'line']});
+  google.charts.setOnLoadCallback(drawCurveTypes1);
+
+  function drawCurveTypes1() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'X');
+        data.addColumn('number', 'Total spent on loan');
+        data.addColumn('number', 'Total spent on additional repayments');
+        data.addColumn('number', 'Savings');
+
+        data.addRows([
+          [mvrepayp[0], toto[0], art4o[0], es3o[0]],
+          [mvrepayp[1], toto[1], art4o[1], es3o[1]],
+          [mvrepayp[2], toto[2], art4o[2], es3o[2]],
+          [mvrepayp[3], toto[3], art4o[3], es3o[3]],
+          [mvrepayp[4], toto[4], art4o[4], es3o[4]],
+          [mvrepayp[5], toto[5], art4o[5], es3o[5]],
+          [mvrepayp[6], toto[6], art4o[6], es3o[6]],
+          [mvrepayp[7], toto[7], art4o[7], es3o[7]],
+          [mvrepayp[8], toto[8], art4o[8], es3o[8]],
+          [mvrepayp[9], toto[9], art4o[9], es3o[9]],
+          [mvrepayp[10], toto[10], art4o[10], es3o[10]],
+          [mvrepayp[11], toto[11], art4o[11], es3o[11]],
+          [mvrepayp[12], toto[12], art4o[12], es3o[12]],
+          [mvrepayp[13], toto[13], art4o[13], es3o[13]],
+          [mvrepayp[14], toto[14], art4o[14], es3o[14]],
+          [mvrepayp[15], toto[15], art4o[15], es3o[15]],
+          [mvrepayp[16], toto[16], art4o[16], es3o[16]],
+          [mvrepayp[17], toto[17], art4o[17], es3o[17]],
+          [mvrepayp[18], toto[18], art4o[18], es3o[18]],
+          [mvrepayp[19], toto[19], art4o[19], es3o[19]],
+          [mvrepayp[20], toto[20], art4o[20], es3o[20]],
+          [mvrepayp[21], toto[21], art4o[21], es3o[21]],
+          [mvrepayp[22], toto[22], art4o[22], es3o[22]],
+          [mvrepayp[23], toto[23], art4o[23], es3o[23]],
+          [mvrepayp[24], toto[24], art4o[24], es3o[24]],
+          [mvrepayp[25], toto[25], art4o[25], es3o[25]],
+          [mvrepayp[26], toto[26], art4o[26], es3o[26]]
+        ]);
+
+        var options = {
+          hAxis: {
+            title: 'Additional Repayments',
+            textStyle : {fontSize:12}
+          },
+          vAxis: {
+            title: 'GBP'
+          },
+          series: {
+            curveType: 'function'
+          },
+          focusTarget: 'category',
+          backgroundColor: '#F3F7FA',
+          height:350,
+          legend: { position: 'top', alignment: 'center' }
+        };
+
+        var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
+        chart.draw(data, options);
+      }
+
+      $(window).resize(function(){
+              drawCurveTypes1();
+              });
+
+
+      for (var i=0; i < j3ypo.length; i++){
+        j3ypo[i]=Number(j3ypo[i]);
+      }
+
+      google.charts.load('current', {packages: ['corechart', 'line']});
+      google.charts.setOnLoadCallback(drawCurveTypes3);
+
+      function drawCurveTypes3() {
+            var data = new google.visualization.DataTable();
+            data.addColumn('string', 'X');
+            data.addColumn('number', 'Time until loan is paid off');
+
+            data.addRows([
+              [mvrepayp[0], j3ypo[0]],
+              [mvrepayp[1], j3ypo[1]],
+              [mvrepayp[2], j3ypo[2]],
+              [mvrepayp[3], j3ypo[3]],
+              [mvrepayp[4], j3ypo[4]],
+              [mvrepayp[5], j3ypo[5]],
+              [mvrepayp[6], j3ypo[6]],
+              [mvrepayp[7], j3ypo[7]],
+              [mvrepayp[8], j3ypo[8]],
+              [mvrepayp[9], j3ypo[9]],
+              [mvrepayp[10], j3ypo[10]],
+              [mvrepayp[11], j3ypo[11]],
+              [mvrepayp[12], j3ypo[12]],
+              [mvrepayp[13], j3ypo[13]],
+              [mvrepayp[14], j3ypo[14]],
+              [mvrepayp[15], j3ypo[15]],
+              [mvrepayp[16], j3ypo[16]],
+              [mvrepayp[17], j3ypo[17]],
+              [mvrepayp[18], j3ypo[18]],
+              [mvrepayp[19], j3ypo[19]],
+              [mvrepayp[20], j3ypo[20]],
+              [mvrepayp[21], j3ypo[21]],
+              [mvrepayp[22], j3ypo[22]],
+              [mvrepayp[23], j3ypo[23]],
+              [mvrepayp[24], j3ypo[24]],
+              [mvrepayp[25], j3ypo[25]],
+              [mvrepayp[26], j3ypo[26]]
+            ]);
+
+            var options = {
+              hAxis: {
+                title: 'Additional Repayments',
+                textStyle : {fontSize:12}
+              },
+              vAxis: {
+                title: 'Years'
+              },
+              series: {
+                curveType: 'function'
+              },
+              focusTarget: 'category',
+              backgroundColor: '#F3F7FA',
+              height:350,
+              legend: { position: 'top', alignment: 'center' }
+            };
+
+            var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
+            chart.draw(data, options);
+          }
+
+          $(window).resize(function(){
+                  drawCurveTypes3();
+                  });
+/*
 const CHART2 = document.getElementById("lineChart2");
 console.log(CHART2)
 
@@ -295,78 +506,8 @@ let lineChart2=new Chart(CHART2, {
       }
   });
 
-  for (var i=0; i < toto.length; i++){
-    toto[i]=Number(toto[i]);
-  }
 
-  for (var i=0; i < es3o.length; i++){
-    es3o[i]=Number(es3o[i]);
-  }
-
-  for (var i=0; i < art4o.length; i++){
-    art4o[i]=Number(art4o[i]);
-  }
-
-
-  google.charts.load('current', {packages: ['corechart', 'line']});
-  google.charts.setOnLoadCallback(drawCurveTypes);
-
-  function drawCurveTypes() {
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'X');
-        data.addColumn('number', 'Total spent on loan');
-        data.addColumn('number', 'Total spent on additional repayments');
-        data.addColumn('number', 'Savings');
-
-        data.addRows([
-          [mvrepayp[0], toto[0], art4o[0], es3o[0]],
-          [mvrepayp[1], toto[1], art4o[1], es3o[1]],
-          [mvrepayp[2], toto[2], art4o[2], es3o[2]],
-          [mvrepayp[3], toto[3], art4o[3], es3o[3]],
-          [mvrepayp[4], toto[4], art4o[4], es3o[4]],
-          [mvrepayp[5], toto[5], art4o[5], es3o[5]],
-          [mvrepayp[6], toto[6], art4o[6], es3o[6]],
-          [mvrepayp[7], toto[7], art4o[7], es3o[7]],
-          [mvrepayp[8], toto[8], art4o[8], es3o[8]],
-          [mvrepayp[9], toto[9], art4o[9], es3o[9]],
-          [mvrepayp[10], toto[10], art4o[10], es3o[10]],
-          [mvrepayp[11], toto[11], art4o[11], es3o[11]],
-          [mvrepayp[12], toto[12], art4o[12], es3o[12]],
-          [mvrepayp[13], toto[13], art4o[13], es3o[13]],
-          [mvrepayp[14], toto[14], art4o[14], es3o[14]],
-          [mvrepayp[15], toto[15], art4o[15], es3o[15]],
-          [mvrepayp[16], toto[16], art4o[16], es3o[16]],
-          [mvrepayp[17], toto[17], art4o[17], es3o[17]],
-          [mvrepayp[18], toto[18], art4o[18], es3o[18]],
-          [mvrepayp[19], toto[19], art4o[19], es3o[19]],
-          [mvrepayp[20], toto[20], art4o[20], es3o[20]],
-          [mvrepayp[21], toto[21], art4o[21], es3o[21]],
-          [mvrepayp[22], toto[22], art4o[22], es3o[22]],
-          [mvrepayp[23], toto[23], art4o[23], es3o[23]],
-          [mvrepayp[24], toto[24], art4o[24], es3o[24]],
-          [mvrepayp[25], toto[25], art4o[25], es3o[25]],
-          [mvrepayp[26], toto[26], art4o[26], es3o[26]]
-        ]);
-
-        var options = {
-          hAxis: {
-            title: 'Additional Repayments'
-          },
-          vAxis: {
-            title: 'GBP'
-          },
-          series: {
-            curveType: 'function'
-          },
-          focusTarget: 'category',
-          backgroundColor: '#F3F7FA',
-          height:400
-        };
-
-        var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-/*const CHART3 = document.getElementById("lineChart3");
+const CHART3 = document.getElementById("lineChart3");
 console.log(CHART3)
 
 let lineChart3=new Chart(CHART3, {
@@ -438,7 +579,7 @@ let lineChart3=new Chart(CHART3, {
           }]
       }
   }
-});*/
+});
 
 const CHART4 = document.getElementById("lineChart4");
 console.log(CHART4)
@@ -480,6 +621,6 @@ let lineChart4=new Chart(CHART4, {
           }]
       }
   }
-});
+});*/
 
 }
