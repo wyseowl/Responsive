@@ -630,6 +630,9 @@ function mloanalert(){
       elems[i].style.display="none";
     }
   }
+document.getElementById("hident3").style.width = "1000px";
+document.getElementById("hident6").style.width = "1000px";
+document.getElementById("hident1").style.width = "1000px";
 }
 
   /************************************************************************************/
