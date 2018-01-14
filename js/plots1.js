@@ -296,7 +296,7 @@ findrc1();
 
             var options = {
               hAxis: {
-                title: 'Additional Repayments',
+                title: 'Additional Monthly Repayments',
                 textStyle : {fontSize:12}
               },
               vAxis: {
@@ -373,7 +373,7 @@ findrc1();
 
         var options = {
           hAxis: {
-            title: 'Additional Repayments',
+            title: 'Additional Monthly Repayments',
             textStyle : {fontSize:12}
           },
           vAxis: {
@@ -441,7 +441,7 @@ findrc1();
 
             var options = {
               hAxis: {
-                title: 'Additional Repayments',
+                title: 'Additional Monthly Repayments',
                 textStyle : {fontSize:12}
               },
               vAxis: {
