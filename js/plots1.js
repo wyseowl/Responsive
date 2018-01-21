@@ -86,25 +86,25 @@ function cancelrcf(){
     if (loantype=="Plan 1") {
       if ((earn1*tdn1)<=leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*ip1[1];
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*(ip1[1]/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30);
           j3[i]=j3[i]+1;
         }
       }
       else if ((earn1*tdn1)>leth){
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*ip1[1];
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*(ip1[1]/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12)-((mmr_init*12)/365);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30)-(mmr_init/30);
           j3[i]=j3[i]+1;
         }
       }
@@ -112,37 +112,37 @@ function cancelrcf(){
     else if (loantype=="Plan 2") {
       if ((earn1*tdn1)<=leth){
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*rpi[1];
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*(rpi[1]/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30);
           j3[i]=j3[i]+1;
         }
       }
       else if ((earn1*tdn1)>leth && (earn1*tdn1)<=uet) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*((ip2*ifrac)+rpi[1]);
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*(((ip2*ifrac)+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12)-((mmr_init*12)/365);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30)-(mmr_init/30);
           j3[i]=j3[i]+1;
         }
       }
       else if ((earn1*tdn1)>uet) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*(ip2+rpi[1]);
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*((ip2+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12)-((mmr_init*12)/365);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30)-(mmr_init/30);
           j3[i]=j3[i]+1;
         }
       }
@@ -150,25 +150,25 @@ function cancelrcf(){
     else if (loantype=="Postgraduate Loan") {
       if ((earn1*tdn1)<=leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*(ipl+rpi[1]);
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*((ipl+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30);
           j3[i]=j3[i]+1;
         }
       }
       else if ((earn1*tdn1)>leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
-          if ((j3[i] % 365)==0) {
-            ir3[i]= cl3[i]*(ipl+rpi[1]);
+          if ((j3[i] % 30)==0) {
+            ir3[i]= cl3[i]*((ipl+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
           }
-          cl3[i]=(cl3[i]+(ir3[i]/365))-((mvrepay[i]/365)*12)-((mmr_init*12)/365);
+          cl3[i]=(cl3[i]+(ir3[i]/30))-(mvrepay[i]/30)-(mmr_init/30);
           j3[i]=j3[i]+1;
         }
       }

@@ -280,25 +280,25 @@ function payoff(){
     if (loantype=="Plan 1") {
       if ((gef*tdn)<=leth) {
         while (cl>0 && j<(cancelledl)) {
-          if ((j % 365)==0) {
-            ir= cl*ip1[1];
+          if ((j % 30)==0) {
+            ir= cl*(ip1[1]/12);
           }
           else{
             ir=ir;
           }
-          cl=(cl+(ir/365))-((arf/365)*12);
+          cl=(cl+(ir/30))-(arf/30);
           j=j+1;
         }
       }
       else if ((gef*tdn)>leth) {
         while (cl>0 && j<(cancelledl)) {
-          if ((j % 365)==0) {
-            ir= cl*ip1[1];
+          if ((j % 30)==0) {
+            ir= cl*(ip1[1]/12);
           }
           else{
             ir=ir;
           }
-          cl=(cl+(ir/365))-((arf/365)*12)-((mmr_init*12)/365);
+          cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
           j=j+1;
         }
       }
@@ -306,37 +306,37 @@ function payoff(){
     else if (loantype=="Plan 2") {
       if ((gef*tdn)<=leth) {
         while (cl>0 && j<(cancelledl)) {
-          if ((j % 365)==0) {
-            ir= cl*rpi[1];
+          if ((j % 30)==0) {
+            ir= cl*(rpi[1]/12);
           }
           else{
             ir=ir;
           }
-          cl=(cl+(ir/365))-((arf/365)*12);
+          cl=(cl+(ir/30))-(arf/30);
           j=j+1;
         }
       }
       else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
         while (cl>0 && j<(cancelledl)) {
-          if ((j % 365)==0) {
-            ir= cl*((ip2*ifrac)+rpi[1]);
+          if ((j % 30)==0) {
+            ir= cl*(((ip2*ifrac)+rpi[1])/12);
           }
           else{
             ir=ir;
           }
-          cl=(cl+(ir/365))-((arf/365)*12)-((mmr_init*12)/365);
+          cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
           j=j+1;
         }
       }
       else if ((gef*tdn)>uet) {
         while (cl>0 && j<(cancelledl)) {
-          if ((j % 365)==0) {
-            ir= cl*(ip2+rpi[1]);
+          if ((j % 30)==0) {
+            ir= cl*((ip2+rpi[1])/12);
           }
           else{
             ir=ir;
           }
-          cl=(cl+(ir/365))-((arf/365)*12)-((mmr_init*12)/365);
+          cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
           j=j+1;
         }
       }
@@ -344,25 +344,25 @@ function payoff(){
       else if (loantype=="Postgraduate Loan") {
         if ((gef*tdn)<=leth) {
           while (cl>0 && j<(cancelledl)) {
-            if ((j % 365)==0) {
-              ir= cl*(ipl+rpi[1]);
+            if ((j % 30)==0) {
+              ir= cl*((ipl+rpi[1])/12);
             }
             else{
               ir=ir;
             }
-            cl=(cl+(ir/365))-((arf/365)*12);
+            cl=(cl+(ir/30))-(arf/30);
             j=j+1;
           }
         }
         else if ((gef*tdn)>leth) {
           while (cl>0 && j<(cancelledl)) {
-            if ((j % 365)==0) {
-              ir= cl*(ipl+rpi[1]);
+            if ((j % 30)==0) {
+              ir= cl*((ipl+rpi[1])/12);
             }
             else{
               ir=ir;
             }
-            cl=(cl+(ir/365))-((arf/365)*12)-((mmr_init*12)/365);
+            cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
             j=j+1;
           }
         }
@@ -383,25 +383,25 @@ function payoffnar(){
       if (loantype=="Plan 1") {
         if ((gef*tdn)<=leth) {
           while (cl1>0 && j1<(cancelledl)) {
-            if ((j1 % 365)==0) {
-              ir1= cl1*ip1[1];
+            if ((j1 % 30)==0) {
+              ir1= cl1*(ip1[1]/12);
             }
             else{
               ir1=ir1;
             }
-            cl1=(cl1+(ir1/365));
+            cl1=(cl1+(ir1/30));
             j1=j1+1;
           }
         }
         else if ((gef*tdn)>leth) {
           while (cl1>0 && j1<(cancelledl)) {
-            if ((j1 % 365)==0) {
-              ir1= cl1*ip1[1];
+            if ((j1 % 30)==0) {
+              ir1= cl1*(ip1[1]/12);
             }
             else{
               ir1=ir1;
             }
-            cl1=(cl1+(ir1/365))-((mmr_init*12)/365);
+            cl1=(cl1+(ir1/30))-(mmr_init/30);
             j1=j1+1;
           }
         }
@@ -409,37 +409,37 @@ function payoffnar(){
       else if (loantype=="Plan 2") {
         if ((gef*tdn)<=leth) {
           while (cl1>0 && j1<(cancelledl)) {
-            if ((j1 % 365)==0) {
-              ir1= cl1*rpi[1];
+            if ((j1 % 30)==0) {
+              ir1= cl1*(rpi[1]/12);
             }
             else{
               ir1=ir1;
             }
-            cl1=(cl1+(ir1/365));
+            cl1=(cl1+(ir1/30));
             j1=j1+1;
           }
         }
         else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
           while (cl1>0 && j1<(cancelledl)) {
-            if ((j1 % 365)==0) {
-              ir1= cl1*((ip2*ifrac)+rpi[1]);
+            if ((j1 % 30)==0) {
+              ir1= cl1*(((ip2*ifrac)+rpi[1])/12);
             }
             else{
               ir1=ir1;
             }
-            cl1=(cl1+(ir1/365))-((mmr_init*12)/365);
+            cl1=(cl1+(ir1/30))-(mmr_init/30);
             j1=j1+1;
           }
         }
         else if ((gef*tdn)>uet) {
           while (cl1>0 && j1<(cancelledl)) {
-            if ((j1 % 365)==0) {
-              ir1= cl1*(ip2+rpi[1]);
+            if ((j1 % 30)==0) {
+              ir1= cl1*((ip2+rpi[1])/12);
             }
             else{
               ir1=ir1;
             }
-            cl1=(cl1+(ir1/365))-((mmr_init*12)/365);
+            cl1=(cl1+(ir1/30))-(mmr_init/30);
             j1=j1+1;
           }
         }
@@ -447,25 +447,25 @@ function payoffnar(){
         else if (loantype=="Postgraduate Loan") {
           if ((gef*tdn)<=leth) {
             while (cl1>0 && j1<(cancelledl)) {
-              if ((j1 % 365)==0) {
-                ir1= cl1*(ipl+rpi[1]);
+              if ((j1 % 30)==0) {
+                ir1= cl1*((ipl+rpi[1])/12);
               }
               else{
                 ir1=ir1;
               }
-              cl1=(cl1+(ir1/12));
+              cl1=(cl1+(ir1/30));
               j1=j1+1;
             }
           }
           else if ((gef*tdn)>leth) {
             while (cl1>0 && j1<(cancelledl)) {
-              if ((j1 % 365)==0) {
-                ir1= cl1*(ipl+rpi[1]);
+              if ((j1 % 30)==0) {
+                ir1= cl1*((ipl+rpi[1])/12);
               }
               else{
                 ir1=ir1;
               }
-              cl1=(cl1+(ir1/365))-((mmr_init*12)/365);
+              cl1=(cl1+(ir1/30))-(mmr_init/30);
               j1=j1+1;
             }
           }
