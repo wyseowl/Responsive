@@ -206,7 +206,7 @@ function findrc1(){
 
         n3[i]= (j3[i]/365)*12;
         pmt3[i] = mvrepay[i];
-        fv3[i] = (mvrepay[i]*((j3[i]/365)*12))+es3[i];
+        fv3[i] = (mvrepay[i]*((j3[i]/365)*12))+es3[i]+bulk1;
         y3[i] =1;
         shif21[i]=1;
         int3[i]=0.00001;
