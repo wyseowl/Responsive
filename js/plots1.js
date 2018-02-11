@@ -215,7 +215,7 @@ function findrc1(){
 	}
 	else {
            while (y3[i]>=0 && shif21[i]>0) {
-              y3[i] = pmt3[i]*((Math.pow((1+shif21[i]),n3[i])-1)/(shif21[i]*(1+shif21[i])))+((pmt3[i]+bulk1)*Math.pow((1+shif21[i]),(n3[i]-1)))-(pmt3[i]/(1+shif21[i]))-fv3[i];    /*(Math.pow((1+shif21[i]),n3[i]))-((fv3[i]/pmt3[i])*shif21[i])-1;*/
+              y3[i] = (pmt3[i]*((Math.pow((1+shif21[i]),n3[i])-1)/(shif21[i]*(1+shif21[i])))+((pmt3[i]+bulk1)*Math.pow((1+shif21[i]),(n3[i]-1)))-(pmt3[i]/(1+shif21[i])))*Math.pow((1+shif21[i]),(n2-n3[i]))-fv3[i];    /*(Math.pow((1+shif21[i]),n3[i]))-((fv3[i]/pmt3[i])*shif21[i])-1;*/
               shif21[i] = shif21[i]-int3[i];
            }
 	}

@@ -63,7 +63,8 @@ var jy;
 var jm;
 var jy1;
 var jm1;
-var n;
+var n1;
+var n2;
 var pmt;
 var fv;
 var y;
@@ -523,7 +524,8 @@ loanfate()
       /********************************************** PERCENT APR **************************************/
 
   function findr() {
-        n= (j/365)*12;
+        n1= (j/365)*12;
+        n2= (j1/365)*12;
         pmt= arf;
         fv= art+es;
         y= 1;
@@ -534,7 +536,7 @@ loanfate()
 	}
 	else {
            while (y>=0 && shif>0) {
-              y = (Math.pow((1+shif),n))-((fv/pmt)*shif)-1;
+              y = (pmt*((Math.pow((1+shif),n1)-1)/shif))*Math.pow((1+shif),(n2-n1))-fv/*(Math.pow((1+shif),n))-((fv/pmt)*shif)-1*/;
               shif = shif-int;
            }
         }
@@ -549,6 +551,7 @@ findr()
       rlo = parseFloat(Math.round(rl*100)/100).toFixed(2);
       eso=parseFloat(Math.round(es*100)/100).toFixed(2);
       mmro=parseFloat(Math.round(mmr_init*100)/100).toFixed(2);
+      shif1o=parseFloat(Math.round(shif1*100)/100).toFixed(2);
 
       function numberWithCommas(x) {
         return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -566,6 +569,7 @@ findr()
   document.getElementById('cancelled').innerHTML=cancelledy +" years, "+cancelledm +" month(s)";
   document.getElementById('loantype').innerHTML=loantype;
   document.getElementById('es').innerHTML="£"+eso;
+  document.getElementById('aprk').innerHTML=shif1o+"%";
 }
       /********************************************** END OF CALCULATE **************************************/
 
