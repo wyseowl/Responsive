@@ -122,13 +122,13 @@ function loantypef(){
           alert("Your loan type is mortgage style loan. Please see the student loans repayment website for further information.");
       return;
     }
-    else if ((ys>=1999 && (l=="Northern Ireland" || l=="Scotland"))||(ys>=1999 && ys<=2012 && (l=="Wales" || l=="England"))) {
+    else if ((ys>=1999 && (l=="Northern Ireland" || l=="Scotland"))||(ys>=1999 && ys<2012 && (l=="Wales" || l=="England"))) {
       loantype="Plan 1";
     }
-    else if ((ys>2012 && l=="England" && pg=="No")||(ys>2012 && l=="Wales")) {
+    else if ((ys>=2012 && l=="England" && pg=="No")||(ys>=2012 && l=="Wales")) {
       loantype="Plan 2";
     }
-    else if (ys>2012 && l=="England" && pg=="Yes") {
+    else if (ys>=2012 && l=="England" && pg=="Yes") {
       loantype="Postgraduate Loan";
     }
 }
@@ -588,13 +588,13 @@ function mloanalert(){
         alert("Your loan type is mortgage style loan. Please see the student loans repayment website for further information.");
     return;
   }
-  else if ((ys>=1999 && (l=="Northern Ireland" || l=="Scotland"))||(ys>=1999 && ys<=2012 && (l=="Wales" || l=="England"))) {
+  else if ((ys>=1999 && (l=="Northern Ireland" || l=="Scotland"))||(ys>=1999 && ys<2012 && (l=="Wales" || l=="England"))) {
     loantype="Plan 1";
   }
-  else if ((ys>2012 && l=="England" && pg=="No")||(ys>2012 && l=="Wales")) {
+  else if ((ys>=2012 && l=="England" && pg=="No")||(ys>=2012 && l=="Wales")) {
     loantype="Plan 2";
   }
-  else if (ys>2012 && l=="England" && pg=="Yes") {
+  else if (ys>=2012 && l=="England" && pg=="Yes") {
     loantype="Postgraduate Loan";
   }
 
@@ -627,7 +627,7 @@ function mloanalert(){
   }
 /*********************** POSTGRAD ************************/
   for (var i=0;i<elems.length;i+=1){
-    if (ys>2012 && l=="England") {
+    if (ys>=2012 && l=="England") {
       elems[i].style.display="table-cell";
     }
     else {
