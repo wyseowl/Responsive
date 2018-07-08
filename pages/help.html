@@ -14,7 +14,7 @@
 
   <link rel="icon" href="../images/slc_icon.png" type="image/png">
   <link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/style.css">
+  <link rel="stylesheet" type="text/css" href="../css/style_help.css">
 
   <title>UK Student Loans Repayment Calculator</title>
 
@@ -32,155 +32,68 @@
 
     <div class="topnav" id="myTopnav">
       <a href="../index.html" class="active"><strong>Student Loan Repayment - UK</strong></a>
-      <a href="../index.html">Back to calculator</a>
       <a href="savings.html">Savings options</a>
+      <a href="help.html">Help</a>
       <a href="contact.html">Contact us</a>
       <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
     </div>
-
     <br>
     <br>
-<!---------------------------------------------------------- INTRO --------------------------------------------------------------->
-<div class = "container"  style="width:100%;">
-  <div class="row">
-    <div class="col-lg-3 col-md-2">
-    </div>
-    <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12" id="inputform" align="left">
-      <h3>Help Centre</h3>
-
-      <br>
-
-      <h2>General Terms</h2>
-
-      <br>
-
-      <strong>APR:</strong>
-
-      <br>
-      <br>
-
-      Annual percentage rate of charge (APR) represents how much you can save compared to how much you invest. It is the interest rate for a whole year (annualised), rather than just a monthly rate. The higher your APR, the better.
-
-      <br>
-      <br>
-
-      <strong>Mandatory Repayments:</strong>
-
-      <br>
-      <br>
-
-      Mandatory repayments are those you are required to pay. They are usually taken from your paycheck. If they are not taken directly from your paycheck, you will be required to make contributions by direct debit or other payment options.
-
-      <br>
-      <br>
-
-      <strong>One time repayments:</strong>
-
-      <br>
-      <br>
-
-      These are one off repayments that you can make. In reality you can make these payments whenever, but if you enter an amount in this calculator, we assume you pay it instantly.
-
-      <br>
-      <br>
+    <br>
+<!---------------------------------------------------------- CONTENT --------------------------------------------------------------->
+<div class = "container" id="standardborder">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" text-align="left">
       <h2>Input values</h2>
+      <hr class="style1">
 
-      <br>
-
-      <strong>Student Loan Balance:</strong>
-
-      <br>
-      <br>
-
+      <h3>Student Loan Balance</h3>
       To view your student loan balance, log on to the student loans repayment website <a href="http://www.studentloanrepayment.co.uk/" target="_blank">here</a>. Alternatively, enter an approximate amount.
 
       <br>
       <br>
 
-      <strong>Location of Home Address:</strong>
+      <h3>Location of Home Address</h3>
+      Enter the country within the UK in which you had your registered home address when you applied for your student loan. If you're from outside the UK, select the country which your university is in.
 
       <br>
       <br>
 
-      Enter the country within the UK to where your registered home address was when you applied for a student loan. If you're from outside the UK, select the country which your university is in.
-
-      <br>
-      <br>
-
-      <strong>Year repayments start:</strong>
-
-      <br>
-      <br>
-
+      <h3>Year repayments start</h3>
       If you're required to enter the year your repayments started, select the year corresponding to the April <strong>after</strong> you finished the course.
 
       <br>
       <br>
 
-      <strong>PAYE (Pay As You Earn):</strong>
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" text-align="left">
 
-      <br>
-      <br>
-
+      <h3>PAYE (Pay As You Earn)</h3>
       If your mandatory repayments are taken directly from your paycheck, select "Yes". If you pay by other means, please choose "No".
 
       <br>
       <br>
 
-      <strong>Gross Earnings:</strong>
+      <h3>Gross Earnings</h3>
+      This is what you earn before tax is taken from your wage.
 
       <br>
       <br>
 
-      These are your pre-tax earnings.
-
-      <br>
-      <br>
-
-      <strong>Additional Monthly Repayments:</strong>
-
-      <br>
-      <br>
-
+      <h3>Additional Monthly Repayments</h3>
       These are monthly repayments that you make in addition to your mandatory ones. They are voluntary and should be made if you want to pay your loan off quicker.
 
       <br>
       <br>
 
-      <strong>Country of Employment:</strong>
-
-      <br>
-      <br>
-
+      <h3>Country of Employment</h3>
       This is the country the Student Loans Company has you registered working at. If in doubt, select United Kingdom.
 
       <br>
       <br>
-
-      <h2>Assumptions</h2>
-      <br>
-      <ul>
-        <li>We assumed a fixed income, inflation and repayment thresholds until your loan is cancelled or you pay it off. In reality, these will increase or decrease through the duration of your loan.</li>
-        <br>
-        <li>We assumed fixed interest rates until your loan is cancelled or you pay it off.</li>
-        <br>
-        <li>We assume you stay in the same country.</li>
-        <br>
-        <li>We assume a fixed currency exchange rate as specified by the Student Loans Company.</li>
-        <br>
-        <li>We assume any one time repayments are made immediately.</li>
-        <br>
-        <li>We assume benefits from making additional repayments are felt immediately after paying the loan off. In reality you will feel the benefits both before <strong>and</strong> after the loan is paid off.</li>
-      </ul>
-      <center>
-      <br>
-      <br>
-      <button onclick="topFunction()" class="btn btn-primary" id="myBtn" title="Go to top">Back to top</button>
     </div>
-  </div>
 </div>
 <br>
-<div class = "container"  style="width:100%;">
+<div class = "container"  id="hfittopage">
   <div class="row">
     <div class="col-lg-3 col-md-2">
     </div>
@@ -200,10 +113,58 @@
 </div>
 </div>
 </div>
-  <br>
-  <br>
+<br>
 
+<div class = "container" id="standardborder">
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" align="left">
 
+      <h2>General Terms</h2>
+      <hr class="style1">
+
+      <h3>APR</h3>
+      Annual percentage rate of charge (APR) represents how much you can save compared to how much you invest. It is the interest rate for a whole year (annualised), rather than just a monthly rate. The higher your APR, the better.
+
+      <br>
+      <br>
+
+      <h3>Mandatory Repayments</h3>
+      Mandatory repayments are those you are required to pay. They are usually taken from your paycheck. If they are not taken directly from your paycheck, you will be required to make contributions by direct debit or other payment options.
+
+      <br>
+      <br>
+
+      <h3>One time repayments</h3>
+      These are one off repayments that you can make. In reality you can make these payments whenever, but if you enter an amount in this calculator, we assume you pay it instantly.
+
+      <br>
+      <br>
+
+    </div>
+    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" align="left">
+      <h2>Assumptions</h2>
+      <hr class="style1">
+      <br>
+      <ul>
+        <li>We assumed a fixed income, inflation and repayment thresholds until your loan is cancelled or you pay it off. In reality, these will increase or decrease through the duration of your loan.</li>
+        <br>
+        <li>We assumed fixed interest rates until your loan is cancelled or you pay it off.</li>
+        <br>
+        <li>We assume you stay in the same country.</li>
+        <br>
+        <li>We assume a fixed currency exchange rate as specified by the Student Loans Company.</li>
+        <br>
+        <li>We assume any one time repayments are made immediately.</li>
+        <br>
+        <li>We assume benefits from making additional repayments are felt immediately after paying the loan off. In reality you will feel the benefits both before <strong>and</strong> after the loan is paid off.</li>
+      </ul>
+      <center>
+      <br>
+      <br>
+      <button onclick="topFunction()" class="btn btn-primary" id="myBtn" title="Go to top">Back to top</button>
+    </div>
+</div>
+<br>
+<br>
   <!------------------------------------------------------------- FOOTER ----------------------------------------------------------------->
     <div class="container" style="width:100%;">
     <center>
