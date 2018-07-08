@@ -1,0 +1,234 @@
+/************************************************ BODY *************************************/
+body { margin: 0; }
+/************************************************ NAVBAR *************************************/
+.topnav {
+  overflow: hidden;
+  background-color: #406db2;
+  box-shadow: 3px 3px 2px #46464D;
+}
+
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #e5edf9;
+  color: black;
+}
+
+.active {
+  background-color: #406db2;
+  color: white;
+}
+
+.topnav .icon {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .topnav a:not(:first-child) {display: none;}
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .topnav.responsive {position: relative;}
+  .topnav.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnav.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+
+}
+
+/************************************************ FONTS *************************************/
+
+
+green {color: rgba(12, 207, 73,1);}
+red {color: rgba(218, 71, 71, 1);}
+blue {color: rgba(85, 117, 220,1);}
+
+
+h2 {color: #406db2;
+  font-family: verdana;
+  font-size: 140%;
+}
+
+h3 {
+  font-size: 120%;
+  font-weight: bold;
+}
+
+/************************************************ STUDENT LOANS LINK *************************************/
+
+#StudentLoansLink{
+      font-size: 110%;
+      padding: 10px 10px;
+      margin-bottom:10px;
+      border-radius: 8px;
+      background-color:rgba(243, 247, 250,1);
+      margin:12px;
+      box-shadow: 3px 3px 2px #46464D;
+}
+
+#slcp{
+  width:80px;
+  box-shadow: 3px 3px 1px grey;
+}
+
+#slcp:hover{
+  box-shadow: 0px 0px 0px grey;
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+}
+
+/************************************************ INPUT FORM *************************************/
+
+.label-container{
+  padding-top:10px;
+}
+
+.row{
+  margin-bottom:5px;
+}
+
+#standardborder{
+  width:100%;
+  box-shadow: 3px 3px 2px #46464D;
+  padding: 40px;
+  background-color:rgba(243, 247, 250,0.98);
+}
+
+#hfittopage{
+  width: 100%;
+}
+
+/************************************************ LOGO FOOTER *************************************/
+
+#compdet{
+  border-radius: 10px;
+  box-shadow: 3px 3px 2px #46464D;
+  color: black;
+  background-color:rgba(243, 247, 250,1);
+  width:105px;
+}
+
+/************************************************ ADVICE *************************************/
+
+#advicediv{
+  font-size: 100%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 2px #46464D;
+  padding: 10px 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 15px;
+  box-sizing: border-box;
+  background-color:rgba(243, 247, 250,1);
+}
+
+/************************************************ LINKS *************************************/
+
+#links{
+  font-size: 90%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 2px #46464D;
+  padding: 10px 10px;
+  margin: 8px 0;
+  background-color:rgba(243, 247, 250,1);
+  text-align:left;
+}
+
+
+/* link */
+a:link {
+    text-decoration: none;
+    font-color:#002E5D;
+}
+
+/* mouse over link */
+a:hover {
+    font-color: rgb(141, 196, 250);
+}
+
+/************************************************ DISCLAIMER *************************************/
+
+#disclaim{
+  font-size: 70%;
+  border-radius: 8px;
+  box-shadow: 3px 3px 2px #46464D;
+  padding: 10px 10px;
+  margin: 8px 0;
+  background-color:rgba(243, 247, 250,1);
+  text-align:left;
+}
+
+/************************************************ HORIZONTAL STYLES *************************************/
+
+
+hr.style1 {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+
+/************************************* SOCIAL ***********************************/
+.social-roll {
+    height: 48px;
+    width: 48px;
+    margin: 10px;
+    float: left;
+    border-radius: 50%;
+    -webkit-transition: all ease 0.3s;
+    -moz-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    -ms-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+ .social-roll:hover {
+     box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.8);
+     -webkit-transform: rotate(360deg);
+     -moz-transform: rotate(360deg);
+     -o-transform: rotate(360deg);
+     -ms-transform: rotate(360deg);
+     transform: rotate(360deg);
+ }
+
+.social-twitter {
+    background-image: url('../images/social/twitter-hover-gray.png');
+}
+
+.social-twitter:hover {
+    background-image: url('../images/social/twitter-hover.png');
+}
+
+.social-facebook {
+    background-image: url('../images/social/facebook-hover-gray.png');
+}
+
+.social-facebook:hover {
+    background-image: url('../images/social/facebook-hover.png');
+}
+
+.social-google {
+    background-image: url('../images/social/google-hover-gray.png');
+}
+
+.social-google:hover {
+    background-image: url('../images/social/google-hover.png');
+}
