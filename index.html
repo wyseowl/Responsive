@@ -34,52 +34,36 @@
 
 <br>
 <br>
-<div class="col-lg-2 col-md-6 col-sm-6 col-xs-12 container">
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-        <strong>Sign up to Coinbase!</strong>
-        </h4>
-      </div>
-        <div class="panel-body">
-          <a href="https://www.coinbase.com/join/586f6b7d88fc1500b673a223" target="_blank">Sign up</a> to <a href="https://www.coinbase.com/about?locale=en" target="_blank">Coinbase</a> using our link and receive £7 of Bitcoin free if you make a purchase!
-          <br>
-          <br>
-          Don't know about Bitcoin? Take a look at our <a href="pages/savings.html" target="_blank">savings options</a> page to find out more.
-        </div>
-    </div>
-  </div>
-</div>
 
-<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 container">
+<div class="col-lg-4 col-md-6 col-sm-12 col-xs-12 container" style="margin-top:45px">
   <div class="panel-group" id="accordion">
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
+          <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse">
         <strong>About this calculator</strong>
+        </a>
         </h4>
       </div>
-        <div class="panel-body">
-          UK student loans are complicated. You may have questions like,
-          <br>
-          <br>
-          <ul>
-          <li>How long until I pay off my loan?</li>
-          <br>
-          <li>How much do I have to pay a month?</li>
-          <br>
-          <li>Does paying off my student loan early <strong>save me money</strong>?</li>
-          </ul>
-          <br>
-          This calculator will help you answer these questions and give advice on how to manage your loan.
-          <br>
+        <div id="collapse" class="panel-collapse collapse">
+          <div class="panel-body">
+            UK student loans are complicated. You may have questions like,
+            <br>
+            <br>
+            <ul>
+              <li>How long until I pay off my loan?</li>
+              <br>
+              <li>How much do I have to pay a month?</li>
+              <br>
+              <li>Does paying off my student loan early <strong>save me money</strong>?</li>
+            </ul>
+            <br>
+            This calculator will help you answer these questions and give advice on how to manage your loan.
+            <br>
+          </div>
         </div>
     </div>
   </div>
-</div>
-
-<div class="col-lg-4 col-md-5 col-sm-6 col-xs-12">
   <div class="panel-group" id="accordion2">
     <div class="panel panel-default">
       <div class="panel-heading">
@@ -418,7 +402,7 @@
   <div class="row">
     <!---------------------------------------------------------- QUESTIONS --------------------------------------------------------------->
 
-        <div class="col-lg-8 col-lg-offset-2 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px">
+        <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px">
           <div class="row text-center" id="inputform">
             <form name="form">
             <div class="form-inline">
@@ -473,6 +457,7 @@
                       <div class="input-group">
                         <select class="form-control dropdown" name="ys" id="yearstart" onchange="mloanalert();">
                           <option value="Select">Select</option>
+                          <option value=2017>2018</option>
                           <option value=2017>2017</option>
                           <option value=2016>2016</option>
                           <option value=2015>2015</option>
@@ -843,7 +828,7 @@
               </div> <!-- end form-group -->
             </div> <!-- end form-inline -->
             <br>
-            <button type="button" class="btn btn-primary" onclick="calculate();calculate2();show1();document.getElementById('outform').scrollIntoView();">Calculate</button>
+            <button type="button" class="btn btn-primary" onclick="calculate();calculate2();show1();document.getElementById('standardborder').scrollIntoView();">Calculate</button>
           </form>
         </div> <!-- end row text-center -->
       </div>
@@ -872,19 +857,20 @@
 </div>
 </div>
 <br>
-<div class="container" style="width:100%;">
+
   <div class="row hidden4">
-    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" align=right>
+    <div class="container" style="width:100%;">
+    <div class="container" id="standardborder">
+      <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
 <!------------------------------------------------------------------- KEY LOAN INFO -------------------------------------------------------------------->
-      <div id="outform" style="width:100%;">
         <form name="outf">
-          <table width=100%>
-            <tr>
-              <td align="left" width=100%>
-                <strong><font size=4.3%>Key information about your loan</font></strong>
-              </td>
-            </tr>
-          </table>
+            <table width=100%>
+              <tr>
+                <td align="left" width=100%>
+                  <strong><font size=4.3%>Key information about your loan</font></strong>
+                </td>
+              </tr>
+            </table>
             <br>
             <table width=100%>
               <tr>
@@ -992,14 +978,11 @@
                 </td>
               </tr>
             </table>
-          </form>
-        </div>
+        </form>
       </div>
 
   <!------------------------------------------------------------------- ADVICE -------------------------------------------------------------------->
-          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-          <center>
-            <div align="left" id="advicediv">
+          <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12" style="padding:20px;">
               <strong><font size=4.3%>How do I save money?</font></strong>
               <br>
               <br>
@@ -1201,23 +1184,30 @@
               <center>
             <button type="button" class="btn btn-primary" onclick="calculate2();">Update Graphs</button>
           </center>
-            </div>
-          </center>
           </div>
         </div>
       </div>
-
+    </div>
 <!------------------------------------------------------------------- ADDITIONAL REPAYMENT GUIDANCE -------------------------------------------------------------------->
 <br>
 <div class = "container hidden5" style="width:100%;">
-  <div class = "container col-lg-1 col-md-1 col-sm-1"></div>
-  <div class="row">
-    <div id="plots1" class="container col-lg-10 col-md-10 col-sm-10 col-xs-12">
-        <center><strong><font size=4.3%>How much should I spend on Additional Monthly Repayments?</font></strong></center>
+    <div class="row" id="standardborder">
+    <center><strong><font size=4.3%>How much should you spend on additional monthly repayments?</font></strong></center>
+    <br>
+    <br>
+      <div class="container col-lg-6 col-md-12 col-sm-12 col-xs-12">
         <div id="chart_div1" class="chart"></div>
-        <hr class="style1">
+      </div>
+      <div class="container col-lg-6 col-md-12 col-sm-12 col-xs-12">
+        <div id="chart_div3" class="chart"></div>
+      </div>
+    </div>
+      <br>
+    <div class="row" id="standardborder">
+      <div class="container col-lg-6 col-md-12 col-sm-12 col-xs-12">
         <div id="chart_div2" class="chart"></div>
-        <br>
+      </div>
+      <div class="container col-lg-6 col-md-12 col-sm-12 col-xs-12">
         This is <strong>the most important chart</strong>! Why is it important? You may have saved money by making additional repayments, but you also might have spent a lot.
         <br>
         <br>
@@ -1225,30 +1215,7 @@
         <br>
         <br>
         Before you make additional repayments, you should compare the APR to other savings account interest rates. It may even be worth putting your money into <a href="pages/savings.html" target="_blank">other savings schemes</a>.
-        <hr class="style1">
-        <div id="chart_div3" class="chart"></div>
-    </div>
-  </div>
-
-<!------------------------------------------------------------- PAGE LINKS ----------------------------------------------------------------->
-  <div class="row">
-    <div class = "container col-lg-1"></div>
-    <div class="col-lg-3 col-md-4 col-sm-10 col-xs-12" style="margin-left:10px">
-      <center>
-      <div id="links">
-        Would you like to see alternative savings options than paying off your student loan? <a href="pages/contact.html" target="_blank">Click here</a>
-        <br>
-        <br>
-        Having any issues or would like to get in touch with us? <a href="pages/contact.html" target="_blank">Contact us</a>.
-        <br>
-        <br>
-        Visit our <a href="pages/help.html" target="_blank">help</a> page for more detailed explanations of questions and terms used.
-        <br>
-        <br>
-        <button onclick="topFunction()" class="btn btn-primary" id="myBtn" title="Go to top">Back to top</button>
-
       </div>
-      </center>
     </div>
 
 <!------------------------------------------------------------- DISCLAIMER ----------------------------------------------------------------->

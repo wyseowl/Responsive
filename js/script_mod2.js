@@ -31,7 +31,7 @@ var currentTime= new Date();
 var thisyear = (new Date().getFullYear());  /* Current Year*/
 var tp = (Math.ceil(Math.abs(currentTime - (new Date('04/01/'+(thisyear)))) / (1000 * 3600 * 24)))/365.25; /* Proportion of year passed*/
 
-var ip1 = [0.0125, 0.015];  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
+var ip1 = 0.0175;  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
 var ip2 = 0.03; /* Plan 2 Interest Rates*/
 var ipl = 0.03; /* PG Interest Rates*/
 var rpi = [0.016, 0.031] /* Retail Price Index before September and after September (incl.) respectively*/
@@ -285,7 +285,7 @@ function payoff(){
       if ((gef*tdn)<=leth) {
         while (cl>0 && j<(cancelledl)) {
           if ((j % 30)==0) {
-            ir= cl*(ip1[1]/12);
+            ir= cl*(ip1/12);
           }
           else{
             ir=ir;
@@ -297,7 +297,7 @@ function payoff(){
       else if ((gef*tdn)>leth) {
         while (cl>0 && j<(cancelledl)) {
           if ((j % 30)==0) {
-            ir= cl*(ip1[1]/12);
+            ir= cl*(ip1/12);
           }
           else{
             ir=ir;
@@ -388,7 +388,7 @@ function payoffnar(){
         if ((gef*tdn)<=leth) {
           while (cl1>0 && j1<(cancelledl)) {
             if ((j1 % 30)==0) {
-              ir1= cl1*(ip1[1]/12);
+              ir1= cl1*(ip1/12);
             }
             else{
               ir1=ir1;
@@ -400,7 +400,7 @@ function payoffnar(){
         else if ((gef*tdn)>leth) {
           while (cl1>0 && j1<(cancelledl)) {
             if ((j1 % 30)==0) {
-              ir1= cl1*(ip1[1]/12);
+              ir1= cl1*(ip1/12);
             }
             else{
               ir1=ir1;
@@ -672,6 +672,8 @@ document.getElementById("hident1").style.width = "1000px";
       elems5[i].style.display="table-cell";
   }
 }
+document.getElementById("hidden4").style.width = "1000px";
+document.getElementById("hidden5").style.width = "1000px";
 }
 
 /************************************************************************************/

@@ -145,75 +145,26 @@ h3 {
   border-radius: 30px;
   box-shadow: 3px 3px 2px #46464D;
   padding: 20px;
-  background-color:rgba(243, 247, 250,1);
+  background-color:rgba(243, 247, 250,0.98);
   margin-left:5px;
   margin-right:5px;
-}
-
-/************************************************ OUTPUT FORM *************************************/
-
-#outform{
-  border-radius: 30px;
-  box-shadow: 3px 3px 2px #46464D;
-  color: black;
-  font-size: 100%;
-  padding: 20px;
-  margin-right:5px;
-  margin-top:12px;
-  margin-bottom:5px;
-  background-color:rgba(243, 247, 250,1);
-}
-
-/************************************************ VOL. REPAY *************************************/
-
-#OneTimeRepay{
-  border-radius: 30px;
-  box-shadow: 3px 3px 2px #46464D;
-  color: black;
-  font-size: 100%;
-  padding: 20px;
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:12px;
-  background-color:rgba(243, 247, 250,1);
 }
 
 /************************************************ PLOTS *************************************/
 
-#plots1{
-  border-radius: 30px;
-  box-shadow: 3px 3px 2px #46464D;
-  color: black;
-  font-size: 100%;
-  padding: 20px;
-  background-color:rgba(243, 247, 250,1);
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:12px;
+#chart_div1{
+  padding:0px;
+  margin:0px;
 }
 
-#plots2{
-  border-radius: 30px;
-  box-shadow: 3px 3px 2px #46464D;
-  color: black;
-  font-size: 100%;
-  padding: 20px;
-  background-color:rgba(243, 247, 250,1);
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:12px;
+#chart_div2{
+  padding:0px;
+  margin:0px;
 }
 
-#plots3{
-  border-radius: 30px;
-  box-shadow: 3px 3px 2px #46464D;
-  color: black;
-  font-size: 100%;
-  padding: 20px;
-  background-color:rgba(243, 247, 250,1);
-  margin-left:5px;
-  margin-right:5px;
-  margin-top:12px;
+#chart_div3{
+  padding:0px;
+  margin:0px;
 }
 
 /************************************************ LOGO FOOTER *************************************/
@@ -222,36 +173,18 @@ h3 {
   border-radius: 10px;
   box-shadow: 3px 3px 2px #46464D;
   color: black;
-  background-color:rgba(243, 247, 250,1);
+  background-color:rgba(243, 247, 250,0.98);
   width:105px;
 }
 
 /************************************************ ADVICE *************************************/
 
-#advicediv{
-  font-size: 100%;
-  border-radius: 8px;
+#standardborder{
+  width:100%;
   box-shadow: 3px 3px 2px #46464D;
-  padding: 10px 10px;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 15px;
-  box-sizing: border-box;
-  background-color:rgba(243, 247, 250,1);
+  padding: 20px;
+  background-color:rgba(243, 247, 250,0.98);
 }
-
-/************************************************ LINKS *************************************/
-
-#links{
-  font-size: 90%;
-  border-radius: 8px;
-  box-shadow: 3px 3px 2px #46464D;
-  padding: 10px 10px;
-  margin: 8px 0;
-  background-color:rgba(243, 247, 250,1);
-  text-align:left;
-}
-
 
 /* link */
 a:link {
@@ -272,7 +205,7 @@ a:hover {
   box-shadow: 3px 3px 2px #46464D;
   padding: 10px 10px;
   margin: 8px 0;
-  background-color:rgba(243, 247, 250,1);
+  background-color:rgba(243, 247, 250,0.98);
   text-align:left;
 }
 

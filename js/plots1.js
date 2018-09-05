@@ -87,7 +87,7 @@ function cancelrcf(){
       if ((earn1*tdn1)<=leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*(ip1[1]/12);
+            ir3[i]= cl3[i]*(ip1/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -99,7 +99,7 @@ function cancelrcf(){
       else if ((earn1*tdn1)>leth){
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*(ip1[1]/12);
+            ir3[i]= cl3[i]*(ip1/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -307,7 +307,8 @@ findrc1();
               focusTarget: 'category',
               backgroundColor: '#F3F7FA',
               height:350,
-              legend: { position: 'top', alignment: 'center' }
+              legend: { position: 'top', alignment: 'center' },
+              chartArea:{left:35,top:25,bottom:45,right:0,width:"100%",height:"100%"}
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
@@ -384,7 +385,8 @@ findrc1();
           focusTarget: 'category',
           backgroundColor: '#F3F7FA',
           height:350,
-          legend: { position: 'top', alignment: 'center' }
+          legend: { position: 'top', alignment: 'center' },
+          chartArea:{left:55,top:25,bottom:45,right:0,width:"100%",height:"100%"}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
@@ -452,7 +454,8 @@ findrc1();
               focusTarget: 'category',
               backgroundColor: '#F3F7FA',
               height:350,
-              legend: { position: 'top', alignment: 'center' }
+              legend: { position: 'top', alignment: 'center' },
+              chartArea:{left:35,top:25,bottom:45,right:0,width:"100%",height:"100%"}
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));
@@ -462,164 +465,4 @@ findrc1();
           $(window).resize(function(){
                   drawCurveTypes3();
                   });
-/*
-const CHART2 = document.getElementById("lineChart2");
-console.log(CHART2)
-
-let lineChart2=new Chart(CHART2, {
-  type: 'line',
-  data: data={
-    labels: mvrepayp,
-    datasets: [{
-      label: 'APR',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(12, 207, 73,0.4)',
-      borderColor: 'rgba(12, 207, 73,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(12, 207, 73,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointBorderRadius: 5,
-      data: shif31o
-    }]
-  },
-  options: {
-      scales: {
-          yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'APR (%)'
-            }
-          }],
-          xAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'Monthly Additional Repayments (\xA3)'
-            }
-          }]
-        }
-      }
-  });
-
-
-const CHART3 = document.getElementById("lineChart3");
-console.log(CHART3)
-
-let lineChart3=new Chart(CHART3, {
-  type: 'line',
-  data: data={
-    labels: mvrepayp,
-    datasets: [{
-      label: 'Savings Made',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(12, 207, 73,0.4)',
-      borderColor: 'rgba(12, 207, 73,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(12, 207, 73,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointBorderRadius: 5,
-      data: es3o
-    },
-    {
-      label: 'Total Spent on Loan',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(218, 71, 71, 0.4)',
-      borderColor: 'rgba(218, 71, 71, 1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(218, 71, 71, 1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointBorderRadius: 5,
-      data: toto
-    },
-    {
-      label: 'Total Spent on Additional Repayments',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(85, 117, 220,0.4)',
-      borderColor: 'rgba(85, 117, 220,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(85, 117, 220,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointBorderRadius: 5,
-      data: art4o
-    }]
-  },
-  options: {
-      scales: {
-          yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'British Pounds (\xA3)'
-            }
-          }],
-          xAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'Monthly Additional Repayments (\xA3)'
-            }
-          }]
-      }
-  }
-});
-
-const CHART4 = document.getElementById("lineChart4");
-console.log(CHART4)
-
-let lineChart4=new Chart(CHART4, {
-  type: 'line',
-  data: data={
-    labels: mvrepayp,
-    datasets: [{
-      label: 'Time until loan is paid off',
-      fill: false,
-      lineTension: 0.1,
-      backgroundColor: 'rgba(75,192,192,0.4)',
-      borderColor: 'rgba(75,192,192,1)',
-      borderCapStyle: 'butt',
-      borderDash: [],
-      borderDashOffset: 0.0,
-      borderJoinStyle: 'miter',
-      pointBorderColor: 'rgba(75,192,192,1)',
-      pointBackgroundColor: '#fff',
-      pointBorderWidth: 1,
-      pointBorderRadius: 5,
-      data: j3ypo
-    }]
-  },
-  options: {
-      scales: {
-          yAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: 'Time until loan is paid off (Years)'
-            }
-          }],
-          xAxes: [{
-            scaleLabel: {
-              display: true,
-              labelString: "Monthly Additional Repayments (\xA3)"
-            }
-          }]
-      }
-  }
-});*/
-
 }
