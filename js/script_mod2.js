@@ -672,8 +672,6 @@ document.getElementById("hident1").style.width = "1000px";
       elems5[i].style.display="table-cell";
   }
 }
-document.getElementById("hidden4").style.width = "1000px";
-document.getElementById("hidden5").style.width = "1000px";
 }
 
 /************************************************************************************/

@@ -308,7 +308,7 @@ findrc1();
               backgroundColor: '#F3F7FA',
               height:350,
               legend: { position: 'top', alignment: 'center' },
-              chartArea:{left:35,top:25,bottom:45,right:0,width:"100%",height:"100%"}
+              chartArea:{left:45,top:25,bottom:45,right:0,width:"100%",height:"100%"}
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div2'));
@@ -386,7 +386,7 @@ findrc1();
           backgroundColor: '#F3F7FA',
           height:350,
           legend: { position: 'top', alignment: 'center' },
-          chartArea:{left:55,top:25,bottom:45,right:0,width:"100%",height:"100%"}
+          chartArea:{left:65,top:25,bottom:45,right:0,width:"100%",height:"100%"}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div1'));
@@ -455,7 +455,7 @@ findrc1();
               backgroundColor: '#F3F7FA',
               height:350,
               legend: { position: 'top', alignment: 'center' },
-              chartArea:{left:35,top:25,bottom:45,right:0,width:"100%",height:"100%"}
+              chartArea:{left:45,top:25,bottom:45,right:0,width:"100%",height:"100%"}
             };
 
             var chart = new google.visualization.LineChart(document.getElementById('chart_div3'));

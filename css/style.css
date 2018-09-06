@@ -201,10 +201,6 @@ a:hover {
 
 #disclaim{
   font-size: 70%;
-  border-radius: 8px;
-  box-shadow: 3px 3px 2px #46464D;
-  padding: 10px 10px;
-  margin: 8px 0;
   background-color:rgba(243, 247, 250,0.98);
   text-align:left;
 }
