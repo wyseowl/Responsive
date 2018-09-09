@@ -11,12 +11,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="icon" href="images/slc_icon.png" type="image/png">
-  <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="icon" href="../images/slc_icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="../css/style_ml.css">
 
   <title>2018 - UK Student Loans Repayment Calculator</title>
-<img src="images/pic2.jpg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
+<img src="../images/pic2.jpg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
 </head>
 
 <!---------------------------------------------------------- BODY --------------------------------------------------------------->
@@ -58,7 +58,7 @@
               <li>Does paying off my student loan early <strong>save me money</strong>?</li>
             </ul>
             <br>
-            This calculator will help you answer these questions and give advice on how to manage your loan.
+            This calculator will help you answer these questions and give advice on how to manage your loans.
             <br>
           </div>
         </div>
@@ -75,7 +75,7 @@
       </div>
       <div id="collapseTwo" class="panel-collapse collapse">
         <div class="panel-body">
-          You can still use this calculator to see how to manage your loan. Enter what your loan is expected to be and how much you expect to earn.
+          You can still use this calculator to see how to manage your loans. Enter what your loans are expected to be and how much you expect to earn.
           <br>
           <br>
           Just keep the following inputs constant,
@@ -98,14 +98,14 @@
       <div class="panel-heading">
         <h4 class="panel-title">
         <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
-        <strong>Your student loan balance</strong>
+        <strong>Your student loan balances</strong>
         </a>
         </h4>
       </div>
       <div id="collapseThree" class="panel-collapse collapse">
         <div class="panel-body">
-          Log in to your account on the Student Loans Company website to find out your <a href="http://www.studentloanrepayment.co.uk/" target="_blank">loan balance</a>
-          <center><a href="http://www.studentloanrepayment.co.uk/" target="_blank"><img src="images/slc.jpg" alt="slc" id="slcp"></a></center>
+          Log in to your account on the Student Loans Company website to find out your <a href="http://www.studentloanrepayment.co.uk/" target="_blank">loan balances</a>
+          <center><a href="http://www.studentloanrepayment.co.uk/" target="_blank"><img src="../images/slc.jpg" alt="slc" id="slcp"></a></center>
         </div>
       </div>
     </div>
@@ -411,7 +411,46 @@
                   <!---------------------------- QUESTION 1 ------------------------>
                   <div class="row">
                     <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 label-container" align="left">
-                      <label for="loan"> Student loan balance:</label>
+                      <label> Student loan balances </label>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 label-container" align="left">
+                      <label for="loan"> Plan 1: </label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" align="right">
+                      <div class="input-group">
+                        <span class="input-group-addon">£</span>
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="dl" id="loan"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the balance displayed in your account on the Student Loans Company website">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 label-container" align="left">
+                      <label for="loan"> Plan 2:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" align="right">
+                      <div class="input-group">
+                        <span class="input-group-addon">£</span>
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="dl" id="loan"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the balance displayed in your account on the Student Loans Company website">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
+                  <div class="row">
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12 label-container" align="left">
+                      <label for="loan"> Postgraduate:</label>
                     </div> <!-- end label-container -->
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" align="right">
                       <div class="input-group">
@@ -842,8 +881,10 @@
     </div>
     <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
 <center>
+<!--
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Student loan ad index responsive -->
+<!--
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-7825217748736229"
@@ -852,6 +893,7 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
+-->
 </center>
 </div>
 </div>
@@ -1255,10 +1297,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"> </script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="js/script_mod2.js"></script>
-  <script type="text/javascript" src="js/plots1.js"></script>
+  <script type="text/javascript" src="../js/script_mod2_ml.js"></script>
+  <script type="text/javascript" src="../js/plots1_ml.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="../css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script>
   $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip({animation: true, delay:{show:300, hide:500}});
