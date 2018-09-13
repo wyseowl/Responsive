@@ -113,7 +113,7 @@ function cancelrcf(){
       if ((earn1*tdn1)<=leth){
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*(rpi/12);
+            ir3[i]= cl3[i]*(rpi[1]/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -125,7 +125,7 @@ function cancelrcf(){
       else if ((earn1*tdn1)>leth && (earn1*tdn1)<=uet) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*(((ip2*ifrac)+rpi)/12);
+            ir3[i]= cl3[i]*(((ip2*ifrac)+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -137,7 +137,7 @@ function cancelrcf(){
       else if ((earn1*tdn1)>uet) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*((ip2+rpi)/12);
+            ir3[i]= cl3[i]*((ip2+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -151,7 +151,7 @@ function cancelrcf(){
       if ((earn1*tdn1)<=leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*((ipl+rpi)/12);
+            ir3[i]= cl3[i]*((ipl+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];
@@ -163,7 +163,7 @@ function cancelrcf(){
       else if ((earn1*tdn1)>leth) {
         while (cl3[i]>0 && j3[i]<(cancelledl)) {
           if ((j3[i] % 30)==0) {
-            ir3[i]= cl3[i]*((ipl+rpi)/12);
+            ir3[i]= cl3[i]*((ipl+rpi[1])/12);
           }
           else{
             ir3[i]=ir3[i];

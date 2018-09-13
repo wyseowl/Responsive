@@ -34,7 +34,7 @@ var tp = (Math.ceil(Math.abs(currentTime - (new Date('04/01/'+(thisyear)))) / (1
 var ip1 = 0.0175;  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
 var ip2 = 0.03; /* Plan 2 Interest Rates*/
 var ipl = 0.03; /* PG Interest Rates*/
-var rpi = 0.033 /* Retail Price Index before September and after September (incl.) respectively*/
+var rpi = [0.031, 0.033] /* Retail Price Index before September and after September (incl.) respectively*/
 
 /***************** UNDETERMINED ***************/
 var loantype;
@@ -311,7 +311,7 @@ function payoff(){
       if ((gef*tdn)<=leth) {
         while (cl>0 && j<(cancelledl)) {
           if ((j % 30)==0) {
-            ir= cl*(rpi/12);
+            ir= cl*(rpi[1]/12);
           }
           else{
             ir=ir;
@@ -323,7 +323,7 @@ function payoff(){
       else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
         while (cl>0 && j<(cancelledl)) {
           if ((j % 30)==0) {
-            ir= cl*(((ip2*ifrac)+rpi)/12);
+            ir= cl*(((ip2*ifrac)+rpi[1])/12);
           }
           else{
             ir=ir;
@@ -335,7 +335,7 @@ function payoff(){
       else if ((gef*tdn)>uet) {
         while (cl>0 && j<(cancelledl)) {
           if ((j % 30)==0) {
-            ir= cl*((ip2+rpi)/12);
+            ir= cl*((ip2+rpi[1])/12);
           }
           else{
             ir=ir;
@@ -349,7 +349,7 @@ function payoff(){
         if ((gef*tdn)<=leth) {
           while (cl>0 && j<(cancelledl)) {
             if ((j % 30)==0) {
-              ir= cl*((ipl+rpi)/12);
+              ir= cl*((ipl+rpi[1])/12);
             }
             else{
               ir=ir;
@@ -361,7 +361,7 @@ function payoff(){
         else if ((gef*tdn)>leth) {
           while (cl>0 && j<(cancelledl)) {
             if ((j % 30)==0) {
-              ir= cl*((ipl+rpi)/12);
+              ir= cl*((ipl+rpi[1])/12);
             }
             else{
               ir=ir;
@@ -414,7 +414,7 @@ function payoffnar(){
         if ((gef*tdn)<=leth) {
           while (cl1>0 && j1<(cancelledl)) {
             if ((j1 % 30)==0) {
-              ir1= cl1*(rpi/12);
+              ir1= cl1*(rpi[1]/12);
             }
             else{
               ir1=ir1;
@@ -426,7 +426,7 @@ function payoffnar(){
         else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
           while (cl1>0 && j1<(cancelledl)) {
             if ((j1 % 30)==0) {
-              ir1= cl1*(((ip2*ifrac)+rpi)/12);
+              ir1= cl1*(((ip2*ifrac)+rpi[1])/12);
             }
             else{
               ir1=ir1;
@@ -438,7 +438,7 @@ function payoffnar(){
         else if ((gef*tdn)>uet) {
           while (cl1>0 && j1<(cancelledl)) {
             if ((j1 % 30)==0) {
-              ir1= cl1*((ip2+rpi)/12);
+              ir1= cl1*((ip2+rpi[1])/12);
             }
             else{
               ir1=ir1;
@@ -452,7 +452,7 @@ function payoffnar(){
           if ((gef*tdn)<=leth) {
             while (cl1>0 && j1<(cancelledl)) {
               if ((j1 % 30)==0) {
-                ir1= cl1*((ipl+rpi)/12);
+                ir1= cl1*((ipl+rpi[1])/12);
               }
               else{
                 ir1=ir1;
@@ -464,7 +464,7 @@ function payoffnar(){
           else if ((gef*tdn)>leth) {
             while (cl1>0 && j1<(cancelledl)) {
               if ((j1 % 30)==0) {
-                ir1= cl1*((ipl+rpi)/12);
+                ir1= cl1*((ipl+rpi[1])/12);
               }
               else{
                 ir1=ir1;

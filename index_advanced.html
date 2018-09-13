@@ -11,12 +11,12 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-  <link rel="icon" href="../images/slc_icon.png" type="image/png">
-  <link rel="stylesheet" type="text/css" href="../css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
-  <link rel="stylesheet" type="text/css" href="../css/style_ml.css">
+  <link rel="icon" href="images/slc_icon.png" type="image/png">
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 
   <title>2018 - UK Student Loans Repayment Calculator</title>
-<img src="../images/pic2.jpg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
+<img src="images/pic2.jpg" alt="stats" style="width:100%;height:100%;position:fixed;left:0px;top:0px;z-index:-1;">
 </head>
 
 <!---------------------------------------------------------- BODY --------------------------------------------------------------->
@@ -58,7 +58,7 @@
               <li>Does paying off my student loan early <strong>save me money</strong>?</li>
             </ul>
             <br>
-            This calculator will help you answer these questions and give advice on how to manage your loans.
+            This calculator will help you answer these questions and give advice on how to manage your loan.
             <br>
           </div>
         </div>
@@ -75,7 +75,7 @@
       </div>
       <div id="collapseTwo" class="panel-collapse collapse">
         <div class="panel-body">
-          You can still use this calculator to see how to manage your loans. Enter what your loans are expected to be and how much you expect to earn.
+          You can still use this calculator to see how to manage your loan. Enter what your loan is expected to be and how much you expect to earn.
           <br>
           <br>
           Just keep the following inputs constant,
@@ -98,14 +98,14 @@
       <div class="panel-heading">
         <h4 class="panel-title">
         <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
-        <strong>Your student loan balances</strong>
+        <strong>Your student loan balance</strong>
         </a>
         </h4>
       </div>
       <div id="collapseThree" class="panel-collapse collapse">
         <div class="panel-body">
-          Log in to your account on the Student Loans Company website to find out your <a href="http://www.studentloanrepayment.co.uk/" target="_blank">loan balances</a>
-          <center><a href="http://www.studentloanrepayment.co.uk/" target="_blank"><img src="../images/slc.jpg" alt="slc" id="slcp"></a></center>
+          Log in to your account on the Student Loans Company website to find out your <a href="http://www.studentloanrepayment.co.uk/" target="_blank">loan balance</a>
+          <center><a href="http://www.studentloanrepayment.co.uk/" target="_blank"><img src="images/slc.jpg" alt="slc" id="slcp"></a></center>
         </div>
       </div>
     </div>
@@ -128,7 +128,7 @@
                   <div class="row">
                     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                       <div class="input-group">
-                        <select class="form-control dropdown" id="overseas" name="c" style="width:100%;margin-left:5px;" onchange="curren();">
+                  <select class="form-control dropdown" id="overseas" name="c" style="width:100%;margin-left:5px;" onchange="curren();">
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="Afghanistan">Afganistan</option>
                     <option value="Albania">Albania</option>
@@ -376,14 +376,14 @@
                     <option value="Zambia">Zambia</option>
                     <option value="Zimbabwe">Zimbabwe</option>
                   </select>
-                        <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the country in which you are registered with the Student Loans Company">
-                            <i class='glyphicon glyphicon-info-sign'></i>
-                          </a>
-                        </span>
-                      </div>
-                    </div>
-                  </div>
+                  <span class="input-group-addon">
+                    <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the country in which you are registered with the Student Loans Company">
+                      <i class='glyphicon glyphicon-info-sign'></i>
+                    </a>
+                  </span>
+                </div>
+              </div>
+                </div>
                 </div>
               </div>
             </form>
@@ -434,7 +434,6 @@
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" align="right">
                       <div class="input-group">
                         <select class="form-control dropdown" name="l" id="location" onchange="mloanalert();">
-                          <option value="Select">Select</option>
                           <option value="England">England</option>
                           <option value="Northern Ireland">Northern Ireland</option>
                           <option value="Scotland">Scotland</option>
@@ -607,8 +606,8 @@
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8" align="right">
                       <div class="input-group">
                         <select class="form-control dropdown" name="paye" id="paye" onchange="mloanalert();">
-                          <option value="No">No</option>
                           <option value="Yes">Yes</option>
+                          <option value="No">No</option>
                         </select>
                         <span class="input-group-addon">
                           <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Pay As You Earn (PAYE) is when your student loan is automatically taken out of your paycheck">
@@ -824,6 +823,24 @@
                       </div>
                     </div> <!-- end column -->
                   </div> <!-- end row -->
+                  <!---------------------------- QUESTION 1A ------------------------>
+                  <div class="row">
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                      <label for="addrepay">Change interest rate:</label>
+                    </div> <!-- end label-container -->
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
+                      <div class="input-group">
+                        <span class="input-group-addon">%</span>
+                        <input type="number" min="0" step="0.05" placeholder="e.g. 1.75" class="form-control currency" name="dl" id="loan"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Current interest rates; Plan 1 is 1.75%, Plan 2 is between 3.3% and 6.3%, Postgraduate is 6.3%">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
+                    </div> <!-- end column -->
+                  </div> <!-- end row -->
                 </div> <!-- end input-group -->
               </div> <!-- end form-group -->
             </div> <!-- end form-inline -->
@@ -842,10 +859,8 @@
     </div>
     <div class="col-lg-6 col-md-8 col-sm-12 col-xs-12">
 <center>
-<!--
 <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 <!-- Student loan ad index responsive -->
-<!--
 <ins class="adsbygoogle"
      style="display:block"
      data-ad-client="ca-pub-7825217748736229"
@@ -854,7 +869,6 @@
 <script>
 (adsbygoogle = window.adsbygoogle || []).push({});
 </script>
--->
 </center>
 </div>
 </div>
@@ -1258,10 +1272,10 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"> </script>
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script type="text/javascript" src="../js/script_mod2_ml.js"></script>
-  <script type="text/javascript" src="../js/plots1_ml.js"></script>
+  <script type="text/javascript" src="js/script_mod2_advanced.js"></script>
+  <script type="text/javascript" src="js/plots1_advanced.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="../css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+  <script src="css/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
   <script>
   $(document).ready(function(){
       $('[data-toggle="tooltip"]').tooltip({animation: true, delay:{show:300, hide:500}});
