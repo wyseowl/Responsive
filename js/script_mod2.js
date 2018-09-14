@@ -34,7 +34,7 @@ var tp = (Math.ceil(Math.abs(currentTime - (new Date('04/01/'+(thisyear)))) / (1
 var ip1 = 0.0175;  /* Plan 1 Interest Rates before September and after September (incl.) respectively*/
 var ip2 = 0.03; /* Plan 2 Interest Rates*/
 var ipl = 0.03; /* PG Interest Rates*/
-var rpi = 0.033 /* Retail Price Index before September and after September (incl.) respectively*/
+var rpi = 0.033; /* Retail Price Index before September and after September (incl.) respectively*/
 
 /***************** UNDETERMINED ***************/
 var loantype;
