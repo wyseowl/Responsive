@@ -60,6 +60,26 @@
 }
 
 /************************************************ ABOUT CALCULATOR *************************************/
+.panel2{
+    background-color:rgba(243, 247, 250,0);
+}
+
+.panel2 .panel-heading2{
+    background-color:rgba(243, 247, 250,0);
+}
+
+.panel-heading2 .accordion-toggle:after {
+    /* symbol for "opening" panels */
+    font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+    float: right;        /* adjust as needed */
+    color: black;         /* adjust as needed */
+}
+
+.panel-heading2 .accordion-toggle.collapsed:after {
+    /* symbol for "collapsed" panels */
+    content: "\e080";    /* adjust as needed, taken from bootstrap.css */
+}
 
 .panel{
     background-color:white;

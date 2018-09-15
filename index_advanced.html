@@ -401,7 +401,6 @@
 <div class = "container"  style="width:100%;">
   <div class="row">
     <!---------------------------------------------------------- QUESTIONS --------------------------------------------------------------->
-
         <div class="col-lg-8 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:10px">
           <div class="row text-center" id="inputform">
             <form name="form">
@@ -433,7 +432,7 @@
                     </div> <!-- end label-container -->
                     <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12" align="right">
                       <div class="input-group">
-                        <select class="form-control dropdown" name="l" id="location" onchange="mloanalert();">
+                        <select class="form-control dropdown" name="l" id="location" onchange="mloanalert();timef();loantypef();overseasf();initialadvancedoptions();">
                           <option value="England">England</option>
                           <option value="Northern Ireland">Northern Ireland</option>
                           <option value="Scotland">Scotland</option>
@@ -454,7 +453,7 @@
                     </div> <!-- end label-container -->
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="right">
                       <div class="input-group">
-                        <select class="form-control dropdown" name="ys" id="yearstart" onchange="mloanalert();">
+                        <select class="form-control dropdown" name="ys" id="yearstart" onchange="mloanalert();timef();loantypef();overseasf();initialadvancedoptions();">
                           <option value="Select">Select</option>
                           <option value=2017>2018</option>
                           <option value=2017>2017</option>
@@ -494,7 +493,7 @@
                     </div> <!-- end label-container -->
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12" align="right">
                       <div class="input-group">
-                        <select class="form-control dropdown" name="ye" id="yearelig" onchange="mloanalert();">
+                        <select class="form-control dropdown" name="ye" id="yearelig" onchange="mloanalert();timef();loantypef();overseasf();initialadvancedoptions();">
                           <option value="Select">Select</option>
                           <option value=2018>2018</option>
                           <option value=2017>2017</option>
@@ -534,7 +533,7 @@
                     </div> <!-- end label-container -->
                     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-8" align="right">
                       <div class="input-group">
-                        <select class="form-control dropdown" name="pg" id="postgrad">
+                        <select class="form-control dropdown" name="pg" id="postgrad" onchange="timef();loantypef();overseasf();initialadvancedoptions();">
                           <option value="No">No</option>
                           <option value="Yes">Yes</option>
                         </select>
@@ -624,7 +623,7 @@
                     </div> <!-- end label-container -->
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6" align="right">
                       <div class="input-group" style="margin:5px">
-                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="ge" id="earnings"/>
+                        <input type="number" min="0" step="100" placeholder="e.g. 20,000" class="form-control currency" name="ge" id="earnings" onchange="overseasf();initialadvancedoptions();"/>
                         </input>
                       </div>
                     </div> <!-- end column -->
@@ -823,60 +822,76 @@
                       </div>
                     </div> <!-- end column -->
                   </div> <!-- end row -->
-                  <!---------------------------- QUESTION 1A ------------------------>
-                  <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                      <label for="intrate">Change interest rate:</label>
-                    </div> <!-- end label-container -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                      <div class="input-group">
-                        <span class="input-group-addon">%</span>
-                        <input type="number" min="0" step="0.05" class="form-control currency" name="intrate" id="intrate"/>
-                        <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Current interest rates; Plan 1 is 1.75%, Plan 2 is between 3.3% and 6.3%, Postgraduate is 6.3%">
-                            <i class='glyphicon glyphicon-info-sign'></i>
-                          </a>
-                        </span>
-                        </input>
+                  <hr class="style1">
+                  <div class="panel-group" id="accordion5">
+                    <div class="panel2 panel-default">
+                      <div class="panel-heading2">
+                        <h4 class="panel-title">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+                        <strong>Advanced Options</strong>
+                        </a>
+                        </h4>
                       </div>
-                    </div> <!-- end column -->
-                  </div> <!-- end row -->
-                  <!---------------------------- QUESTION 2A ------------------------>
-                  <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                      <label for="inflation">Change inflation:</label>
-                    </div> <!-- end label-container -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                      <div class="input-group">
-                        <span class="input-group-addon">%</span>
-                        <input type="number" min="0" step="0.05" class="form-control currency" name="inflation" id="inflation"/>
-                        <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Changing the inflation rate changes the plan 2 and postgraduate interest rate and the repayment threshold">
-                            <i class='glyphicon glyphicon-info-sign'></i>
-                          </a>
-                        </span>
-                        </input>
+                      <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                          <!---------------------------- QUESTION 1A ------------------------>
+                          <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                              <label for="intrate">Change interest rate:</label>
+                            </div> <!-- end label-container -->
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
+                              <div class="input-group">
+                                <span class="input-group-addon">%</span>
+                                <input type="number" min="0" step="0.05" class="form-control currency" name="intrate" id="intrate"/>
+                                <span class="input-group-addon">
+                                  <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Current interest rates; Plan 1 is 1.75%, Plan 2 is between 3.3% and 6.3%, Postgraduate is 6.3%">
+                                    <i class='glyphicon glyphicon-info-sign'></i>
+                                  </a>
+                                </span>
+                                </input>
+                              </div>
+                            </div> <!-- end column -->
+                          </div> <!-- end row -->
+                          <!---------------------------- QUESTION 2A ------------------------>
+                          <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                              <label for="inflation">Change inflation:</label>
+                            </div> <!-- end label-container -->
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
+                              <div class="input-group">
+                                <span class="input-group-addon">%</span>
+                                <input type="number" min="0" step="0.05" class="form-control currency" name="inflation" id="inflation"/>
+                                <span class="input-group-addon">
+                                  <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Changing the inflation rate changes the repayment thresholds">
+                                    <i class='glyphicon glyphicon-info-sign'></i>
+                                  </a>
+                                </span>
+                                </input>
+                              </div>
+                            </div> <!-- end column -->
+                          </div> <!-- end row -->
+                          <!---------------------------- QUESTION 3A ------------------------>
+                          <div class="row">
+                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                              <label for="payrise">Yearly pay rise:</label>
+                            </div> <!-- end label-container -->
+                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
+                              <div class="input-group">
+                                <span class="input-group-addon">%</span>
+                                <input type="number" min="0" step="0.05" placeholder="0.00" class="form-control currency" name="payrise" id="payrise"/>
+                                <span class="input-group-addon">
+                                  <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Changing the inflation rate changes the plan 2 and postgraduate interest rate and the repayment threshold">
+                                    <i class='glyphicon glyphicon-info-sign'></i>
+                                  </a>
+                                </span>
+                                </input>
+                              </div>
+                            </div> <!-- end column -->
+                          </div> <!-- end row -->
+                        </div>
                       </div>
-                    </div> <!-- end column -->
-                  </div> <!-- end row -->
-                  <!---------------------------- QUESTION 3A ------------------------>
-                  <div class="row">
-                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                      <label for="payrise">Yearly pay rise:</label>
-                    </div> <!-- end label-container -->
-                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                      <div class="input-group">
-                        <span class="input-group-addon">%</span>
-                        <input type="number" min="0" step="0.05" class="form-control currency" name="payrise" id="payrise"/>
-                        <span class="input-group-addon">
-                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Changing the inflation rate changes the plan 2 and postgraduate interest rate and the repayment threshold">
-                            <i class='glyphicon glyphicon-info-sign'></i>
-                          </a>
-                        </span>
-                        </input>
-                      </div>
-                    </div> <!-- end column -->
-                  </div> <!-- end row -->
+                    </div>
+                  </div>
                 </div> <!-- end input-group -->
               </div> <!-- end form-group -->
             </div> <!-- end form-inline -->

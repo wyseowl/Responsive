@@ -80,11 +80,9 @@ var shif1;
 var rlo;
 var rp;
 
-document.form.intrate.value=1.75;
-document.form.inflation.value=3.3;
-document.form.payrise.value=0;
 /************************************************ TIME DETERMINATION *****************************************/
 function timef() {
+  td = document.form.td.value;
   if (td=="per year") {
     tdn=1;
   }
@@ -97,6 +95,9 @@ function timef() {
 }
 /************************************************ LOAN TYPE *****************************************/
 function loantypef(){
+  l = document.form.l.value;
+  pg = document.form.pg.value;
+  ys = document.form.ys.value;
   if (ys=="Before 1999") {
         alert("Your loan type is mortgage style loan. Please see the student loans repayment website for further information.");
     return;
@@ -136,45 +137,48 @@ function cancelf() {
 }
 /************************************************** OVERSEAS ***************************************/
 function overseasf() {
-if (loantype=="Plan 1"){
-  rp=0.09;
+  c = document.form_over.c.value;
+  ge = Number(document.form.ge.value);
+  ar = Number(document.form.ar.value);
+  if (loantype=="Plan 1"){
+    rp=0.09;
+    for (var i = 0; i < obj.Sheet1.length; i++){
+      if (obj.Sheet1[i].Country == c){
+        curr=obj.Sheet1[i].Currency;
+        exch=obj.Sheet1[i].Exchange_Rate;
+        leth=obj.Sheet1[i].Earnings_threshold;
+      }
+    }
+  }
+  if (loantype=="Plan 2"){
+    rp=0.09;
+    for (var i = 0; i < obj2.Sheet2.length; i++){
+      if (obj2.Sheet2[i].Country == c){
+        curr=obj2.Sheet2[i].Currency;
+        exch=obj2.Sheet2[i].Exchange_Rate;
+        leth=obj2.Sheet2[i].Lower_income_threshold;
+        uet=obj2.Sheet2[i].Upper_income_threshold;
+      }
+    }
+  }
+  if (loantype=="Postgraduate Loan"){
+    rp=0.06;
+    for (var i = 0; i < obj3.Sheet3.length; i++){
+      if (obj3.Sheet3[i].Country == c){
+        curr=obj3.Sheet3[i].Currency;
+        exch=obj3.Sheet3[i].Exchange_Rate;
+        leth=obj3.Sheet3[i].Lower_income_threshold;
+      }
+    }
+  }
+  /* Voluntary repayments */
   for (var i = 0; i < obj.Sheet1.length; i++){
-    if (obj.Sheet1[i].Country == c){
-      curr=obj.Sheet1[i].Currency;
-      exch=obj.Sheet1[i].Exchange_Rate;
-      leth=obj.Sheet1[i].Earnings_threshold;
+    if (obj.Sheet1[i].Currency == curr_ar){
+      exch_ar=obj.Sheet1[i].Exchange_Rate;
     }
   }
-}
-if (loantype=="Plan 2"){
-  rp=0.09;
-  for (var i = 0; i < obj2.Sheet2.length; i++){
-    if (obj2.Sheet2[i].Country == c){
-      curr=obj2.Sheet2[i].Currency;
-      exch=obj2.Sheet2[i].Exchange_Rate;
-      leth=obj2.Sheet2[i].Lower_income_threshold;
-      uet=obj2.Sheet2[i].Upper_income_threshold;
-    }
-  }
-}
-if (loantype=="Postgraduate Loan"){
-  rp=0.06;
-  for (var i = 0; i < obj3.Sheet3.length; i++){
-    if (obj3.Sheet3[i].Country == c){
-      curr=obj3.Sheet3[i].Currency;
-      exch=obj3.Sheet3[i].Exchange_Rate;
-      leth=obj3.Sheet3[i].Lower_income_threshold;
-    }
-  }
-}
-/* Voluntary repayments */
-for (var i = 0; i < obj.Sheet1.length; i++){
-  if (obj.Sheet1[i].Currency == curr_ar){
-    exch_ar=obj.Sheet1[i].Exchange_Rate;
-  }
-}
-arf = Number(ar*exch_ar);
-gef = Number(ge*exch);
+  arf = Number(ar*exch_ar);
+  gef = Number(ge*exch);
 }
 /*********************************************** MANDATORY MONTHLY REPAYMENT ****************************/
 function mmrf() {
@@ -469,9 +473,9 @@ function calculate(){
 /********************************************** SOURCE VALUES *****************************************************/
   dl = Number(document.form.dl.value);
   l = document.form.l.value;
+  pg = document.form.pg.value;
   ys = document.form.ys.value;
   ye = document.form.ye.value;
-  pg = document.form.pg.value;
   paye = document.form.paye.value;
   age_y = document.form.age_y.value;
   age_m = document.form.age_m.value;
@@ -517,6 +521,59 @@ function calculate(){
   document.getElementById('loantype').innerHTML=loantype;
   document.getElementById('es').innerHTML="£"+eso;
   document.getElementById('aprk').innerHTML=shif1o+"%";
+}
+/********************************* DISPLAY ADVANCED OPTIONS ****************************/
+function initialadvancedoptions(){
+  l = document.form.l.value;
+  ys = document.form.ys.value;
+  pg = document.form.pg.value;
+  intrate = document.form.intrate.value;
+  inflation = document.form.inflation.value;
+  payrise = document.form.payrise.value;
+  if (ys=="Before 1999") {
+        alert("Your loan type is mortgage style loan. Please see the student loans repayment website for further information.");
+    return;
+  }
+  else if ((ys>=1999 && (l=="Northern Ireland" || l=="Scotland"))||(ys>=1999 && ys<2012 && (l=="Wales" || l=="England"))) {
+    loantype="Plan 1";
+  }
+  else if ((ys>=2012 && l=="England" && pg=="No")||(ys>=2012 && l=="Wales")) {
+    loantype="Plan 2";
+  }
+  else if (ys>=2012 && l=="England" && pg=="Yes") {
+    loantype="Postgraduate Loan";
+  }
+  if (loantype=="Plan 1") {
+    var ip1_r=parseFloat(Math.round(ip1*10000)/100).toFixed(2);
+    var rpi_r=parseFloat(Math.round(rpi*10000)/100).toFixed(2);
+    document.form.intrate.value=ip1_r;
+    document.form.inflation.value=rpi_r;
+    document.form.payrise.value=0.0;
+  }
+  else if (loantype=="Plan 2") {
+    if ((gef*tdn)<=leth) {
+      var ip2_f= Number(rpi);
+    }
+    else if ((gef*tdn)>leth && (gef*tdn)<=uet) {
+      ifrac=Number(((gef*tdn)-leth)/(uet-leth));
+      var ip2_f= Number(ifrac*ip2+rpi);
+    }
+    else if ((gef*tdn)>uet) {
+      var ip2_f= Number(rpi+ip2);
+    }
+    var ip2_r=Number(parseFloat(Math.round(ip2_f*10000)/100).toFixed(2));
+    var rpi_r=Number(parseFloat(Math.round(rpi*10000)/100).toFixed(2));
+    document.form.intrate.value=ip2_r;
+    document.form.inflation.value=rpi_r;
+    document.form.payrise.value=0.0;
+  }
+  else if (loantype=="Postgraduate Loan") {
+    var ipl_r=Number(parseFloat(Math.round(ipl*10000)/100).toFixed(2));
+    var rpi_r=Number(parseFloat(Math.round(rpi*10000)/100).toFixed(2));
+    document.form.intrate.value=(ipl_r+rpi_r);
+    document.form.inflation.value=rpi_r;
+    document.form.payrise.value=0.0;
+  }
 }
 /********************************* DISPLAY HIDDEN FIELDS ****************************/
 function mloanalert(){
@@ -601,7 +658,7 @@ function show1(){
     }
   }
 }
-/*********************************** CURREN FUNCTION ********************************/
+/*********************************** CURRENCY FUNCTION ********************************/
 function curren(){
   c = document.form_over.c.value;
   for (var i = 0; i < obj.Sheet1.length; i++){
