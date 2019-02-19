@@ -601,26 +601,28 @@
                   </div> <!-- end row -->
                   <!---------------------------- GROSS EARNINGS QUESTION ------------------------>
                   <div class="row">
-                    <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12 label-container" align="left">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 label-container" align="left">
                       <label for="earnings">Yearly gross earnings:</label>
                     </div> <!-- end label-container -->
-                    <div class="col-lg-3 col-md-6 col-sm-4 col-xs-4" align="right">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12" align="right">
                       <div class="input-group" style="width:100%;margin-top:10px">
                         <input type="range" class="form-control-range" min="0" max="100000" value="0" step="500" name="ge" id="earnings" onchange="overseasf();initialadvancedoptions();"/>
                         </input>
                       </div>
                     </div> <!-- end column -->
-                    <div class="col-lg-4 col-md-3 col-sm-4 col-xs-4 label-container">
-                      <input type="number" value="0" min="0" step="500" class="form-control currency" name="ge_value" id="earnings_value" onchange="overseasf();initialadvancedoptions();"/>
-                      <span class="input-group-addon">
-                        <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is your pre-tax earnings">
-                          <i class='glyphicon glyphicon-info-sign'></i>
-                        </a>
-                      </span>
-                      </input>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 label-container">
+                      <div class="input-group">
+                        <input type="number" value="0" min="0" step="500" class="form-control currency" name="ge_value" id="earnings_value" onchange="overseasf();initialadvancedoptions();"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is your pre-tax earnings">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
                     </div>
-                    <div class="col-lg-2 col-md-4 col-sm-4 col-xs-6 label-container">
-                      <span id=curr>British Pounds</span>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 label-container">
+                      <centre><span id=curr>British Pounds</span></centre>
                     </div>
                   </div> <!-- end row -->
                   <!---------------------------- ADVANCED OPTIONS ------------------------>
@@ -656,237 +658,6 @@
                                     <i class='glyphicon glyphicon-info-sign'></i>
                                   </a>
                                 </span>
-                              </div>
-                            </div> <!-- end column -->
-                          </div> <!-- end row -->
-                          <!---------------------------- ADDITIONAL REPAYMENTS QUESTION ------------------------>
-                          <div class="row">
-                            <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12 label-container" align="left">
-                              <label for="addrepay">Monthly additional repayments:</label>
-                            </div> <!-- end label-container -->
-                            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12 label-container" align="right">
-                              <div class="input-group" style="margin:5px">
-                                <input type="number" min="0" step="100" placeholder="e.g. 50" class="form-control currency" name="ar" id="addrepay"/>
-                                </input>
-                              </div>
-                            </div> <!-- end column -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12 label-container" align="right">
-                              <div class="input-group">
-                                <select class="form-control dropdown" name="curr_ar" id="curr_ar">
-                                  <option value="British Pound">British Pounds</option>
-                                  <option value="Afghanis">Afghanis</option>
-                                  <option value="Algerian Dinar">Algerian Dinar</option>
-                                  <option value="Antillean Guilder">Antillean Guilder</option>
-                                  <option value="Antilles Guilder">Antilles Guilder</option>
-                                  <option value="Argentine Peso">Argentine Peso</option>
-                                  <option value="Aruban Guilder">Aruban Guilder</option>
-                                  <option value="Australian Dollar">Australian Dollar</option>
-                                  <option value="Azerbaijanian Manat">Azerbaijanian Manat</option>
-                                  <option value="Bahamian Dollar">Bahamian Dollar</option>
-                                  <option value="Bahrain Dinar">Bahrain Dinar</option>
-                                  <option value="Balboas">Balboas</option>
-                                  <option value="Barbados Dollar">Barbados Dollar</option>
-                                  <option value="Belarusian Ruble">Belarusian Ruble</option>
-                                  <option value="Belizean Dollar">Belizean Dollar</option>
-                                  <option value="Bermudian Dollar">Bermudian Dollar</option>
-                                  <option value="Bhutanese Ngultrum">Bhutanese Ngultrum</option>
-                                  <option value="Bolivar Fuerte">Bolivar Fuerte</option>
-                                  <option value="Boliviano">Boliviano</option>
-                                  <option value="Brazilian Real">Brazilian Real</option>
-                                  <option value="Brunei Dollar">Brunei Dollar</option>
-                                  <option value="Bulgarian Lev">Bulgarian Lev</option>
-                                  <option value="Burundi Franc">Burundi Franc</option>
-                                  <option value="Canadian Dollar">Canadian Dollar</option>
-                                  <option value="Cape Verde Escudo">Cape Verde Escudo</option>
-                                  <option value="Cayman Islands Dollar">Cayman Islands Dollar</option>
-                                  <option value="CFA Franc (BCEAO)">CFA Franc (BCEAO)</option>
-                                  <option value="CFA Franc (BEAC)">CFA Franc (BEAC)</option>
-                                  <option value="CFP Franc">CFP Franc</option>
-                                  <option value="Chilean Peso">Chilean Peso</option>
-                                  <option value="Colombian Peso">Colombian Peso</option>
-                                  <option value="Comorian Franc">Comorian Franc</option>
-                                  <option value="Congolese Franc">Congolese Franc</option>
-                                  <option value="Convertible Marka">Convertible Marka</option>
-                                  <option value="Costa Rican Colon">Costa Rican Colon</option>
-                                  <option value="Cuban Peso">Cuban Peso</option>
-                                  <option value="Czech Koruna">Czech Koruna</option>
-                                  <option value="Dalasi">Dalasi</option>
-                                  <option value="Danish Krone">Danish Krone</option>
-                                  <option value="Djiboutian Franc">Djiboutian Franc</option>
-                                  <option value="Dobras">Dobras</option>
-                                  <option value="Dominican Peso">Dominican Peso</option>
-                                  <option value="Dong">Dong</option>
-                                  <option value="Dram">Dram</option>
-                                  <option value="East Caribbean Dollar">East Caribbean Dollar</option>
-                                  <option value="Egyptian Pound">Egyptian Pound</option>
-                                  <option value="Ethiopian Birr">Ethiopian Birr</option>
-                                  <option value="Euro">Euro</option>
-                                  <option value="Falkland Pound">Falkland Pound</option>
-                                  <option value="Fiji Dollar">Fiji Dollar</option>
-                                  <option value="Forint">Forint</option>
-                                  <option value="Ghanaian Cedi">Ghanaian Cedi</option>
-                                  <option value="Gold Cordoba">Gold Cordoba</option>
-                                  <option value="Gourde">Gourde</option>
-                                  <option value="Guarani">Guarani</option>
-                                  <option value="Guinean Franc">Guinean Franc</option>
-                                  <option value="Guyanese Dollar">Guyanese Dollar</option>
-                                  <option value="Hong Kong Dollar">Hong Kong Dollar</option>
-                                  <option value="Hryvnia">Hryvnia</option>
-                                  <option value="Icelandic Krona">Icelandic Krona</option>
-                                  <option value="Indian Rupee">Indian Rupee</option>
-                                  <option value="Indonesian Rupiah">Indonesian Rupiah</option>
-                                  <option value="Iranian Rial">Iranian Rial</option>
-                                  <option value="Iraqi Dinar">Iraqi Dinar</option>
-                                  <option value="Jamaican Dollar">Jamaican Dollar</option>
-                                  <option value="Jordanian Dinar">Jordanian Dinar</option>
-                                  <option value="Kenya Schilling">Kenya Schilling</option>
-                                  <option value="Kina">Kina</option>
-                                  <option value="Kip">Kip</option>
-                                  <option value="Kuna">Kuna</option>
-                                  <option value="Kuwaiti Dinar">Kuwaiti Dinar</option>
-                                  <option value="Kwanza">Kwanza</option>
-                                  <option value="Kyat">Kyat</option>
-                                  <option value="Kyrgyzstan Som">Kyrgyzstan Som</option>
-                                  <option value="Lari">Lari</option>
-                                  <option value="Lebanese Pound">Lebanese Pound</option>
-                                  <option value="Leke">Leke</option>
-                                  <option value="Lempira">Lempira</option>
-                                  <option value="Leone">Leone</option>
-                                  <option value="Liberian Dollar (US Dollar in use)">Liberian Dollar (US Dollar in use)</option>
-                                  <option value="Libyan Dinar">Libyan Dinar</option>
-                                  <option value="Lilangeni">Lilangeni</option>
-                                  <option value="Loti">Loti</option>
-                                  <option value="Macedonian Denar">Macedonian Denar</option>
-                                  <option value="Malagasy Ariary">Malagasy Ariary</option>
-                                  <option value="Malawi Kwacha">Malawi Kwacha</option>
-                                  <option value="Mauritius Rupee">Mauritius Rupee</option>
-                                  <option value="Metical">Metical</option>
-                                  <option value="Mexican Peso">Mexican Peso</option>
-                                  <option value="Moldovan Leu">Moldovan Leu</option>
-                                  <option value="Moroccan Dirham">Moroccan Dirham</option>
-                                  <option value="Nafka">Nafka</option>
-                                  <option value="Namibian Dollar">Namibian Dollar</option>
-                                  <option value="Nepalese Rupee">Nepalese Rupee</option>
-                                  <option value="New Israeli Shekel">New Israeli Shekel</option>
-                                  <option value="New Sol">New Sol</option>
-                                  <option value="New Zealand Dollar">New Zealand Dollar</option>
-                                  <option value="Nigerian Naira">Nigerian Naira</option>
-                                  <option value="Norwegian Krone">Norwegian Krone</option>
-                                  <option value="Ouguiyas">Ouguiyas</option>
-                                  <option value="Pa anga">Pa'anga</option>
-                                  <option value="Pakistan Rupee">Pakistan Rupee</option>
-                                  <option value="Patacas">Patacas</option>
-                                  <option value="Philippine Peso">Philippine Peso</option>
-                                  <option value="Pula">Pula</option>
-                                  <option value="Qatar Riyal">Qatar Riyal</option>
-                                  <option value="Quetzal">Quetzal</option>
-                                  <option value="Rand">Rand</option>
-                                  <option value="Rial Omani">Rial Omani</option>
-                                  <option value="Riel">Riel</option>
-                                  <option value="Ringgit">Ringgit</option>
-                                  <option value="Romanian Leu">Romanian Leu</option>
-                                  <option value="Rufiyaa">Rufiyaa</option>
-                                  <option value="Russian Ruble">Russian Ruble</option>
-                                  <option value="Rwanda Franc">Rwanda Franc</option>
-                                  <option value="Saint Helena Pound">Saint Helena Pound</option>
-                                  <option value="Saudi Riyal">Saudi Riyal</option>
-                                  <option value="Serbian Dinar">Serbian Dinar</option>
-                                  <option value="Seychelles Rupee">Seychelles Rupee</option>
-                                  <option value="Singapore Dollar">Singapore Dollar</option>
-                                  <option value="Solomon Islands Dollar">Solomon Islands Dollar</option>
-                                  <option value="Somali Shilling">Somali Shilling</option>
-                                  <option value="Somoni">Somoni</option>
-                                  <option value="Sri Lankan Rupee">Sri Lankan Rupee</option>
-                                  <option value="Sudanese Pound">Sudanese Pound</option>
-                                  <option value="Surinam Dollar">Surinam Dollar</option>
-                                  <option value="Swedish Krona">Swedish Krona</option>
-                                  <option value="Swiss Franc">Swiss Franc</option>
-                                  <option value="Syrian Pound">Syrian Pound</option>
-                                  <option value="Taiwan Dollar">Taiwan Dollar</option>
-                                  <option value="Taka">Taka</option>
-                                  <option value="Tala">Tala</option>
-                                  <option value="Tanzanian Shilling">Tanzanian Shilling</option>
-                                  <option value="Tenge">Tenge</option>
-                                  <option value="Thai Baht">Thai Baht</option>
-                                  <option value="Trinidad and Tobago Dollar">Trinidad and Tobago Dollar</option>
-                                  <option value="Tugrik">Tugrik</option>
-                                  <option value="Tunisian Dinar">Tunisian Dinar</option>
-                                  <option value="Turkish New Lira">Turkish New Lira</option>
-                                  <option value="Turkmenistan New Manat">Turkmenistan New Manat</option>
-                                  <option value="U.A.E. Dirham">U.A.E. Dirham</option>
-                                  <option value="U.S. Dollar">U.S. Dollar</option>
-                                  <option value="Ugandan New Shilling">Ugandan New Shilling</option>
-                                  <option value="Uruguayan Peso">Uruguayan Peso</option>
-                                  <option value="Uzbekistan Sum">Uzbekistan Sum</option>
-                                  <option value="Vatu">Vatu</option>
-                                  <option value="Won Korea Dem. Rep">Won Korea Dem. Rep</option>
-                                  <option value="Yuan Renminbi">Yuan Renminbi</option>
-                                  <option value="Won Korea Rep">Won Korea Rep</option>
-                                  <option value="Yemeni Rial">Yemeni Rial</option>
-                                  <option value="Yen">Yen</option>
-                                  <option value="Zambian Kwacha">Zambian Kwacha</option>
-                                  <option value="Zimbabwean Dollar">Zimbabwean Dollar</option>
-                                  <option value="Zloty">Zloty</option>
-                                </select>
-                                <span class="input-group-addon">
-                                  <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="These are monthly additional recurring repayments you make in addition to your mandatory repayments">
-                                    <i class='glyphicon glyphicon-info-sign'></i>
-                                  </a>
-                                </span>
-                              </div>
-                            </div> <!-- end column -->
-                          </div> <!-- end row -->
-                          <!---------------------------- INTEREST RATE QUESTION ------------------------>
-                          <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                              <label for="intrate">Change interest rate:</label>
-                            </div> <!-- end label-container -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                              <div class="input-group">
-                                <span class="input-group-addon">%</span>
-                                <input type="number" min="0" step="0.05" class="form-control currency" name="intrate" id="intrate"/>
-                                <span class="input-group-addon">
-                                  <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Current interest rates; Plan 1 is 1.75%, Plan 2 is between 3.3% and 6.3%, Postgraduate is 6.3%">
-                                    <i class='glyphicon glyphicon-info-sign'></i>
-                                  </a>
-                                </span>
-                                </input>
-                              </div>
-                            </div> <!-- end column -->
-                          </div> <!-- end row -->
-                          <!---------------------------- INFLATION QUESTION ------------------------>
-                          <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                              <label for="inflation">Change inflation:</label>
-                            </div> <!-- end label-container -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                              <div class="input-group">
-                                <span class="input-group-addon">%</span>
-                                <input type="number" step="0.05" class="form-control currency" name="inflation" id="inflation"/>
-                                <span class="input-group-addon">
-                                  <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Changing the inflation rate changes the repayment thresholds">
-                                    <i class='glyphicon glyphicon-info-sign'></i>
-                                  </a>
-                                </span>
-                                </input>
-                              </div>
-                            </div> <!-- end column -->
-                          </div> <!-- end row -->
-                          <!---------------------------- PAYRISE QUESTION ------------------------>
-                          <div class="row">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
-                              <label for="payrise">Yearly pay rise (in addition to inflation):</label>
-                            </div> <!-- end label-container -->
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12" align="right">
-                              <div class="input-group">
-                                <span class="input-group-addon">%</span>
-                                <input type="number" step="0.05" placeholder="0.00" class="form-control currency" name="payrise" id="payrise"/>
-                                <span class="input-group-addon">
-                                  <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Changing the inflation rate changes the plan 2 and postgraduate interest rate and the repayment threshold">
-                                    <i class='glyphicon glyphicon-info-sign'></i>
-                                  </a>
-                                </span>
-                                </input>
                               </div>
                             </div> <!-- end column -->
                           </div> <!-- end row -->
@@ -941,7 +712,7 @@
             <table width=100%>
               <tr>
                 <td align="left" width=100%>
-                  <strong><font size=4.3%>Key information about your loan</font></strong>
+                  <strong><font size=4.3%>Key information about your <span id=loan_ref>...</span> loan</font></strong>
                 </td>
               </tr>
             </table>
@@ -1009,46 +780,12 @@
               </tr>
             </table>
             <hr class="style1">
-            <!---------------------------- ADDITIONAL REPAYMENTS SAVINGS ------------------------>
-            <!--<table width=100%>
-              <tr>
-                <td align="left" width=70%>
-                  <span>
-                    <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="If you continued making additional repayments of this amount, this is how much you will save by paying off early. Note: Negative means you're losing money.">
-                      <i class='glyphicon glyphicon-info-sign'></i>
-                    </a>
-                  </span>
-                  Amount saved by making additional repayments
-                </td>
-                <td id="es" align="left" width=40%>
-                  ...
-                </td>
-              </tr>
-            </table>
-            <hr class="style1">-->
-            <!---------------------------- LOAN TYPE ------------------------>
-            <table width=100%>
-              <tr>
-                <td align="left" width=70%>
-                  <span>
-                    <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is the loan type you are classified as having, based on when you went to university and where you applied from.">
-                      <i class='glyphicon glyphicon-info-sign'></i>
-                    </a>
-                  </span>
-                  Your loan type
-                </td>
-                <td id="loantype" align="left" width=40%>
-                  ...
-                </td>
-              </tr>
-            </table>
-            <hr class="style1">
           </form>
         </div>
         <br>
-        <div class="row text-center" id="plotadjustform" style="padding:30px;">
+        <div class="row text-center" id="plotadjustform" style="padding:30px;text-align:left;">
           <br>
-          <strong>Adjust the inputs to see how additional repayments affect your student loan</strong>
+          <strong><font size=4.3%>Adjust the inputs to see how additional repayments affect your student loan</font></strong>
           <br>
           <br>
           <form name="plot_form">
@@ -1057,20 +794,27 @@
                 <div class="input-group">
                   <!---------------------------- GROSS EARNINGS QUESTION ------------------------>
                   <div class="row">
-                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 label-container" align="left">
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 label-container" align="left">
                       <label for="plot_earnings">Yearly gross earnings:</label>
                     </div> <!-- end label-container -->
-                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-4" align="right">
-                      <div class="input-group" style="margin-bottom:5px;width:100%;">
+                    <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 label-container" align="right">
+                      <div class="input-group" style="margin-bottom:5px;width:100%">
                         <input type="range" class="form-control-range" min="0" max="100000" step="500" id="plot_earnings" onchange="calculate2();"/>
                         </input>
                       </div>
                     </div> <!-- end column -->
-                    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4 label-container" style="margin-bottom:5px;">
-                      <input type="number" min="0" step="500" class="form-control currency" name="plot_ge" id="plot_earnings_value" onchange="calculate2();"/>
-                      </input>
+                    <div class="col-lg-6 col-md-3 col-sm-4 col-xs-6 label-container" style="margin-bottom:5px;">
+                      <div class="input-group">
+                        <input type="number" min="0" step="500" class="form-control currency" name="plot_ge" id="plot_earnings_value" onchange="calculate2();"/>
+                        <span class="input-group-addon">
+                          <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is your pre-tax earnings">
+                            <i class='glyphicon glyphicon-info-sign'></i>
+                          </a>
+                        </span>
+                        </input>
+                      </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-4 label-container">
+                    <div class="col-lg-6 col-md-3 col-sm-4 col-xs-6" style="padding:10px;">
                       <span id=curr_plots>British Pounds</span>
                     </div>
                   </div> <!-- end row -->
@@ -1078,22 +822,30 @@
               </div>
             </div>
           </form>
+          <br>
           <form name="volunt">
             <div class="row">
-              <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12 label-container" align="left">
+              <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 label-container" align="left">
                 <label for="input">Make a one time repayment:</label>
               </div> <!-- end label-container -->
-              <div class="col-lg-6 col-md-3 col-sm-3 col-xs-6" align="right">
-                <div class="input-group" style="margin:5px;width:100%;">
+              <div class="col-lg-6 col-md-6 col-sm-4 col-xs-12 label-container" align="right">
+                <div class="input-group" style="margin-bottom:5px;width:100%;">
                   <input type="range" class="form-control-range" value="0" min="0" max="100000" step="100" name="plot_bulk_ar" id="plot_bulk_ar" onchange="calculate2();"/>
                   </input>
                 </div>
               </div> <!-- end column -->
-              <div class="col-lg-6 col-md-3 col-sm-3 col-xs-6 label-container">
-                <input type="number" value="0" min="0" step="500" class="form-control currency" id="plot_bulk_ar_value" onchange="calculate2();"/>
-                </input>
+              <div class="col-lg-6 col-md-3 col-sm-4 col-xs-6 label-container">
+                <div class="input-group">
+                  <input type="number" value="0" min="0" step="500" class="form-control currency" id="plot_bulk_ar_value" onchange="calculate2();"/>
+                  <span class="input-group-addon">
+                    <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="This is assumed to be paid immediately">
+                      <i class='glyphicon glyphicon-info-sign'></i>
+                    </a>
+                  </span>
+                  </input>
+                </div>
               </div>
-              <div class="col-lg-6 col-md-3 col-sm-3 col-xs-8 label-container" align="right">
+              <div class="col-lg-6 col-md-3 col-sm-4 col-xs-6 label-container" align="right">
                 <div class="input-group">
                   <select class="form-control dropdown" name="plot_curr_bulk_ar" id="plot_currency_input" onchange="calculate2();bulk_range_range();">
                   <option value="British Pound">British Pounds</option>
@@ -1260,23 +1012,99 @@
               </div> <!-- end column -->
             </div> <!-- end row -->
           </form>
+          <br>
+          <form name="plot_advanced">
+            <div class="panel-group" id="accordion5">
+              <div class="panel2 panel-default">
+                <div class="panel-heading2">
+                  <h4 class="panel-title">
+                    <a type="button" class="btn btn-primary" data-toggle="collapse" data-parent="#accordion5" href="#collapseSix" style="color:white;float:left;">
+                      Advanced Options
+                    </a>
+                  </h4>
+                </div>
+                <br>
+                <br>
+                <div id="collapseSix" class="panel-collapse collapse">
+                  <div class="panel-body">
+                    <!---------------------------- INTEREST RATE QUESTION ------------------------>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                        <label for="intrate">Change interest rate:</label>
+                      </div> <!-- end label-container -->
+                      <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12" align="right">
+                        <div class="input-group">
+                          <span class="input-group-addon">%</span>
+                          <input type="number" min="0" step="0.05" class="form-control currency" name="intrate" id="intrate"/>
+                          <span class="input-group-addon">
+                            <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Current interest rates; Plan 1 is 1.75%, Plan 2 is between 3.3% and 6.3%, Postgraduate is 6.3%">
+                              <i class='glyphicon glyphicon-info-sign'></i>
+                            </a>
+                          </span>
+                          </input>
+                        </div>
+                      </div> <!-- end column -->
+                    </div> <!-- end row -->
+                    <!---------------------------- INFLATION QUESTION ------------------------>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                        <label for="inflation">Change inflation:</label>
+                      </div> <!-- end label-container -->
+                      <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12" align="right">
+                        <div class="input-group">
+                          <span class="input-group-addon">%</span>
+                          <input type="number" step="0.05" class="form-control currency" name="inflation" id="inflation"/>
+                          <span class="input-group-addon">
+                            <a class='my-tool-tip' data-toggle="tooltip" placeholder="0.00" data-placement="top" title="Changing the inflation rate changes the repayment thresholds">
+                              <i class='glyphicon glyphicon-info-sign'></i>
+                            </a>
+                          </span>
+                          </input>
+                        </div>
+                      </div> <!-- end column -->
+                    </div> <!-- end row -->
+                    <!---------------------------- PAYRISE QUESTION ------------------------>
+                    <div class="row">
+                      <div class="col-lg-6 col-md-8 col-sm-8 col-xs-12 label-container" align="left">
+                        <label for="payrise">Yearly pay rise (in addition to inflation):</label>
+                      </div> <!-- end label-container -->
+                      <div class="col-lg-6 col-md-4 col-sm-4 col-xs-12" align="right">
+                        <div class="input-group">
+                          <span class="input-group-addon">%</span>
+                          <input type="number" step="0.05" placeholder="0.00" class="form-control currency" name="payrise" id="payrise"/>
+                          <span class="input-group-addon">
+                            <a class='my-tool-tip' data-toggle="tooltip" data-placement="top" title="Changing the inflation rate changes the plan 2 and postgraduate interest rate and the repayment threshold">
+                              <i class='glyphicon glyphicon-info-sign'></i>
+                            </a>
+                          </span>
+                          </input>
+                        </div>
+                      </div> <!-- end column -->
+                    </div> <!-- end row -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
         </div>
       </div>
     <div class="container col-lg-8 col-md-12 col-sm-12 col-xs-12">
-      <!---------------------------- TITLE ------------------------>
-      <table width=100%>
-        <tr>
-          <td align="left" width=100%>
-            <strong><font size=4.3%>How much should you spend on additional repayments?</font></strong>
-            <br>
-            <br>
-            The only part of the student loan you have control over are the <strong>additional repayments</strong>.
-            <br>
-            <br>
-            Additional repayments are voluntary repayments you can make on top of your mandatory repayments. These repayments can be either monthly recurring or a one-off bulk repayment.
-          </td>
-        </tr>
-      </table>
+      <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="padding-left:40px;padding-right:40px;padding-top:10px;margin-bottom:50px;">
+        <!---------------------------- TITLE ------------------------>
+        <table width=100%>
+          <tr>
+            <td align="left" width=100%>
+              <strong><font size=4.3%>How much should you spend on additional repayments?</font></strong>
+              <br>
+              <br>
+              The only part of the student loan you have control over are the <strong>additional repayments</strong>.
+              <br>
+              <br>
+              Additional repayments are voluntary repayments you can make on top of your mandatory repayments. These repayments can be either monthly recurring or a one-off bulk repayment.
+            </td>
+          </tr>
+        </table>
+      </div>
       <br>
       <div class="container col-lg-12 col-md-12 col-sm-12 col-xs-12" style="margin-bottom:40px">
         <div id="chart_div1" class="chart"></div>

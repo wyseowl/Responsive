@@ -18,8 +18,6 @@ var paye; /* Whether PAYE is used*/
 var age_y; /* Year of birth*/
 var age_m; /* Month of birth*/
 var ge; /* Gross Earnings */
-var ar; /* Voluntary repayments */
-var curr_ar; /* Voluntary repayment currency */
 var intrate; /* Interest rate */
 var inflation; /* Inflation rate */
 var payrise; /* Percentage payrise per year */
@@ -42,7 +40,6 @@ var exch_ar; /* Exchange Rate for additional repayments*/
 var leth; /* Lower earnings threshold*/
 var uet; /* Upper earnings threshold for Plan 2 Loan*/
 var gef; /* Currency adjusted gross earnings*/
-var arf; /* Currency adjusted additional repayments*/
 var rl; /* Realtime Loan - as of today*/
 var ifrac;
 var mmr_init; /* Initial Mandatory Monthly repayments*/
@@ -65,7 +62,6 @@ var fv;
 var y;
 var shif;
 var int;
-var art;
 var total;
 var shif1;
 var rlo;
@@ -116,7 +112,6 @@ function cancelf() {
 function overseasf() {
   c = document.form_over.c.value;
   ge = Number(document.form.ge.value);
-  ar = Number(document.form.ar.value);
   if (loantype=="Plan 1"){
     rp=0.09;
     for (var i = 0; i < obj.Sheet1.length; i++){
@@ -148,13 +143,6 @@ function overseasf() {
       }
     }
   }
-  /* Voluntary repayments */
-  for (var i = 0; i < obj.Sheet1.length; i++){
-    if (obj.Sheet1[i].Currency == curr_ar){
-      exch_ar=obj.Sheet1[i].Exchange_Rate;
-    }
-  }
-  arf = Number(ar*exch_ar);
   gef = Number(ge*exch);
 }
 /*********************************************** MANDATORY MONTHLY REPAYMENT ****************************/
@@ -214,7 +202,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30);
+        cl=(cl+(ir/30));
         j=j+1;
       }
     }
@@ -226,7 +214,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
+        cl=(cl+(ir/30))-(mmr_init/30);
         j=j+1;
       }
     }
@@ -240,7 +228,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30);
+        cl=(cl+(ir/30));
         j=j+1;
       }
     }
@@ -252,7 +240,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
+        cl=(cl+(ir/30))-(mmr_init/30);
         j=j+1;
       }
     }
@@ -266,7 +254,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30);
+        cl=(cl+(ir/30));
         j=j+1;
       }
     }
@@ -278,7 +266,7 @@ function payoff(){
         else{
           ir=ir;
         }
-        cl=(cl+(ir/30))-(arf/30)-(mmr_init/30);
+        cl=(cl+(ir/30))-(mmr_init/30);
         j=j+1;
       }
     }
@@ -371,19 +359,9 @@ function payoffnar(){
   jy1=Math.floor(j1/365);
   jm1=Math.floor(((j1/365)-jy1)*12);
 }
-/********************************************** EXTRA SAVED **************************************/
-function esaved(){
-  if (gef<=leth) {
-    es= -(j/365)*(arf*12);
-  }
-  else if (gef>leth) {
-    es=(j1/365)*(mmr_init*12)-((j/365)*((arf*12)+(mmr_init*12)));
-  }
-}
 /********************************************** TOTAL SPENT ON VOLUNTARY REPAYMENTs **************************************/
 function totspent(){
-  art=(j/365)*(arf*12);
-  total=(j/365)*((arf*12)+(mmr_init*12));
+  total=(j/365)*(mmr_init*12);
 }
 /********************************************** LOAN FATE **************************************/
 function loanfate(){
@@ -432,15 +410,10 @@ function calculate(){
   age_y = document.form.age_y.value;
   age_m = document.form.age_m.value;
   ge = Number(document.form.ge.value);
-  ar = Number(document.form.ar.value);
-  curr_ar = document.form.curr_ar.value;
-  intrate = Number(document.form.intrate.value);
-  inflation = Number(document.form.inflation.value);
-  payrise = Number(document.form.payrise.value);
   c = document.form_over.c.value;
-  intrate = document.form.intrate.value/100;
-  inflation = document.form.inflation.value/100;
-  payrise = document.form.payrise.value/100;
+  intrate = document.plot_advanced.intrate.value/100;
+  inflation = document.plot_advanced.inflation.value/100;
+  payrise = document.plot_advanced.payrise.value/100;
 
   loantypef(); /* Calculate loan type */
   cancelf(); /* Calculate time until loan is cancelled */
@@ -449,7 +422,6 @@ function calculate(){
   realtimef();
   payoff(); /* Time until loan is paid off or cancelled */
   payoffnar();
-  esaved();
   totspent();
   loanfate();
   /*findr();*/
@@ -471,8 +443,7 @@ function calculate(){
   document.getElementById('mmr').innerHTML="£"+mmro;
   document.getElementById('tcanc').innerHTML=loancomp;
   document.getElementById('cancelled').innerHTML=cancelledy +" years, "+cancelledm +" month(s)";
-  document.getElementById('loantype').innerHTML=loantype;
-  /*document.getElementById('es').innerHTML="£"+eso;*/ /* NOTE: Not used Currently */
+  document.getElementById('loan_ref').innerHTML=loantype;
 /*  document.getElementById('aprk').innerHTML=shif1o+"%";*/
 }
 /********************************* DISPLAY ADVANCED OPTIONS ****************************/
@@ -500,9 +471,9 @@ function initialadvancedoptions(){
   if (loantype=="Plan 1") {
     var ip1_r=parseFloat(Math.round(ip1*10000)/100).toFixed(2);
     var rpi_r=parseFloat(Math.round(rpi*10000)/100).toFixed(2);
-    document.form.intrate.value=ip1_r;
-    document.form.inflation.value=rpi_r;
-    document.form.payrise.value=0.0;
+    document.plot_advanced.intrate.value=ip1_r;
+    document.plot_advanced.inflation.value=rpi_r;
+    document.plot_advanced.payrise.value=0.0;
   }
   else if (loantype=="Plan 2") {
     if (gef<=leth) {
@@ -517,16 +488,16 @@ function initialadvancedoptions(){
     }
     var ip2_r=Number(parseFloat(Math.round(ip2_f*10000)/100).toFixed(2));
     var rpi_r=Number(parseFloat(Math.round(rpi*10000)/100).toFixed(2));
-    document.form.intrate.value=ip2_r;
-    document.form.inflation.value=rpi_r;
-    document.form.payrise.value=0.0;
+    document.plot_advanced.intrate.value=ip2_r;
+    document.plot_advanced.inflation.value=rpi_r;
+    document.plot_advanced.payrise.value=0.0;
   }
   else if (loantype=="Postgraduate Loan") {
     var ipl_r=Number(parseFloat(Math.round(ipl*10000)/100).toFixed(2));
     var rpi_r=Number(parseFloat(Math.round(rpi*10000)/100).toFixed(2));
-    document.form.intrate.value=(ipl_r+rpi_r);
-    document.form.inflation.value=rpi_r;
-    document.form.payrise.value=0.0;
+    document.plot_advanced.intrate.value=(ipl_r+rpi_r);
+    document.plot_advanced.inflation.value=rpi_r;
+    document.plot_advanced.payrise.value=0.0;
   }
 }
 /********************************* DISPLAY HIDDEN FIELDS ****************************/

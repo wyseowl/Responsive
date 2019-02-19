@@ -357,7 +357,6 @@ function calculate2(){
     rlo=numberWithCommas(rlo);
     mmro=numberWithCommas(mmro);
   /********************************************** OUTPUT **************************************/
-    document.getElementById('rl').innerHTML="£"+rlo;
     document.getElementById('mmr').innerHTML="£"+mmro;
     document.getElementById('tcanc').innerHTML=loancomp;
   /********************************************** FORMAT OUTPUT **************************************/
